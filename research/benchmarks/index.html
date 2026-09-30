@@ -1,0 +1,4949 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Spot the work you keep repeating in Claude Code, and turn it into reviewed skills.">
+      
+      
+      
+        <link rel="canonical" href="https://skill-plus-plus-org.github.io/research/benchmarks/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../episode-filter/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Benchmarks - Skill++</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#benchmarks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Skill++" class="md-header__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Skill++
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Benchmarks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Skill++" class="md-nav__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Skill++
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research log
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-in-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is in it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-scores-kept-apart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two scores, kept apart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-found-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it found immediately
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-is-deliberately-coarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground truth is deliberately coarse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scored-against-featpattern-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scored against feat/pattern-detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-productivity-half-found-in-this-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the productivity half found in this branch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ported-from-featpattern-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ported from feat/pattern-detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ported from feat/pattern-detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windowing-the-principle-not-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windowing: the principle, not the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embeddings-a-tie-breaker-for-one-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embeddings: a tie-breaker for one band
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#featpattern-detections-real-product-finally-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feat/pattern-detection's real product, finally measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="feat/pattern-detection&#39;s real product, finally measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-is-the-difference-that-is-not-a-tuning-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming is the difference that is not a tuning gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveat-on-this-branchs-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveat on this branch's numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-naming-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the naming gap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-defects-all-found-by-running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five defects, all found by running it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-failed-attempt-to-fix-the-ranker-recorded-so-it-is-not-repeated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failed attempt to fix the ranker (recorded so it is not repeated)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-a-local-model-find-the-boundaries-two-framings-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can a local model find the boundaries? Two framings, measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Can a local model find the boundaries? Two framings, measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-is-still-not-wired-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is still not wired in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-generalisation-worth-keeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The generalisation worth keeping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-works-and-the-restraint-matters-more-than-the-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splitting works, and the restraint matters more than the action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-that-maintains-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground truth that maintains itself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-more-cases-and-the-score-went-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five more cases, and the score went down
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five more cases, and the score went down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mistake-worth-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mistake worth recording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-gaps-are-closed-downstream-and-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Both gaps are closed downstream, and verified
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-suite-now-names-the-gaps-instead-of-tolerating-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The suite now names the gaps instead of tolerating them
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-near-miss-floor-and-moving-the-check-off-the-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The near-miss floor, and moving the check off the hook
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The near-miss floor, and moving the check off the hook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-floor-was-070-and-why-that-stopped-being-the-right-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the floor was 0.70, and why that stopped being the right number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measured-full-corpus-gemma3ne4b--nomic-embed-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured, full corpus, gemma3n:e4b + nomic-embed-text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-was-deliberately-not-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was deliberately not built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-safe-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fail-safe, measured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fold-no-longer-waits-to-be-asked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fold no longer waits to be asked
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-boundary-judge-nine-configurations-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The boundary judge: nine configurations, measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The boundary judge: nine configurations, measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-each-failure-was-so-it-is-not-rediscovered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each failure was, so it is not rediscovered
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-one-thing-the-judge-has-ever-done-better-than-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one thing the judge has ever done better than code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-stands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it stands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tenth-and-eleventh-configurations-and-what-actually-helped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tenth and eleventh configurations, and what actually helped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-failure-mode-the-score-hides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failure mode the score hides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-length-rule-is-gone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The length rule is gone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-is-not-evidence-that-nothing-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading is not evidence that nothing happened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-vocabulary-stops-being-a-segmenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The vocabulary stops being a segmenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-third-repair-pass-goes-too" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The third repair pass goes too
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-per-step-judge-on-241955c7-what-was-ruled-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The per-step judge on 241955c7: what was ruled out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The per-step judge on 241955c7: what was ruled out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-prompt-at-the-boundary-and-what-is-fixed-versus-inserted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The prompt at the boundary, and what is fixed versus inserted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewording-the-definition-does-not-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rewording the definition does not help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-does-more-of-the-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nor does more of the step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-a-different-question-nor-less-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nor a different question, nor less context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarity-changes-everything-which-means-it-is-not-judging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polarity changes everything, which means it is not judging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model-is-also-not-self-consistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model is also not self-consistent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ratchet-and-the-bootstrapping-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ratchet, and the bootstrapping trap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-went-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it went next
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-moved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question moved
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The question moved">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-slot-earns-its-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every slot earns its place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-bugs-the-score-could-not-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two bugs the score could not see
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-costs-and-what-it-gives-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it costs and what it gives up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framings-rejected-and-what-a-call-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framings rejected, and what a call costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemma4e4b-as-the-judge-more-to-read-one-input-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gemma4:e4b as the judge: more to read, one input at a time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gemma4:e4b as the judge: more to read, one input at a time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thinking-off-each-input-alone-against-the-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking off: each input alone, against the defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-at-the-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on, at the defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-with-the-reply-tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on, with the reply tail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-what-what-they-do-next-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on: what "What they do next" does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-restructured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question restructured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The question restructured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-prose-question-missed-every-code-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the prose question missed every code switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sections-instead-of-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections instead of prose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-counts-as-a-new-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What counts as a new task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-finished-commit-said-in-one-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A finished commit, said in one line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-procedure-decided-by-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same procedure, decided by embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Same procedure, decided by embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-yardstick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The yardstick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is embedded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-text-replaces-commands-where-a-run-has-replies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation text replaces commands where a run has replies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-change-at-a-time-what-the-conversation-text-keeps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One change at a time: what the conversation text keeps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../episode-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The episode filter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design (historical)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-in-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is in it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-scores-kept-apart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two scores, kept apart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-found-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it found immediately
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-is-deliberately-coarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground truth is deliberately coarse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scored-against-featpattern-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scored against feat/pattern-detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-productivity-half-found-in-this-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the productivity half found in this branch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ported-from-featpattern-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ported from feat/pattern-detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ported from feat/pattern-detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windowing-the-principle-not-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windowing: the principle, not the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embeddings-a-tie-breaker-for-one-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embeddings: a tie-breaker for one band
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#featpattern-detections-real-product-finally-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feat/pattern-detection's real product, finally measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="feat/pattern-detection&#39;s real product, finally measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-is-the-difference-that-is-not-a-tuning-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming is the difference that is not a tuning gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caveat-on-this-branchs-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveat on this branch's numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-naming-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the naming gap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-defects-all-found-by-running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five defects, all found by running it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-failed-attempt-to-fix-the-ranker-recorded-so-it-is-not-repeated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failed attempt to fix the ranker (recorded so it is not repeated)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-a-local-model-find-the-boundaries-two-framings-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can a local model find the boundaries? Two framings, measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Can a local model find the boundaries? Two framings, measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-it-is-still-not-wired-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is still not wired in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-generalisation-worth-keeping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The generalisation worth keeping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-works-and-the-restraint-matters-more-than-the-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splitting works, and the restraint matters more than the action
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-that-maintains-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ground truth that maintains itself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-more-cases-and-the-score-went-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five more cases, and the score went down
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Five more cases, and the score went down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mistake-worth-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mistake worth recording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-gaps-are-closed-downstream-and-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Both gaps are closed downstream, and verified
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-suite-now-names-the-gaps-instead-of-tolerating-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The suite now names the gaps instead of tolerating them
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-near-miss-floor-and-moving-the-check-off-the-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The near-miss floor, and moving the check off the hook
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The near-miss floor, and moving the check off the hook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-floor-was-070-and-why-that-stopped-being-the-right-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the floor was 0.70, and why that stopped being the right number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measured-full-corpus-gemma3ne4b--nomic-embed-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured, full corpus, gemma3n:e4b + nomic-embed-text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-was-deliberately-not-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was deliberately not built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-safe-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fail-safe, measured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fold-no-longer-waits-to-be-asked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fold no longer waits to be asked
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-boundary-judge-nine-configurations-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The boundary judge: nine configurations, measured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The boundary judge: nine configurations, measured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-each-failure-was-so-it-is-not-rediscovered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each failure was, so it is not rediscovered
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-one-thing-the-judge-has-ever-done-better-than-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The one thing the judge has ever done better than code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-stands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it stands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tenth-and-eleventh-configurations-and-what-actually-helped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The tenth and eleventh configurations, and what actually helped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-failure-mode-the-score-hides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A failure mode the score hides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-length-rule-is-gone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The length rule is gone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-is-not-evidence-that-nothing-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading is not evidence that nothing happened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-vocabulary-stops-being-a-segmenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The vocabulary stops being a segmenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-third-repair-pass-goes-too" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The third repair pass goes too
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-per-step-judge-on-241955c7-what-was-ruled-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The per-step judge on 241955c7: what was ruled out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The per-step judge on 241955c7: what was ruled out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-prompt-at-the-boundary-and-what-is-fixed-versus-inserted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The prompt at the boundary, and what is fixed versus inserted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewording-the-definition-does-not-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rewording the definition does not help
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-does-more-of-the-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nor does more of the step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-a-different-question-nor-less-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nor a different question, nor less context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarity-changes-everything-which-means-it-is-not-judging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polarity changes everything, which means it is not judging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model-is-also-not-self-consistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model is also not self-consistent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ratchet-and-the-bootstrapping-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ratchet, and the bootstrapping trap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-it-went-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where it went next
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-moved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question moved
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The question moved">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#every-slot-earns-its-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every slot earns its place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-bugs-the-score-could-not-see" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two bugs the score could not see
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-costs-and-what-it-gives-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it costs and what it gives up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framings-rejected-and-what-a-call-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framings rejected, and what a call costs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemma4e4b-as-the-judge-more-to-read-one-input-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gemma4:e4b as the judge: more to read, one input at a time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gemma4:e4b as the judge: more to read, one input at a time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thinking-off-each-input-alone-against-the-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking off: each input alone, against the defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-at-the-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on, at the defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-with-the-reply-tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on, with the reply tail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thinking-on-what-what-they-do-next-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking on: what "What they do next" does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-restructured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question restructured
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The question restructured">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-prose-question-missed-every-code-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the prose question missed every code switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sections-instead-of-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections instead of prose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-counts-as-a-new-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What counts as a new task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-finished-commit-said-in-one-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A finished commit, said in one line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-procedure-decided-by-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same procedure, decided by embedding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Same procedure, decided by embedding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-yardstick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The yardstick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is embedded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversation-text-replaces-commands-where-a-run-has-replies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversation text replaces commands where a run has replies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-change-at-a-time-what-the-conversation-text-keeps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One change at a time: what the conversation text keeps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Part of the <a href="../">research log</a>, which says where things stand now.
+The sessions cited below by tag are a private set, not in the repo.</p>
+</blockquote>
+<p>Every earlier measurement in this repo used fixtures written by whoever was also
+writing the detector, which tests internal consistency more than anything else.
+This corpus is written the other way round: from what the work actually looks
+like, in two domains, with the answer decided before the pipeline was run
+against it.</p>
+<div class="highlight"><pre><span></span><code>python3 tests/benchmarks/run.py --no-model      # segmentation, free
+python3 tests/benchmarks/run.py                 # + ranking, needs Ollama
+python3 tests/benchmarks/run.py --kind productivity
+python3 tests/benchmarks/run.py --json          # for tracking over time
+</code></pre></div>
+<h2 id="what-is-in-it">What is in it<a class="headerlink" href="#what-is-in-it" title="Permanent link">&para;</a></h2>
+<p>14 cases — 8 programming, 6 productivity — in <code>tests/benchmarks/cases.py</code>.</p>
+<p><strong>Programming</strong> is Bash-heavy with closing markers the segmenter recognises:
+releasing a service, rotating a credential, onboarding a repository, a migration
+that fails on a lock and is worked around, an exploration ending in a one-line
+fix, an investigation that concludes nothing, two unrelated tasks in one sitting,
+and a hotfix for one specific crash.</p>
+<p><strong>Productivity</strong> is MCP-shaped, where no <code>git commit</code> ever arrives and the only
+boundary is the next request: the weekly status email, monthly expenses, support
+triage, meeting prep, answering one question, and reading around without
+deciding anything.</p>
+<p><strong>Four cases are negative</strong> — two that should bank nothing, and several that
+should bank real work and rank it low. Without those, a detector that keeps
+everything scores perfectly.</p>
+<h2 id="two-scores-kept-apart">Two scores, kept apart<a class="headerlink" href="#two-scores-kept-apart" title="Permanent link">&para;</a></h2>
+<p>They fail for different reasons and cost different amounts.</p>
+<p><strong>Segmentation</strong> — given a session, does it bank the right number of candidates?
+Free, deterministic, and run inside the unit suite, because a wrong episode count
+is the one error nothing downstream recovers: merged episodes hide procedures
+inside each other, split ones destroy the recurrence count, and an episode that
+should not exist becomes a candidate titled after whatever question started it.</p>
+<p><strong>Ranking</strong> — of the candidates banked, are the reusable ones marked <code>method</code>?
+Needs a local model, so it is a benchmark rather than a test. Scored only on
+cases that segmented correctly, since ranking episodes that should not exist
+measures nothing.</p>
+<h2 id="what-it-found-immediately">What it found immediately<a class="headerlink" href="#what-it-found-immediately" title="Permanent link">&para;</a></h2>
+<p><strong>Segmentation 12/14 → 14/14.</strong> Both misses were sessions that should bank
+nothing and banked one. <code>segment.py</code> only flagged trailing work when a session
+split into several episodes, so a session that was <em>entirely</em> exploration sailed
+through. An exploration-only guard fixed both. It also required teaching
+<code>is_read_only</code> about MCP verbs — <code>search_messages</code> and <code>get_event</code> look,
+<code>send_message</code> and <code>append_rows</code> do not — as a prefix heuristic that treats
+anything unrecognised as work, so a wrong guess keeps an episode rather than
+discarding one.</p>
+<p><strong>Ranking 7/12, and the misses were a clean domain split:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Methods correctly ranked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programming</td>
+<td>4 of 5</td>
+</tr>
+<tr>
+<td><strong>Productivity</strong></td>
+<td><strong>0 of 4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Every productivity procedure — weekly email, expenses, triage, meeting prep —
+was ranked <code>one-off</code>. The cause was in the prompt, not the model: every example
+in <code>prompts/reusable.md</code> was an engineering one ("filing a defect, cutting a
+release, rolling out a service, rotating a credential, onboarding a
+repository"), so the model reasonably inferred that a method is an engineering
+procedure. The examples now span both domains and the prompt says outright that
+the domain and the tooling are irrelevant.</p>
+<p>That is the whole argument for having a corpus that is not written by the same
+hand as the detector. A programming-only benchmark would have scored this bug at
+100%.</p>
+<h2 id="ground-truth-is-deliberately-coarse">Ground truth is deliberately coarse<a class="headerlink" href="#ground-truth-is-deliberately-coarse" title="Permanent link">&para;</a></h2>
+<p><code>episodes</code> is how many candidates a correct run banks; <code>methods</code> is how many of
+those a person would follow again. Anything finer would encode the current
+implementation's opinions as truth, which is how a benchmark stops being able to
+find anything.</p>
+<p>A case marked <code>methods=0</code> with <code>episodes=1</code> is not a detection failure — it is
+real work that happened once and should be ranked low, not discarded.</p>
+<hr />
+<h2 id="scored-against-featpattern-detection">Scored against <code>feat/pattern-detection</code><a class="headerlink" href="#scored-against-featpattern-detection" title="Permanent link">&para;</a></h2>
+<p>The runner takes <code>--repo</code>, so the corpus can be pointed at any checkout exposing
+the three hook handlers and a <code>Ledger</code>. Segmentation only — ranking is this
+branch's concept and that one has no equivalent.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>this branch</th>
+<th><code>pattern-detection</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segmentation</td>
+<td><strong>17 of 17</strong></td>
+<td><strong>12 of 17</strong></td>
+</tr>
+<tr>
+<td>Multi-task sessions</td>
+<td><strong>3 of 3</strong></td>
+<td><strong>0 of 3</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Its five misses are all one shape: it banks exactly one candidate per session.
+That is right whenever a session held one task, and wrong the moment it held two
+— it merged a release with a CI bump, three morning tasks into one, and a weekly
+update with the expenses that followed it. The two sessions that should have
+banked nothing each banked one.</p>
+<p><strong>The first version of this corpus could not see that.</strong> 13 of its 14 cases held
+a single task, where banking one entry is correct by construction, and
+<code>pattern-detection</code> scored 11 of 14 — a detector that does no segmentation at
+all, looking respectable. Three multi-task cases were added for that reason, and
+they are what separates the two designs.</p>
+<p>A corpus that cannot distinguish <em>segments correctly</em> from <em>never segments</em> is
+not measuring segmentation. Worth re-checking whenever a case is added.</p>
+<h2 id="what-the-productivity-half-found-in-this-branch">What the productivity half found in this branch<a class="headerlink" href="#what-the-productivity-half-found-in-this-branch" title="Permanent link">&para;</a></h2>
+<p>Two defects that the programming cases could not reach, because both are about
+work that never produces a <code>git commit</code>.</p>
+<p><strong>A finished task was discarded for lacking a marker.</strong> <code>two-chores-one-sitting</code>
+drafts the weekly email, then does the expenses. The expenses episode ended at
+session end with no marker — MCP work never produces one — and the flagging rule
+threw it away as work that trailed off. So <em>any session whose last task was a
+productivity one lost that task.</em></p>
+<p>The rule now only flags a trailing markerless episode if it was <strong>entirely</strong>
+looking around. An episode that changed something finished, whether or not a
+regex can see it, and pure exploration is caught by its own guard regardless of
+how it ended.</p>
+<p><strong>One test had to change its mind, and that is worth recording.</strong>
+<code>test_a_single_episode_session_is_never_flagged</code> asserted that a lone episode is
+never flagged, on the reasoning that a session which did one thing needs no
+artifact to be believable. Its example was <code>kubectl logs</code> then <code>kubectl top</code> —
+pure reading. The rule is right for work and wrong for looking around, so it is
+now two tests: a single episode that <em>did something</em> is not flagged, and one
+that only looked around is. The old assertion was load-bearing for the two
+"nothing here" cases failing.</p>
+<p>Extending the read-only vocabulary along the way — <code>kubectl top</code>, <code>explain</code>,
+<code>version</code>, <code>docker inspect</code> — was found by that same test failing for the right
+reason.</p>
+<hr />
+<h2 id="ported-from-featpattern-detection">Ported from <code>feat/pattern-detection</code><a class="headerlink" href="#ported-from-featpattern-detection" title="Permanent link">&para;</a></h2>
+<p>Two things were worth taking, and one of them turned out not to be what it
+looked like.</p>
+<h3 id="windowing-the-principle-not-the-module">Windowing: the principle, not the module<a class="headerlink" href="#windowing-the-principle-not-the-module" title="Permanent link">&para;</a></h3>
+<p><code>window.py</code> splits a <em>transcript</em> into pieces small enough for a local model to
+read. Its unit is a developer request — which is already this branch's episode
+boundary — so porting it would have added nothing to segmentation. It also sits
+unwired on that branch, built to feed a local writer that was measured out of
+reach.</p>
+<p>What did transfer is its measurement: prompt-to-prompt segments run a median of
+290 tokens and p90 of 1,458, so <strong>a procedure is a small number of steps.</strong></p>
+<p>That diagnosed <code>big</code> properly. Segmentation was producing <strong>nine episodes of
+~61 steps</strong>, split only at prompts because no completion marker fired in 500
+steps; lexical matching then merged eight of them into one candidate at ×8. Not
+one defect but two.</p>
+<p><code>max_markerless_steps</code> (25) flagged a long stretch that had nothing to show for
+itself. Conditioned on the absence of a marker on purpose — <em>length is not the
+failure, never finishing is</em>, and a fifty-step migration ending in a commit is
+one recipe. <code>big</code> banked <strong>1 candidate instead of a 61-step blob at ×8</strong>.</p>
+<p>That rule has since been removed — see <em>The length rule is gone</em> at the end of
+this file. <code>big</code> is a synthetic case and is no longer evidence; the live
+sessions say the rule cost three ledgers and saved none.</p>
+<h3 id="embeddings-a-tie-breaker-for-one-band">Embeddings: a tie-breaker for one band<a class="headerlink" href="#embeddings-a-tie-breaker-for-one-band" title="Permanent link">&para;</a></h3>
+<p>Lexical similarity is robust to everything realistic. Measured against a release
+procedure repeated with variation:</p>
+<table>
+<thead>
+<tr>
+<th>Variation</th>
+<th>Lexical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same procedure, later version</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>One edit added mid-procedure</td>
+<td>0.897</td>
+</tr>
+<tr>
+<td>One step reordered</td>
+<td>0.880</td>
+</tr>
+<tr>
+<td>Two exploration steps prepended</td>
+<td>1.000 <em>(after the trim)</em></td>
+</tr>
+<tr>
+<td><strong>One step served by a different tool</strong></td>
+<td><strong>0.786 — misses</strong></td>
+</tr>
+<tr>
+<td>Wrapped in a script the second time</td>
+<td>0.207 <em>(arguably correct to miss)</em></td>
+</tr>
+</tbody>
+</table>
+<p>One shape fails: <code>npm test</code> against <code>pytest -q</code> in an otherwise identical
+release. They share not one token and land at 0.786 against a 0.85 threshold —
+the worst place for a signal to sit.</p>
+<p><code>nomic-embed-text</code> separates that pair at <strong>0.912</strong>, against <strong>0.451</strong> for a
+genuinely different procedure. End to end, two sessions doing that release two
+ways: lexical 0.747, embedding 0.972, merged to one entry at ×2 — which is what
+puts it on the path to a threshold at all.</p>
+<p><strong>It is a tie-breaker, not a replacement.</strong> Only pairs already in the near-miss
+band (0.70–0.85) cost a call, so almost every comparison stays free. And it runs
+from <code>skill-plus-plus merge</code>, not from a hook: matching happens during <code>SessionEnd</code>, and
+a hook that waits on a model adds that wait to every session.</p>
+<p>Folding is not symmetrical — the second entry's evidence moves into the first
+and the second is deleted — so an unreachable model merges nothing, and a dry
+run is the default.</p>
+<p>One bug worth recording: the first <code>fold_into</code> set
+<code>occurrences = occurrences + 1</code>, which is the same double-count this project
+corrected once before. Occurrences are the size of the <strong>session union</strong>, never
+a sum, because two sightings inside one session are one occurrence. A test now
+pins both directions.</p>
+<hr />
+<h2 id="featpattern-detections-real-product-finally-measured"><code>feat/pattern-detection</code>'s real product, finally measured<a class="headerlink" href="#featpattern-detections-real-product-finally-measured" title="Permanent link">&para;</a></h2>
+<p>Every earlier comparison scored only its hook path, which is vestigial by
+design. Its actual product reads a transcript with a frontier model, one call per
+session, and needed an authenticated CLI to run at all.</p>
+<p><code>tests/benchmarks/as_transcript.py</code> renders each case as a Claude Code
+transcript, so both designs see the same 17 sessions in their own native input
+and the comparison is not measuring an adapter. One <code>/log-session</code> call per case,
+a <strong>fresh store each time</strong> — the pilot showed why: run two cases against one
+store and the second recognises what the first taught it, which measures
+recurrence rather than detection.</p>
+<p>Scored on the <strong>methods</strong> axis, because that branch records only what it judges
+worth keeping, whereas this one banks candidates and ranks them. Comparing its
+proposals against our episode counts would be comparing different things.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>this branch</th>
+<th><code>pattern-detection</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Methods axis</td>
+<td><strong>14 of 17</strong></td>
+<td><strong>14 of 17</strong></td>
+</tr>
+<tr>
+<td>Splitting multi-task sessions</td>
+<td><strong>3 of 3</strong></td>
+<td>1 of 3</td>
+</tr>
+<tr>
+<td>False positives on one-offs</td>
+<td>none</td>
+<td>1 — a grep sweep recorded as a procedure</td>
+</tr>
+<tr>
+<td>Missed real procedures</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Over-split</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Naming</td>
+<td>the developer's prompt, verbatim</td>
+<td>the task, named</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A tie, with opposite failure modes.</strong> This branch splits sessions correctly and
+under-calls methods. That one judges a single procedure correctly and cannot
+split a session at all. Its two misses on multi-task sessions and its one false
+positive are precisely what its own <code>docs/bakeoff.md</code> conceded losing on.</p>
+<h3 id="naming-is-the-difference-that-is-not-a-tuning-gap">Naming is the difference that is not a tuning gap<a class="headerlink" href="#naming-is-the-difference-that-is-not-a-tuning-gap" title="Permanent link">&para;</a></h3>
+<p><code>migration-with-a-lock</code> is the clearest case. It named the procedure
+<strong><code>draining-app-replicas-to-clear-a-migration-lock</code></strong> — identifying that the
+reusable knowledge is the workaround, not the incident. This branch titles the
+same session <code>the staging migration is stuck, get it green</code>.</p>
+<p>Others from the same run: <code>cutting-a-signed-release</code>,
+<code>rotating-a-database-credential-in-kubernetes</code>,
+<code>bootstrapping-a-local-dev-environment</code>,
+<code>compiling-meeting-agenda-and-posting-to-slack</code>.</p>
+<p>A skill's description is the only thing read when deciding whether to load it, so
+a correctly-detected candidate carrying a prompt for a name is still dead. This
+is structural rather than fixable by tuning: code can only reuse a string it
+observed, and a model can name what it read. It is the one defect that has
+survived every fix here, and the strongest argument for the two designs being
+complementary rather than competing.</p>
+<h3 id="caveat-on-this-branchs-numbers">Caveat on this branch's numbers<a class="headerlink" href="#caveat-on-this-branchs-numbers" title="Permanent link">&para;</a></h3>
+<p>The 17 of 17 segmentation score followed fixing four defects this corpus found,
+so it measures a detector shaped by the corpus. The 14 of 17 methods figure is
+the less-tuned one, and it is where the tie is.</p>
+<hr />
+<h2 id="closing-the-naming-gap">Closing the naming gap<a class="headerlink" href="#closing-the-naming-gap" title="Permanent link">&para;</a></h2>
+<p>The one difference measured as <em>not</em> a tuning gap: this branch titled a candidate
+with whatever the developer typed, because capture can only reuse a string it
+observed. <code>skill-plus-plus draft</code> now names it, since a frontier reader is already in the
+loop there and naming is the half code cannot do.</p>
+<p><code>skill-plus-plus name &lt;id&gt; --title … --description …</code> writes both back to the ledger, and
+the draft prompt does it <strong>before</strong> deciding whether to draft at all — a name is
+worth having even on a candidate the agent then declines. The description is
+capped at 200 characters, the skill frontmatter limit, because one that will not
+fit cannot become a skill and refusing here beats discovering it at promotion.</p>
+<p>Measured on exactly the case that motivated it:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Before</td>
+<td><code>the staging migration is stuck, get it green</code></td>
+</tr>
+<tr>
+<td>After</td>
+<td><code>draining-app-replicas-to-clear-a-migration-lock</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td><em>When a staging DB migration hangs or fails because the running app holds a lock on the table being migrated</em></td>
+</tr>
+</tbody>
+</table>
+<p>It reached the same name <code>feat/pattern-detection</code> produced independently, from
+the same reasoning: the reusable knowledge is the workaround, not the incident.</p>
+<p>The draft's <code>## Open questions</code> is the part worth reading. It recorded that the
+causal mechanism was never confirmed — only that the migration failed with
+replicas up and succeeded at zero — that <code>--replicas=3</code> is an observed value
+rather than a known-correct one, that staging is fully down between two steps,
+and that this was seen once in staging. None of them invented.</p>
+<h2 id="five-defects-all-found-by-running-it">Five defects, all found by running it<a class="headerlink" href="#five-defects-all-found-by-running-it" title="Permanent link">&para;</a></h2>
+<p>Nothing below was reachable from a fixture. Every one appeared the first time
+the command was pointed at a live agent, and each was a seam between this code
+and that one.</p>
+<table>
+<thead>
+<tr>
+<th>Defect</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent allowed nothing</td>
+<td>prompt said <code>skill-plus-plus show</code>, tool scope permitted <code>python3 bin/skill-plus-plus</code></td>
+</tr>
+<tr>
+<td>A blocked agent read as a decline</td>
+<td>inferred "nothing here" from an absent file</td>
+</tr>
+<tr>
+<td>Candidate not found</td>
+<td><code>--root</code> never reached the agent's own <code>skill-plus-plus</code> calls</td>
+</tr>
+<tr>
+<td>Draft written to the wrong place</td>
+<td>prompt said <code>&lt;draft-dir&gt;</code> and nothing substituted it</td>
+</tr>
+<tr>
+<td>Draft could not be written at all</td>
+<td><code>$SKILL_PLUS_PLUS_DRAFT_DIR</code> in a sandboxed Bash call is rejected as "Contains expansion"</td>
+</tr>
+</tbody>
+</table>
+<p>The last is the one worth generalising: <strong>an environment variable is fine for a
+Python process to read and unusable inside a sandboxed shell command</strong>, because
+an allowed-tools pattern cannot be checked against text that is not yet known.
+<code>SKILL_PLUS_PLUS_ROOT</code> works for that reason and the draft directory does not — it is
+passed as a literal argument in the prompt instead.</p>
+<p>Two safeguards earned their place along the way. The decline sentinel meant a
+blocked agent was reported as <em>"most likely blocked rather than unconvinced"</em>
+instead of a considered judgement, twice, on failures that had not been
+anticipated. And the agent itself refused to fabricate a draft or to route
+around a sandbox restriction every single time — it was the only party in the
+loop behaving correctly.</p>
+<hr />
+<h2 id="a-failed-attempt-to-fix-the-ranker-recorded-so-it-is-not-repeated">A failed attempt to fix the ranker (recorded so it is not repeated)<a class="headerlink" href="#a-failed-attempt-to-fix-the-ranker-recorded-so-it-is-not-repeated" title="Permanent link">&para;</a></h2>
+<p><code>sift</code> ranks <code>migration-with-a-lock</code> and <code>meeting-prep</code> as <code>one-off</code> when both
+are methods. The diagnosis looked easy: one rule in <code>prompts/reusable.md</code> reads
+<em>"one broken deploy … finding out why something specific was wrong and fixing it
+is <code>no</code>"</em>, which describes the migration case superficially even though the
+drain/migrate/restore technique generalises. Two attempts, both worse:</p>
+<table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Ranking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Baseline</strong></td>
+<td><strong>12 of 15</strong></td>
+</tr>
+<tr>
+<td>Rewritten around "would this save a colleague an afternoon?"</td>
+<td>8 of 15</td>
+</tr>
+<tr>
+<td>Baseline plus one narrow workaround exception</td>
+<td>9 of 15</td>
+</tr>
+</tbody>
+</table>
+<p>The second attempt is the useful one. A single added paragraph, scoped to
+workarounds, with a worked example on each side — <em>draining replicas is a
+method; adding a null check is not</em> — <strong>did not fix its target</strong> and broke
+<code>onboard-a-repository</code>, <code>answer-one-question</code> and <code>two-chores-one-sitting</code>, none
+of which it mentions. At temperature 0, so that is the added text shifting
+unrelated judgements rather than sampling noise.</p>
+<p>Which reproduces the lesson <code>feat/pattern-detection</code> recorded as its most
+expensive: <strong>every auxiliary hint in a prompt gets read as a rule.</strong> Seven
+revisions of its locator prompt, each removing a hint the model had started
+treating as sufficient on its own.</p>
+<p>So the prompt is at a local optimum and these two cases sit on the real boundary
+between <em>this instance</em> and <em>this kind of task</em> — the same boundary <code>retry</code> sat
+on, unmoved across five attempts in different shapes.</p>
+<p><strong>Why that is tolerable rather than a blocker.</strong> <code>sift</code> ranks and never
+discards, so both stay in the queue, ranked low and visible. And <code>draft</code> already
+judges <code>migration-with-a-lock</code> correctly — it named it
+<code>draining-app-replicas-to-clear-a-migration-lock</code> with four honest open
+questions. The pipeline has a stage that gets it right; a conservative ranker
+costs a position in a list, not the candidate.</p>
+<p><strong>The direction worth trying is the opposite one:</strong> let <code>draft</code> correct the hint
+when it disagrees with <code>sift</code>, rather than making the cheap stage cleverer. The
+expensive stage is the one with the context to be right.</p>
+<hr />
+<h2 id="can-a-local-model-find-the-boundaries-two-framings-measured">Can a local model find the boundaries? Two framings, measured<a class="headerlink" href="#can-a-local-model-find-the-boundaries-two-framings-measured" title="Permanent link">&para;</a></h2>
+<p>The proposal: the hook already appends "this happened" to a session buffer, so
+let a local model read that log and mark where tasks start, end or are abandoned,
+instead of relying on markers and prompt boundaries.</p>
+<p>Worth taking seriously — the architecture it assumes is the one this branch
+already has, and <code>feat/pattern-detection</code> measured a closely related question
+(<code>settled.md</code>, "did the change work?") at 20/21 and 18/21 on a free 7B.</p>
+<p><strong>Framing decided the result, by a wide margin.</strong></p>
+<p><em>Per-step binary</em> — for each step, "does this begin a new task?" — found <strong>zero
+boundaries across three cases.</strong> Its one correct answer was a case with no
+boundary, which a detector hardwired to "no" also gets. It missed a boundary the
+markers see trivially (<code>git push</code> closing an episode).</p>
+<p><em>Positional</em> — "which step number begins the second task, or <code>none</code>?" — <strong>3 of
+5</strong>, including case C, the one shape code cannot split:</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Truth</th>
+<th>Got</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release only</td>
+<td>none</td>
+<td>none</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>release + CI bump</td>
+<td>3</td>
+<td>3</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><strong>rollout + smoke (case C)</strong></td>
+<td><strong>2</strong></td>
+<td><strong>2</strong></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>migration workaround (one procedure)</td>
+<td>none</td>
+<td>2</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>release then unrelated fix</td>
+<td>5</td>
+<td>none</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<p>Same lesson as the first Ollama probe on this project: the shape of the question
+matters more than the model behind it.</p>
+<h3 id="why-it-is-still-not-wired-in">Why it is still not wired in<a class="headerlink" href="#why-it-is-still-not-wired-in" title="Permanent link">&para;</a></h3>
+<p>The natural gate is "ask only where code found no marker", since that is where
+code is blind. Traced through the cases, that gate <strong>fixes case C and breaks the
+migration workaround</strong> — both are markerless, so both get asked, and the model
+splits the workaround at its <code>migrate → scale → migrate → scale</code> repetition.</p>
+<p>+1 and −1. And the wrong half is the more valuable one: the workaround is a real
+procedure that currently banks correctly as a single candidate, and reading
+repetition as a boundary would shatter it.</p>
+<p>Patching the prompt against that is the obvious next move and is not being
+attempted, because two attempts at exactly that on <code>reusable.md</code> an hour earlier
+went 12/15 → 8/15 → 9/15, with a single scoped paragraph destabilising three
+cases it never mentioned.</p>
+<h3 id="the-generalisation-worth-keeping">The generalisation worth keeping<a class="headerlink" href="#the-generalisation-worth-keeping" title="Permanent link">&para;</a></h3>
+<p>Across everything measured on this project, a local model answers questions
+<strong>about a span it is handed</strong> and fails at <strong>finding the span</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Local model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is this session worth reading?</td>
+<td>works</td>
+</tr>
+<tr>
+<td>Did this change land?</td>
+<td>18–21/21</td>
+</tr>
+<tr>
+<td>Is this junk or a method?</td>
+<td>ranks usefully</td>
+</tr>
+<tr>
+<td>Are these the same procedure?</td>
+<td>0.972 against 0.451</td>
+</tr>
+<tr>
+<td>Where does one task end?</td>
+<td>finds it when told one exists; cannot tell whether one does</td>
+</tr>
+</tbody>
+</table>
+<p>The last row is the whole difficulty. A segmenter needs both halves.</p>
+<h3 id="splitting-works-and-the-restraint-matters-more-than-the-action">Splitting works, and the restraint matters more than the action<a class="headerlink" href="#splitting-works-and-the-restraint-matters-more-than-the-action" title="Permanent link">&para;</a></h3>
+<p><code>skill-plus-plus split</code>, reached from the draft prompt, closes case C. Three live runs:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Should split</th>
+<th>Did</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>migrate → scale → migrate → scale → test</code></td>
+<td>no — one workaround</td>
+<td><strong>no</strong> ✓</td>
+</tr>
+<tr>
+<td>helm rollout → smoke test</td>
+<td>arguably one</td>
+<td><strong>no</strong>, named "Roll out API to staging and verify with smoke test" ✓</td>
+</tr>
+<tr>
+<td>helm rollout → <code>git log</code> → write → Gmail draft</td>
+<td><strong>yes, at index 2</strong></td>
+<td><strong>yes, at index 2</strong> ✓</td>
+</tr>
+</tbody>
+</table>
+<p>Its reasoning on the third: <em>"two unrelated procedures glued together by 'and
+then'"</em>. It drafted the first half as
+<code>Deploy the API service hotfix via Helm to staging</code> and left the second as its
+own candidate.</p>
+<p><strong>The first row is the result that matters.</strong> A positional prompt on a local
+model split that same sequence at its repetition; the frontier stage did not.
+That is the argument for putting the judgement where it can afford to be right,
+rather than teaching the cheap stage a rule — which was tried and cost 12/15 →
+9/15 on an unrelated prompt.</p>
+<p>The second row is a lesson about the corpus rather than the code. That case was
+written as a two-procedure case while noting out loud that it was arguable, and
+then scored against. Ambiguous ground truth cannot falsify anything; the doubt
+should have been the signal not to score it.</p>
+<p><strong>One loose end by design:</strong> the second half inherits the original title and is
+not named until it gets its own <code>draft</code>. It sits in the queue titled after the
+developer's prompt in the meantime.</p>
+<hr />
+<h2 id="ground-truth-that-maintains-itself">Ground truth that maintains itself<a class="headerlink" href="#ground-truth-that-maintains-itself" title="Permanent link">&para;</a></h2>
+<p>The corpus above is 17 hand-written cases whose truth was authored by whoever
+wrote the detector. That measures internal consistency, and it already hid one
+defect: case C was written as a two-procedure case <em>while noting out loud that
+it was arguable</em>, and then scored against.</p>
+<p><code>feat/pattern-detection</code> solved this and its <code>truth.py</code> says why: labels read out
+of reviews the pipeline already wrote are <em>"what the fixtures are not, and the
+reason three separate defects in this work were invisible until real data."</em></p>
+<p>Ported as <code>decisions.jsonl</code> — append-only, one line per human decision, never
+read by the capture path. Statuses are overwritten in place, so without it every
+judgement is lost the moment it is superseded.</p>
+<p>The line records <strong>the ranker's hint and the person's decision together</strong>, which
+is what makes it a measurement rather than history:</p>
+<table>
+<thead>
+<tr>
+<th>Person did</th>
+<th>Means</th>
+<th>Scored against</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>promote</code></td>
+<td>it was a method</td>
+<td>the hint at that moment</td>
+</tr>
+<tr>
+<td><code>dismiss</code></td>
+<td>it was not</td>
+<td>the hint at that moment</td>
+</tr>
+<tr>
+<td><code>reopen</code></td>
+<td>a model parked something they wanted back</td>
+<td>a false drop, caught in the act</td>
+</tr>
+<tr>
+<td><code>sift --park</code></td>
+<td>the model's own act</td>
+<td><strong>never truth</strong> — that would be grading its own homework</td>
+</tr>
+</tbody>
+</table>
+<p><code>skill-plus-plus accuracy</code> reports the tally and lists the disagreements. On a seeded
+run it correctly surfaced the one that matters:</p>
+<div class="highlight"><pre><span></span><code>agreed 2/3 (67%)
+  ranker said one-off · you promoted · drain replicas then migrate
+</code></pre></div>
+<p>Which is the known miss — the case two prompt rewrites failed to fix — now
+recorded from a decision rather than from ground truth I wrote.</p>
+<p>Decisions made before <code>sift</code> ran are counted separately as <code>unranked</code> rather than
+folded in, and the latest decision per candidate wins, because parked → reopened
+→ promoted is one judgement with a history, not three.</p>
+<hr />
+<h2 id="five-more-cases-and-the-score-went-down">Five more cases, and the score went down<a class="headerlink" href="#five-more-cases-and-the-score-went-down" title="Permanent link">&para;</a></h2>
+<p>The corpus was 17 cases scoring 17 of 17 — while <strong>three shipped capabilities
+measured exactly zero on it.</strong> <code>merge</code>, <code>split</code> and recurrence were all
+invisible, recurrence most importantly of all: occurrences count sessions, every
+case was one session, so the promotion gate the whole design rests on had never
+been tested.</p>
+<p>Fixed by giving <code>Case</code> a <code>follow</code> — a second session played into the same ledger
+— and scoring a third axis.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cases</td>
+<td>17</td>
+<td><strong>22</strong></td>
+</tr>
+<tr>
+<td>Multi-session</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Axes</td>
+<td>2</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>Segmentation</td>
+<td>17/17</td>
+<td><strong>20/22</strong></td>
+</tr>
+<tr>
+<td>Ranking</td>
+<td>12/15</td>
+<td><strong>15/18</strong></td>
+</tr>
+<tr>
+<td>Recurrence</td>
+<td>not measured</td>
+<td><strong>1/2</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-mistake-worth-recording">The mistake worth recording<a class="headerlink" href="#the-mistake-worth-recording" title="Permanent link">&para;</a></h3>
+<p>The first version of the two new cases set <code>episodes</code> to <strong>what the code
+currently does</strong> — 1 for the unsplit deploy-then-email, 2 for the unmerged
+release pair. Both passed, and the corpus stayed at 22 of 22.</p>
+<p>That is encoding the implementation's opinion as ground truth, which this
+document already warns against two sections above, and it is the second time the
+same error has appeared here. Corrected to what is <em>correct</em>, both fail and the
+gaps are visible.</p>
+<p>A benchmark that agrees with the code is not measuring the code.</p>
+<h3 id="both-gaps-are-closed-downstream-and-verified">Both gaps are closed downstream, and verified<a class="headerlink" href="#both-gaps-are-closed-downstream-and-verified" title="Permanent link">&para;</a></h3>
+<p><strong><code>the-same-release-different-runner</code></strong> — capture banks two entries at ×1;
+<code>merge</code> folds them: lexical 0.747, embedding 0.945, one entry at <strong>×2</strong>. Run
+live, not assumed.</p>
+<p><strong><code>deploy-then-status-email</code></strong> — capture banks one; <code>draft</code> splits at index 2,
+demonstrated 3 for 3 including the two cases that must <em>not</em> split.</p>
+<p>So segmentation alone is 20 of 22 and the pipeline handles 22 of 22 — but only
+if the commands are run, and the benchmark is right to score the stages
+separately rather than blur that into one flattering number.</p>
+<h3 id="the-suite-now-names-the-gaps-instead-of-tolerating-them">The suite now names the gaps instead of tolerating them<a class="headerlink" href="#the-suite-now-names-the-gaps-instead-of-tolerating-them" title="Permanent link">&para;</a></h3>
+<p><code>test_the_known_gaps_are_still_exactly_the_known_gaps</code> asserts the failing set
+is <em>exactly</em> those two. A suite that silently tolerates a documented gap cannot
+tell you when the gap closes, and a stale exclusion is how a benchmark quietly
+stops measuring.</p>
+<hr />
+<h2 id="the-near-miss-floor-and-moving-the-check-off-the-hook">The near-miss floor, and moving the check off the hook<a class="headerlink" href="#the-near-miss-floor-and-moving-the-check-off-the-hook" title="Permanent link">&para;</a></h2>
+<p>The gap above — <em>"<code>merge</code> folds them, run live, not assumed"</em> — closed one case
+and hid the shape of the problem. <code>the-same-release-different-runner</code> scores
+<strong>0.747</strong> lexically, which is inside the <code>[0.70, 0.85)</code> band <code>merge</code> already
+looks at. It was never evidence that the band was wide enough; it was the one
+case that happened to land inside it.</p>
+<p><code>the-same-release-two-steps-different</code> is the same procedure with the test
+runner <em>and</em> the fetch swapped. It scores <strong>0.531</strong>. <code>merge</code> returns <em>zero</em>
+pairs on it — not a wrong verdict, no verdict at all, because the pair never
+reaches an embedding. The embedding separates it at <strong>0.925</strong> when finally
+asked.</p>
+<p>That is the shape behind three sightings of one procedure sitting at ×1 each and
+a recurrence threshold none of them reach.</p>
+<h3 id="why-the-floor-was-070-and-why-that-stopped-being-the-right-number">Why the floor was 0.70, and why that stopped being the right number<a class="headerlink" href="#why-the-floor-was-070-and-why-that-stopped-being-the-right-number" title="Permanent link">&para;</a></h3>
+<p>The floor is a cost guard, and the cost it guards is not the model — the
+embedding is local, free, and sub-second. It is that <code>merge</code> is a command a
+person types and then waits on: a wide band makes a live run long to read.</p>
+<p>The check therefore moved somewhere nothing is waiting on it. <code>SessionEnd</code>
+records which entry it touched and decides nothing. <code>SessionStart</code> spawns a
+detached process that runs the same <code>near_misses</code>/<code>same_procedure</code> comparison at
+a floor of <strong>0.40</strong> and writes a report. <code>skill-plus-plus near-misses</code> reads it.
+Folding still needs <code>--apply</code>.</p>
+<p><code>merge</code> keeps its own 0.70 default, unchanged. Two knobs rather than one
+widened knob: the manual command does not have this problem and should not pay
+for the fix.</p>
+<h3 id="measured-full-corpus-gemma3ne4b--nomic-embed-text">Measured, full corpus, <code>gemma3n:e4b</code> + <code>nomic-embed-text</code><a class="headerlink" href="#measured-full-corpus-gemma3ne4b--nomic-embed-text" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>segmentation</td>
+<td>20 of 22</td>
+<td><strong>22 of 23</strong></td>
+</tr>
+<tr>
+<td>ranking</td>
+<td>15 of 18</td>
+<td><strong>17 of 20</strong></td>
+</tr>
+<tr>
+<td>recurrence</td>
+<td>1 of 2</td>
+<td><strong>3 of 3</strong></td>
+</tr>
+<tr>
+<td>cases</td>
+<td>22</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>Two runs, 12s each, same corpus, same models.</p>
+<p><strong>Read the ranking row as a denominator change, not an improvement.</strong> Ranking is
+scored only on cases that segmented correctly. <code>different-runner</code> used to fail
+segmentation and was excluded; it now segments right, enters scoring and passes.
+Numerator and denominator both +2. The ranker is untouched by this work and its
+own misses — <code>meeting-prep</code>, <code>three-tasks-one-morning</code> — are unchanged.</p>
+<p>Per-case, exactly two things moved: <code>different-runner</code> went from failing all
+three axes to passing all three, and the new case passes all three. <strong>Nothing
+else changed on any axis.</strong> <code>deploy-then-status-email</code> remains the one
+segmentation gap, untouched.</p>
+<h3 id="what-was-deliberately-not-built">What was deliberately not built<a class="headerlink" href="#what-was-deliberately-not-built" title="Permanent link">&para;</a></h3>
+<p>Stated because each was considered and rejected on a reason, not overlooked:</p>
+<ul>
+<li><strong>No lockfile around the background pass.</strong> It reports and never folds, so two
+  racing passes recompute the same free local answer and the later write wins.
+  Waste, not a wrong result — and a stale-pid reclaim mechanism is real
+  complexity bought for a cosmetic problem.</li>
+<li><strong>No atomic write on the report.</strong> <code>load_near_miss_report</code> already treats an
+  unparseable file as "no report yet", so a crash mid-write costs one deferred
+  check.</li>
+<li><strong>No shortened per-call embed timeout.</strong> Nothing waits on this pass, so a
+  precisely-enforced deadline buys nothing.</li>
+</ul>
+<p>The queue drain <em>does</em> write atomically. Losing track of what still needs
+checking, silently, is the one failure here with a cost nothing downstream would
+report.</p>
+<h3 id="fail-safe-measured">Fail-safe, measured<a class="headerlink" href="#fail-safe-measured" title="Permanent link">&para;</a></h3>
+<p>One unreachable-host answer stops the whole pass rather than rediscovering the
+same outage once per pair: <strong>0.13s</strong> against a closed port, queue byte-identical,
+ledger untouched. Neither a timeout nor a dead model drains the queue, so a
+partial pass retries the whole backlog instead of dropping the pairs it never
+reached.</p>
+<h3 id="the-fold-no-longer-waits-to-be-asked">The fold no longer waits to be asked<a class="headerlink" href="#the-fold-no-longer-waits-to-be-asked" title="Permanent link">&para;</a></h3>
+<p>The queued pass above wrote a report and a person ran <code>--apply</code>. That gate was
+redundant with one already further down the pipeline, and removing it cost
+nothing measurable.</p>
+<p><code>fold_into</code> keeps <strong>both</strong> entries' intents and variants on the survivor rather
+than discarding the loser's evidence, and a folded entry is still only a
+<em>candidate</em> — it has to pass <code>review</code>/<code>show</code>, which print those intents, and
+then an explicit <code>promote</code>. So a wrong fold does not vanish: it arrives at
+review as a candidate whose intents plainly do not belong together. The person
+was always going to look there. Asking them twice bought nothing.</p>
+<p>The pass now folds inline, and <code>decisions.jsonl</code> records each one with the
+dropped entry's id and title — the only place that identity survives once its
+file is gone. Deliberately <em>not</em> one of <code>decisions._TRUTH</code>'s labels: that dict
+scores a ranker's hint against a person's verdict, and a fold is neither.
+Verified — <code>skill-plus-plus accuracy</code> reports nothing after an auto-fold.</p>
+<p>The report file and <code>skill-plus-plus near-misses</code> are deleted rather than repurposed.
+The report had exactly one reader, the command deciding whether to apply it;
+with nothing left to decide there is nothing left to read, and
+<code>decisions.jsonl</code> is a better record anyway — every pass, not just the last,
+kept whether or not anyone runs a command.</p>
+<p><strong>The scoreboard is unchanged, which is the point:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>--apply</code> era</th>
+<th>auto-fold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>segmentation</td>
+<td>22 of 23</td>
+<td>22 of 23</td>
+</tr>
+<tr>
+<td>ranking</td>
+<td>17 of 20</td>
+<td>17 of 20</td>
+</tr>
+<tr>
+<td>recurrence</td>
+<td>3 of 3</td>
+<td>3 of 3</td>
+</tr>
+</tbody>
+</table>
+<p>Zero per-case deltas across all three axes. This change moves <em>when</em> a fold
+happens, not <em>which</em> pairs are recognised, and the corpus confirms it.</p>
+<p>Fail-safe re-verified after the change: an unreachable model folds nothing,
+records no decision, leaves the queue byte-identical, and returns in 0.10s.</p>
+<hr />
+<h2 id="the-boundary-judge-nine-configurations-measured">The boundary judge: nine configurations, measured<a class="headerlink" href="#the-boundary-judge-nine-configurations-measured" title="Permanent link">&para;</a></h2>
+<p><strong>Historical</strong>, like the section that follows it: this measures the judge that
+was asked on every tool call. What ships now asks once per prompt gap — see
+<em>The question moved</em> at the end of this file. The configurations below are still
+the record of how the context, the goal and the span were sized, and several of
+those findings carried over.</p>
+<p>The proposal, at the time: replace <code>is_marker</code>'s vocabulary of git verbs with a
+local model asked, on every tool call, whether the task ended there. <code>82b9e78</code> above
+recorded the first attempt and did not wire it in. This is the second, wired in
+behind <code>SKILL_PLUS_PLUS_JUDGE</code> and measured properly.</p>
+<p><strong>Read this before proposing a tenth.</strong> Every row is a real run against
+<code>tests/fixtures/sessions/</code>, which is the only yardstick here — the synthetic
+corpus was written by whoever wrote the detector, and rewards the opposite goal
+shape because its tasks run 3-4 steps against 20+ in real spans.</p>
+<table>
+<thead>
+<tr>
+<th>what the judge was given</th>
+<th>live sessions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the step alone, no goal, no span</td>
+<td>0 of 5</td>
+</tr>
+<tr>
+<td>+ the goal and the steps behind it</td>
+<td>0 of 5</td>
+</tr>
+<tr>
+<td>+ <strong>what an ending is</strong></td>
+<td>this is the whole difference</td>
+</tr>
+<tr>
+<td>goal = latest prompt only</td>
+<td>0 of 5 — read 54 steps as 27 endings</td>
+</tr>
+<tr>
+<td>goal = first prompt of the span</td>
+<td>0 of 5 — 54 steps, 17 episodes</td>
+</tr>
+<tr>
+<td>goal = every prompt in the span, 6 steps of context</td>
+<td>2 of 5</td>
+</tr>
+<tr>
+<td>…10 steps of context</td>
+<td>3 of 5</td>
+</tr>
+<tr>
+<td>…<strong>20 steps of context</strong></td>
+<td><strong>4 of 5</strong> — the best it ever reached</td>
+</tr>
+<tr>
+<td>+ the developer's own <code>description</code> per step</td>
+<td>2 of 5</td>
+</tr>
+<tr>
+<td>+ a deterministic prior ("this step only looked")</td>
+<td>worse, and broke a passing case</td>
+</tr>
+<tr>
+<td>+ steps rendered as generated summaries</td>
+<td><strong>1 fixed / 6 broken</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The vocabulary it is trying to beat scores 3 of 5 and costs nothing.</p>
+<h3 id="what-each-failure-was-so-it-is-not-rediscovered">What each failure was, so it is not rediscovered<a class="headerlink" href="#what-each-failure-was-so-it-is-not-rediscovered" title="Permanent link">&para;</a></h3>
+<p><strong>Latest prompt as the goal</strong> — a task is stated across several prompts, so the
+last one is a sub-step, and a sub-step is satisfied by a single edit. The goal
+named a file, the step touched that file, "delivered?" was honestly yes, every
+time.</p>
+<p><strong>First prompt of the span</strong> — once an ending fires the span resets, and the
+next span has no prompt in it at all. The goal renders "(not stated)" and the
+context renders "(nothing yet)", so the model is asked whether a request it
+cannot see is finished. It says yes, which fires another ending, which empties
+the next span. A 50-step session became 13 episodes.</p>
+<p><strong>Every prompt in the span</strong> — the shape that works, and it carries a ratchet:
+miss one ending and the next prompt joins the same goal, so the question becomes
+"is <em>every</em> part done" over two tasks and is harder to answer yes than the first
+was. Its failures are all <code>got 1</code> whatever the truth was.</p>
+<p><strong>Context size is the strongest lever measured.</strong> 6 steps 2/5, 10 steps 3/5,
+20 steps 4/5. At 20 the one multi-task live session came out right for the first
+time — the work that had finished was simply scrolling out of a smaller window.
+It buys nothing on the synthetic corpus because every task there already fits in
+six steps, which is why that corpus cannot see this.</p>
+<p><strong>The developer's <code>description</code></strong> — 2/5 against 4/5 without. Tried before the
+command and after it; byte-identical results, so not a phrasing effect. The
+extra detail itself pushes the model toward "delivered".</p>
+<p><strong>Generated summaries as the judge's context</strong> — 1 fixed / 6 broken, and every
+session gained episodes: expense-report 1→4, failed-retry 1→4, long-session 1→8,
+with three losing <code>must_contain</code> steps as content scattered across fragments.
+The cause is in the summaries: each ends by tying the step to the request —
+"fulfilling the developer's request", "informing the developer's next task" —
+and the judge reads twenty of those before being asked whether the request is
+done. The phrasing that makes a summary readable reads as completion.</p>
+<p>Cost: 3.2s per step, and 8.6s on the 110-step session as summaries fill the
+window. Two model calls per tool call at that rate is not viable on a hook.</p>
+<h3 id="the-one-thing-the-judge-has-ever-done-better-than-code">The one thing the judge has ever done better than code<a class="headerlink" href="#the-one-thing-the-judge-has-ever-done-better-than-code" title="Permanent link">&para;</a></h3>
+<p><code>241955c7</code> — two unrelated jobs, one commit — is 1 episode under the vocabulary
+against a truth of 2, and the judge gets it right, with content intact, in the
+summaries configuration. That is the case this whole thread exists for, and it
+is the only one. It cost six correct sessions to buy.</p>
+<h3 id="where-it-stands">Where it stands<a class="headerlink" href="#where-it-stands" title="Permanent link">&para;</a></h3>
+<p>Wired in, default on, <code>SKILL_PLUS_PLUS_JUDGE=0</code> to disable. <code>render_step</code> deliberately
+does <strong>not</strong> use <code>step["summary"]</code>; see the comment there. The describer stays —
+it produces a better record, verified separately — it simply does not feed this
+prompt.</p>
+<p>Two traps that produced false readings during this work, recorded so the next
+person does not pay for them again:</p>
+<ul>
+<li><strong>Measure warm.</strong> A first call is ~11s and that is the model loading. It put a
+  false <code>think=False</code> claim in <code>boundary.py</code> (11.5s vs 4.2s; warm it is 1.10s vs
+  1.09s) and an 11.15s reading for a step that costs 2.49s.</li>
+<li><strong><code>gemma3n:e4b</code> cannot think.</strong> <code>think=True</code> returns HTTP 400. The flag stays
+  because it is free here and worth 113.8s against 0.5s on a model that can.</li>
+</ul>
+<h3 id="the-tenth-and-eleventh-configurations-and-what-actually-helped">The tenth and eleventh configurations, and what actually helped<a class="headerlink" href="#the-tenth-and-eleventh-configurations-and-what-actually-helped" title="Permanent link">&para;</a></h3>
+<p>Two more runs, both on the same ten live sessions (<code>263d65ce</code> skipped — it is a
+third of the corpus by step count and the slowest by far).</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>fixtures</th>
+<th>what the judge reads</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>as recorded</td>
+<td>raw commands</td>
+<td>3 fixed / 5 broken</td>
+</tr>
+<tr>
+<td>B</td>
+<td>re-extracted</td>
+<td>raw commands</td>
+<td><strong>3 fixed / 3 broken</strong></td>
+</tr>
+<tr>
+<td>C</td>
+<td>re-extracted</td>
+<td>generated summaries</td>
+<td>3 fixed / 5 broken</td>
+</tr>
+</tbody>
+</table>
+<p><strong>B is the best the judge has ever scored</strong>, and the improvement has nothing to
+do with the describer.</p>
+<p><em>Re-extracted</em> means the fixtures were rebuilt from their original transcripts
+with the current <code>_KEEP_INPUT</code>, which now stores <code>content</code> for a <code>Write</code>,
+<code>old_string</code>/<code>new_string</code> for an <code>Edit</code>, and a bounded <code>tool_returned</code> for
+everything. Those reach the judge through <code>render_step</code>'s leftover-field
+rendering. That widening was made for the describer's benefit and never measured
+against the judge; it is worth two sessions on its own:</p>
+<div class="highlight"><pre><span></span><code>71448e61   BROKE -&gt; ok
+d5fd2e59   BROKE -&gt; ok
+</code></pre></div>
+<p><em>Summaries</em> then give one session back and lose three:</p>
+<div class="highlight"><pre><span></span><code>241955c7   still wrong -&gt; FIXED
+71448e61   ok -&gt; BROKE
+a7be1ef5   ok -&gt; BROKE
+fb505861   FIXED -&gt; still wrong
+</code></pre></div>
+<p>This is with the summary prompt rewritten to its minimal form — tool, input,
+reply, and "in one sentence of at most 20 words, say what that did; describe it,
+do not continue or reproduce any content shown above". That prompt is a large
+improvement on its predecessor as a <em>record</em>: 87-141 characters, 1.7s per step,
+no fabrication, where the previous one produced 2,182 characters and invented
+eight topics that were not in the file it was describing. It still does not help
+the judge.</p>
+<p>So: capturing more of each step helps. Describing each step does not. The
+describer earns its place as a record and has never earned it as judge input.</p>
+<h3 id="a-failure-mode-the-score-hides">A failure mode the score hides<a class="headerlink" href="#a-failure-mode-the-score-hides" title="Permanent link">&para;</a></h3>
+<p><code>a8b61dae</code> reports <code>0/1</code> under summaries — not a wrong episode count, <strong>no
+candidate at all</strong>. The judge marked zero endings across 26 work steps, so
+<code>segment</code> produced one markerless episode, <code>max_markerless_steps</code> (25) flagged
+it, and <code>fold_session</code> dropped it. One step over the threshold and the session
+disappears with nothing to review.</p>
+<p>That threshold was calibrated when "markerless" meant "no git verb appeared".
+Under the judge it means "the model said no 26 times", which is a different
+claim. Worth re-deriving before the judge is trusted by default.</p>
+<p><code>judge_replay.py --verbose</code> was no help here: it prints only steps the judge
+called endings, so a run with zero endings prints nothing and looks identical to
+a run that never executed.</p>
+<h3 id="the-length-rule-is-gone">The length rule is gone<a class="headerlink" href="#the-length-rule-is-gone" title="Permanent link">&para;</a></h3>
+<p>Removed <code>max_markerless_steps</code> outright. Two measurements, both against the live
+sessions:</p>
+<p><strong>Deterministic path — the rule never fired.</strong> <code>score.py</code> over all eleven
+fixtures is byte-identical with it on and off:</p>
+<div class="highlight"><pre><span></span><code>rule ON  (25):  6/6 sessions pass, 5 known gap(s)
+rule OFF  (0):  6/6 sessions pass, 5 known gap(s)
+</code></pre></div>
+<p>Every session long enough to trip 25 steps — <code>1c3c9422</code> (54), <code>2095a8af</code> (50),
+<code>263d65ce</code> (110) — contains a <code>git commit</code>, so <code>has_marker</code> is true and the rule
+skips it. It has never once fired on real captured work.</p>
+<p><strong>Judged path — the rule was the whole remaining deficit.</strong> <code>judge_replay.py</code>
+at <code>_VALUE_CHARS=80</code>, ten sessions, <code>263d65ce</code> skipped:</p>
+<table>
+<thead>
+<tr>
+<th>session</th>
+<th>work steps</th>
+<th>rule ON</th>
+<th>rule OFF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1c3c9422</code> expense-report</td>
+<td>54</td>
+<td><strong>BROKE</strong> 0/1</td>
+<td>ok 1/1</td>
+</tr>
+<tr>
+<td><code>2095a8af</code> timesheet</td>
+<td>50</td>
+<td><strong>BROKE</strong> 0/1</td>
+<td>ok 1/1</td>
+</tr>
+<tr>
+<td><code>a8b61dae</code> failed-commit-then-retry</td>
+<td>28</td>
+<td><strong>BROKE</strong> 0/1</td>
+<td>ok 1/1</td>
+</tr>
+<tr>
+<td><code>5c7b0f81</code> coverage-writeup-run2</td>
+<td></td>
+<td>FIXED</td>
+<td>FIXED</td>
+</tr>
+<tr>
+<td><code>95b6bde7</code> mcp-retrieval-then-compare</td>
+<td></td>
+<td>FIXED</td>
+<td>FIXED</td>
+</tr>
+<tr>
+<td><code>fb505861</code> coverage-writeup</td>
+<td></td>
+<td>FIXED</td>
+<td>FIXED</td>
+</tr>
+<tr>
+<td><code>71448e61</code>, <code>a7be1ef5</code>, <code>d5fd2e59</code></td>
+<td></td>
+<td>ok</td>
+<td>ok</td>
+</tr>
+<tr>
+<td><code>241955c7</code> two-unrelated-tasks</td>
+<td></td>
+<td>still wrong 1/2</td>
+<td>still wrong 1/2</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>3 fixed, 3 broken</strong></td>
+<td><strong>3 fixed, 0 broken</strong></td>
+</tr>
+</tbody>
+</table>
+<p>All three broken sessions are the same shape, and it is the one the section
+above describes: judge marks no endings → one markerless episode → flagged →
+<code>foldable</code> drops it → <strong>empty ledger</strong>. Not a wrong count, no candidate at all.
+Every one of the three is over 25 steps; the three that already worked are all
+under it.</p>
+<p>This is the first configuration where the judge beats the vocabulary outright.</p>
+<p><strong>What the removal gives up.</strong> The rule was written for a shape this corpus does
+not contain: the 433 KB session that produced nine ~61-step markerless episodes.
+That measurement is real, but it came from a synthetic case, and no live fixture
+reproduces it — <code>263d65ce</code> is the closest by size and it ends in a marker. The
+trade is deliberate: a defence against an unrepresented shape, for a fix to three
+represented ones. Nothing in the test suite covered the rule, which is part of
+why it survived this long.</p>
+<p>If that shape ever shows up in a real capture, the fix is not a length cap. It is
+that the judge found no ending in sixty steps, and the length cap only hid it.</p>
+<p><strong>Untouched by this.</strong> <code>241955c7</code> still merges two unrelated tasks into one
+episode — a genuine judge miss, and the sign that the removal is not papering
+over judge errors. The trailing-session-end flag stays; it is conditioned on
+what the work <em>did</em>, not on how long it ran. The read-only flag went next — see
+below.</p>
+<h3 id="reading-is-not-evidence-that-nothing-happened">Reading is not evidence that nothing happened<a class="headerlink" href="#reading-is-not-evidence-that-nothing-happened" title="Permanent link">&para;</a></h3>
+<p><code>95b6bde7</code> is a real session: pull the ADK reference docs through MCP, compare
+them against <code>cases.json</code> and <code>generate_fixtures.py</code>, report. It banked <strong>one
+candidate — the right count — containing none of the retrieval the procedure
+exists for.</strong> The count being right is what hid it; only <code>must_contain</code> could
+see it.</p>
+<div class="highlight"><pre><span></span><code>episode 1  ended_by=prompt  flagged=TRUE   work=4   &lt;- dropped
+     mcp__adk-docs__list_doc_sources
+     mcp__adk-docs__fetch_docs  llms.txt
+     mcp__adk-docs__fetch_docs  evaluate/index.md
+     mcp__adk-docs__fetch_docs  criteria/index.md
+episode 2  ended_by=session-end  flagged=false  work=6   &lt;- banked
+     the comparison, titled after the second prompt
+</code></pre></div>
+<p>A mid-task prompt (<em>"compare that against how it actually works here"</em>) cut the
+session, leaving the four retrievals alone in a read-only episode, which the
+all-read-only flag then discarded. <code>trim_leading_exploration</code> was not at fault —
+its MCP exemption works; a second rule defeated it one stage later.</p>
+<p><strong>Four variants, measured across all eleven sessions.</strong></p>
+<table>
+<thead>
+<tr>
+<th>variant</th>
+<th><code>95b6bde7</code></th>
+<th>corpus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baseline</td>
+<td>1/1, <strong>missing</strong> <code>mcp__adk-docs</code></td>
+<td>6/6, 5 gaps</td>
+</tr>
+<tr>
+<td>A — delete the flag only</td>
+<td><strong>2/1</strong>, still missing</td>
+<td>6/6, 5 gaps</td>
+</tr>
+<tr>
+<td>B — absorb read-only forward</td>
+<td>1/1, kept all</td>
+<td>7/7, 4 gaps</td>
+</tr>
+<tr>
+<td><strong>C — both (shipped)</strong></td>
+<td><strong>1/1, kept all</strong></td>
+<td><strong>7/7, 4 gaps</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A fails for a reason worth writing down: <code>must_contain</code> is checked against the
+<strong>largest banked</strong> candidate, so un-flagging rescues the retrieval episode from
+deletion but at four steps it loses to the six-step comparison, and the count is
+now wrong as well. The retrieval has to end up <em>inside</em> the episode the check
+reads.</p>
+<p>B and C score identically. The only read-only episodes anywhere in the corpus
+are three one-step trailers — a status check after the commit, in <code>2095a8af</code>,
+<code>a8b61dae</code> and <code>d5fd2e59</code> — dropped by the under-two-steps rule either way. The
+corpus cannot distinguish them.</p>
+<p><strong>C was chosen on consistency, not on score.</strong> B leaves two rules contradicting
+each other — <em>read-only work is preamble, keep it</em> and <em>read-only work has no
+method, drop it</em> — resolved only by which runs later in <code>segment()</code>. And the
+flag's sole justification was <code>reading-around</code> in <code>tests/benchmarks/cases.py</code>:
+five hand-authored steps written alongside the detector, exercised by no live
+session. Same standing as <code>max_markerless_steps</code> above.</p>
+<p><strong>What it gives up.</strong> An aimless reading session now banks a candidate instead
+of vanishing — a row left in the ledger to review rather than a silent discard.
+Noise is already filtered without guessing at content: <code>recurrence_threshold = 3</code>
+means a one-off never reaches <code>ready</code>. The corpus's <code>episodes == 0</code> negative
+cases drop from two to one; the surviving shape, work that concluded nothing
+<em>and</em> ended the session, is the only one that still banks nothing.</p>
+<p><strong>Scope.</strong> Under the judge this session was never broken — verdicts stop prompts
+from cutting, so there was one episode and the retrieval survived. The defect
+was on the vocabulary path, which is what runs when the local model is
+unreachable.</p>
+<h3 id="the-vocabulary-stops-being-a-segmenter">The vocabulary stops being a segmenter<a class="headerlink" href="#the-vocabulary-stops-being-a-segmenter" title="Permanent link">&para;</a></h3>
+<p><code>skill-plus-plus</code> segmented two different ways depending on whether a local model
+answered. With verdicts, the judge decided. Without them a <strong>parallel</strong> system
+took over: cut at every new prompt following two substantive steps, and at every
+git completion verb.</p>
+<p>That parallel system produced the cuts three separate passes existed to undo —
+<code>_absorb_before_commit</code>, <code>_absorb_read_only_preamble</code>, and
+<code>trim_leading_exploration</code>'s MCP exemption — each added after a real session lost
+work to a boundary nobody wanted. <strong>Now, when nothing judged the steps, Skill++
+is offline: it does not segment and does not bank.</strong></p>
+<p><strong>Measured across the eleven live sessions:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keep the vocabulary fallback</td>
+<td>7/11</td>
+</tr>
+<tr>
+<td>no verdicts, no cuts (one episode)</td>
+<td>9/11</td>
+</tr>
+<tr>
+<td>no verdicts, nothing banked, fixtures unjudged</td>
+<td>0/11</td>
+</tr>
+<tr>
+<td><strong>no verdicts, nothing banked, fixtures carrying verdicts</strong></td>
+<td><strong>10/11</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The 0/11 row is an artefact, not a result. Every fixture is a projection of a
+Claude Code transcript, and a transcript has no <code>end</code> field — so the corpus was
+"unjudged" by construction and scored zero against a pipeline that requires
+verdicts. <code>judge_replay.py --write</code> bakes real verdicts in, which is what the
+last row measures and what a live capture would have carried all along.</p>
+<p><strong>Baking alone moved the board from 7 correct to 10.</strong> No behaviour changed —
+the fixtures simply stopped exercising the fallback and started exercising the
+path that ships. Three of the four gaps under investigation that morning were
+never defects in shipping code; they were the vocabulary failing on recordings
+production would never produce.</p>
+<p>What closed:</p>
+<ul>
+<li><code>5c7b0f81</code> and <code>fb505861</code> — the same procedure recorded twice. The prompt rule
+  cut at <em>"Write that list to REPORT.md"</em>, severing the deliverable from the
+  investigation that produced it. Two symptoms from one cut, decided only by how
+  many steps followed the prompt: one banked a single episode missing the file,
+  the other banked two and <code>must_contain</code> read the larger one.</li>
+<li><code>263d65ce</code> — 110 steps, never scored against the judge before because every
+  replay skipped it for cost. E4B marks exactly <strong>one</strong> ending in 110 steps and
+  puts it in the right place: 2/2.</li>
+</ul>
+<p><strong>What stays: 3 endings in 357 steps.</strong> The judge is sparse. That is not by
+itself wrong — nine of eleven truths are a single episode — but it is why
+<code>241955c7</code> remains open, and why <code>two-chores-one-sitting</code>,
+<code>two-chores-then-nothing</code> and two <code>TestSegmentBeforeAfter</code> tests are now
+recorded as needing a verdict that does not exist yet. Each is the same shape:
+two pieces of work with nothing observable between them.</p>
+<p><strong><code>has_marker</code> stays verdict-based.</strong> Making it observational —
+<code>any(is_marker(...))</code> instead of <code>any(is_end(...))</code> — was planned and dropped on
+measurement: it breaks <code>263d65ce</code> from 2/2 back to 1/2. Under verdicts that
+session's first episode counts as concluded because the judge said so; under
+observation it has no git commit, so <code>_absorb_before_commit</code> folds it into the
+one that does. <code>_absorb_before_commit</code> asks whether an episode <em>concluded</em>, not
+whether a commit happened, and a verdict is the better answer to that question.</p>
+<p><strong>Accepted costs.</strong></p>
+<ul>
+<li>A commit alone never ends an episode; only a verdict does. Measured neutral —
+  cutting on verdicts <em>plus</em> observed markers scores an identical 9/11, because
+  <code>_absorb_before_commit</code> re-merges the marker cuts anyway.</li>
+<li>With no model, a session banks nothing. The session file is kept and stamped
+  <code>held</code> instead of deleted, so being offline costs the candidate and never the
+  record, and <code>skill-plus-plus stats</code> reports what is waiting. Ollama was down twice
+  during the day this landed, so the path is not hypothetical.</li>
+<li>The marker vocabulary survives as a <strong>test double</strong>, standing in for a
+  reachable model across the suite. That is where a hardcoded heuristic belongs.</li>
+</ul>
+<h3 id="the-third-repair-pass-goes-too">The third repair pass goes too<a class="headerlink" href="#the-third-repair-pass-goes-too" title="Permanent link">&para;</a></h3>
+<p><code>_absorb_before_commit</code> folded every markerless episode forward into the next
+one that had a marker. It was written for the prompt rule's damage — on one real
+six-turn session that rule <em>"cut five times and banked five fragments plus the
+commit, none of them the procedure"</em>, and this pass swept them back together.</p>
+<p>With the prompt rule gone there are no fragments to sweep. Instrumented across
+all eleven live sessions it <strong>never fires once</strong>, the board is identical with it
+disabled, and the full suite passes with it stubbed out — 294 tests, no
+failures. Deleted.</p>
+<p>It is the third pass removed that existed only to repair the vocabulary's cuts,
+after <code>_absorb_read_only_preamble</code> and the length rule. Each was added after a
+real session lost work to a boundary nobody wanted, and each stopped having a
+job the moment the thing drawing those boundaries was removed.</p>
+<p><strong>This is also what made <code>has_marker</code> look load-bearing.</strong> <code>_absorb_before_commit</code>
+was its only meaningful consumer, and the reason making <code>has_marker</code>
+observational "broke" <code>263d65ce</code> is that it woke a dormant pass and had it eat a
+correct boundary. The two readings are exactly inverted on that session:</p>
+<div class="highlight"><pre><span></span><code>judge said ENDING at step 98: Write .../article/sections/08-one-ag…
+
+  ep1   87 steps   verdict-based has_marker=True    observed has_marker=False
+  ep2   23 steps   verdict-based has_marker=False   observed has_marker=True
+</code></pre></div>
+<p>ep1 is the article work, ending in a <code>Write</code> the judge called an ending —
+not a git verb, so observation sees nothing. ep2 holds the <code>git commit</code>, which
+the judge did not call an ending. Neither reading was "the fact"; they answer
+different questions, and the pass asking was already dead.</p>
+<p><code>has_marker</code> now has one consumer, the trailing-investigation flag.</p>
+<p><strong>Two tests named for the pass were passing vacuously</strong> and have been rewritten
+rather than deleted: one asserted a fold that can no longer happen because there
+is only ever one episode, the other asserted that trailing work was <em>spared</em> by
+a pass that never touched it. Both now say what actually holds — a verdict cuts,
+and nothing re-merges afterwards.</p>
+<p><strong>A harness that scored green while measuring nothing.</strong> <code>judge_replay.py</code>
+reported <code>ok</code> with <code>0.00s per step</code> when Ollama was down: every <code>judge</code> call
+returned <code>None</code>, no verdict was written, and the "judged" row was the vocabulary
+row printed twice. It now refuses to start without a reachable model, and aborts
+if the model answers none of a session's steps. This is the same failure as the
+<code>--verbose</code> note above — a success indicator that cannot tell <em>finished</em> from
+<em>never started</em>.</p>
+<h2 id="the-per-step-judge-on-241955c7-what-was-ruled-out">The per-step judge on <code>241955c7</code>: what was ruled out<a class="headerlink" href="#the-per-step-judge-on-241955c7-what-was-ruled-out" title="Permanent link">&para;</a></h2>
+<p><strong>Historical.</strong> This is the judge that asked, once per tool call, whether the
+request was finished. It was replaced — see <em>The question moved</em> below. Kept
+because everything here was measured and none of it should be retried.</p>
+<p>The last remaining gap at the time. Two unrelated jobs in one sitting — investigate why some
+tutorial cards render blank (read-only, nothing written), then separately add
+the missing <code>chart</code> eval case and commit. Truth is 2 episodes; the pipeline
+banks 1, because the judge marks no ending anywhere.</p>
+<p>Every step was replayed through <code>gemma3n:e4b</code> at <code>_VALUE_CHARS=80</code>,
+<code>CONTEXT_STEPS=20</code>. <strong>0 endings in 24 steps</strong>, including step 24, which is
+<code>git add …cases.json …fixtures.json &amp;&amp; git commit -m "$(cat &lt;&lt;'EOF'</code>.</p>
+<p>The boundary the judge has to find is after step 6, the last step of task one.</p>
+<h3 id="the-prompt-at-the-boundary-and-what-is-fixed-versus-inserted">The prompt at the boundary, and what is fixed versus inserted<a class="headerlink" href="#the-prompt-at-the-boundary-and-what-is-fixed-versus-inserted" title="Permanent link">&para;</a></h3>
+<p><code>skill_plus_plus/prompts/task_end.md</code> — since deleted, replaced by <code>new_job.md</code> — was 16
+lines with three slots. Lines 1, 5, the words "Just now, they", and 10-16 were
+constant on all 357 judgements ever made.
+<code>{GOAL}</code> is every prompt in the span, <code>{PRIOR}</code> the last 20 steps rendered by
+<code>render_step</code>, <code>{STEP}</code> the step being judged.</p>
+<div class="highlight"><pre><span></span><code>- TITLES in page.py can stage tutorial cards whose body has no matching key
+  in toolTutorials.ts … Work out which ones, and tell me before changing
+  anything.                                    &lt;- inserted: forbids an artifact
+
+Just now, they read the file `… page.py`       &lt;- inserted
+
+A task ends when everything the developer asked for has been produced — a change
+that outlasts the session.                     &lt;- fixed: requires an artifact
+It has not ended while … they are gathering information, preparing, or
+checking their work.                           &lt;- fixed: names this task exactly
+</code></pre></div>
+<p>The request asks to be <em>told</em> something before anything changes; the definition
+requires a change that outlasts the session and excludes gathering information.
+By the rule as written this task can never end.</p>
+<h3 id="rewording-the-definition-does-not-help">Rewording the definition does not help<a class="headerlink" href="#rewording-the-definition-does-not-help" title="Permanent link">&para;</a></h3>
+<p>Four definitions, tested on the steps that discriminate — 6 must be an ending,
+3, 5, 14 and 20 must not:</p>
+<table>
+<thead>
+<tr>
+<th>definition</th>
+<th>3</th>
+<th>5</th>
+<th>6</th>
+<th>14</th>
+<th>20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>current ("a change that outlasts the session")</td>
+<td>no</td>
+<td>no</td>
+<td><strong>no</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>"where they asked to be told something, the answer is the deliverable"</td>
+<td>no</td>
+<td>no</td>
+<td><strong>no</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>"the change they wanted made, or the question they asked answered"</td>
+<td>no</td>
+<td>no</td>
+<td><strong>no</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>"working something out and reporting it is a complete task"</td>
+<td>no</td>
+<td>no</td>
+<td><strong>no</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>The reason no wording can work is visible in the rendered steps:</p>
+<div class="highlight"><pre><span></span><code>step 3: read the file `…/backend/acme_agent/page.py`
+step 6: read the file `…/backend/acme_agent/page.py`
+</code></pre></div>
+<p>Byte-identical. Step 3 is mid-investigation, step 6 finishes it. The only
+difference reaching the model is three extra lines in <code>{PRIOR}</code>.</p>
+<h3 id="nor-does-more-of-the-step">Nor does more of the step<a class="headerlink" href="#nor-does-more-of-the-step" title="Permanent link">&para;</a></h3>
+<p><code>render_step</code> emits <code>step["input"]</code> only. Of 1024 characters stored on step 6,
+<strong>85 reach the model</strong> — the <code>tool_returned</code> (400) and the <code>closing_note</code> (400)
+are dropped. Supplying them changes nothing:</p>
+<table>
+<thead>
+<tr>
+<th>shown</th>
+<th>3</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>as today (8% of the step)</td>
+<td>no</td>
+<td><strong>no</strong></td>
+</tr>
+<tr>
+<td>+ what the tool returned</td>
+<td>no</td>
+<td><strong>no</strong></td>
+</tr>
+<tr>
+<td>+ the completion report ("Scan done. All 4 … resolve to keys")</td>
+<td>no</td>
+<td><strong>no</strong></td>
+</tr>
+<tr>
+<td>+ both</td>
+<td>no</td>
+<td><strong>no</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Note also that the completion report is <strong>not available</strong> when its own step is
+judged: <code>handle_tool</code> writes <code>closing_note</code> onto step <em>N-1</em> (capture.py:427) and
+judges step <em>N</em> (capture.py:462). Showing it would require judging one step late.</p>
+<h3 id="nor-a-different-question-nor-less-context">Nor a different question, nor less context<a class="headerlink" href="#nor-a-different-question-nor-less-context" title="Permanent link">&para;</a></h3>
+<p>"Is this a finishing step", "Was that the last step of this task" — both score
+identically to the current question on all six steps. Removing <code>{PRIOR}</code>
+entirely, or trimming it to two steps, also changes nothing at step 6.</p>
+<h3 id="polarity-changes-everything-which-means-it-is-not-judging">Polarity changes everything, which means it is not judging<a class="headerlink" href="#polarity-changes-everything-which-means-it-is-not-judging" title="Permanent link">&para;</a></h3>
+<p>Same model, same context, same steps. Only the direction of the question
+differs — "is every part of the request done" against "is more work needed",
+with the second inverted:</p>
+<div class="highlight"><pre><span></span><code>endings: direct 0/24, inverted 17/24     (truth: 1, at step 6)
+</code></pre></div>
+<p>The inverted question answers "more work needed" for steps 1-7 and "no more work
+needed" for <strong>every step from 8 to 24</strong>, without reverting. Step 8 is where
+<code>{GOAL}</code> first holds two prompts and <code>{PRIOR}</code> first holds a finished task.</p>
+<p>Neither answer is a judgement of the step. Both are a constant response to the
+shape of the question against the shape of the context. This is not sampling
+noise: <code>local.ask</code> sends <code>temperature: 0</code>, and eight repeats of the identical
+prompt gave eight identical answers at steps 6 and 24.</p>
+<h3 id="the-model-is-also-not-self-consistent">The model is also not self-consistent<a class="headerlink" href="#the-model-is-also-not-self-consistent" title="Permanent link">&para;</a></h3>
+<p>Two of the three endings it has ever marked across the whole corpus are the same
+command shape as the one it refuses here:</p>
+<div class="highlight"><pre><span></span><code>a7be1ef5  end=True    git add …cases.json …fixtures.json &amp;&amp; git commit -m "$(cat &lt;&lt;'EOF'
+241955c7  end=False   git add …cases.json …fixtures.json &amp;&amp; git commit -m "$(cat &lt;&lt;'EOF'
+</code></pre></div>
+<p>Trimming <code>241955c7</code>'s goal to just "Commit both changes together." still gives
+<code>no</code>.</p>
+<h3 id="the-ratchet-and-the-bootstrapping-trap">The ratchet, and the bootstrapping trap<a class="headerlink" href="#the-ratchet-and-the-bootstrapping-trap" title="Permanent link">&para;</a></h3>
+<p><code>window</code>'s docstring already records the cost of using every prompt in the span:
+<em>"miss one ending and the next prompt joins the same goal … That is why its
+failures are all <code>got 1</code>."</em> <code>241955c7</code> is that cost arriving.</p>
+<p>The span is <em>steps</em> since the last <code>end: True</code>, so with zero endings nothing
+ever resets. By step 8 the goal is both jobs welded into one request and
+<code>{PRIOR}</code> presents task one's six investigation steps as "what they have done on
+it so far"; by step 24 the goal is all four prompts.</p>
+<p><strong>Context reset is already implemented</strong> — <code>window</code> starts the span after the
+last ending. What is missing is any way to recover once an ending is missed.
+The reset is gated on a verdict, and the verdict is the thing that fails.</p>
+<p>Measured separately: contamination is <em>not</em> why step 6 is missed. Step 6's
+context is clean — one goal bullet, five prior lines, all task one — and it is
+missed anyway. The ratchet is a second, downstream problem that begins at step 8.</p>
+<h3 id="where-it-went-next">Where it went next<a class="headerlink" href="#where-it-went-next" title="Permanent link">&para;</a></h3>
+<p>Not another model: the constraint was deliberate and this one turned out to be
+capable — of a different question. Two of the three directions listed here were
+taken, and the third was not needed.</p>
+<p><strong>Re-judging at session end</strong> was the unlock. Every intervention above is
+forward-only, and the one formulation that ever answered <code>yes</code> at step 6 —
+asking, when the next prompt arrives, whether it starts a new task — needs
+information that does not exist yet at step 6.</p>
+<p><strong>A first, untuned prompt-pair form scored 5/11</strong>, over-firing on continuations:
+it cut <code>fb505861</code> at "Write that list to REPORT.md" and shattered <code>263d65ce</code>
+into nine. That was the starting point, not the answer.</p>
+<p><strong>Whether an ending must be closable only by the judge</strong> never had to be
+answered. It stopped mattering once the judge fired where it should.</p>
+<h2 id="the-question-moved">The question moved<a class="headerlink" href="#the-question-moved" title="Permanent link">&para;</a></h2>
+<p>Asked in a different place, of a different thing, the same model gets the corpus
+right. <strong>Only ask where a boundary can be</strong> — a gap between two tool calls that
+an instruction landed in — and make it a comparison rather than an assessment:
+here is what they asked for, here is what they just said, here is what they did
+next; is that a new job?</p>
+<div class="highlight"><pre><span></span><code>                                              correct   model calls
+per-step "is the request done"                 10/11        357
+gated, {NEXT} = 1 step                          7/11         33
+gated, {NEXT} = 3 steps                        11/11         33
+gated, {NEXT} = 5 steps                         8/11         33
+gated, majority of 5 at temperature 0.7        10/11        165
+</code></pre></div>
+<p><code>{NEXT}</code> is a window, not a knob. One step cannot tell two jobs apart — <code>find
+cases.json</code> belongs to either. Five reaches far enough into the next task to
+echo the old one. <code>{PRIOR}</code> at 3 beats the old 20: a long history made every
+late gap read as a continuation, proved by swapping the prompt text between an
+early and a late gap while holding everything else — <strong>the verdict followed the
+position, not the words.</strong></p>
+<p>Temperature buys nothing. Voting scores the same and, at <code>{NEXT}</code>=2, abandons
+the correct boundary in <code>241955c7</code> (2/5) to cut in the middle of task two, while
+still scoring 2/2.</p>
+<h3 id="every-slot-earns-its-place">Every slot earns its place<a class="headerlink" href="#every-slot-earns-its-place" title="Permanent link">&para;</a></h3>
+<p>Ablated across all eleven sessions:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>full</td>
+<td><strong>11/11</strong></td>
+</tr>
+<tr>
+<td>without the <code>Then they say: {PROMPT}</code> block</td>
+<td>8/11</td>
+</tr>
+<tr>
+<td>prompt and goal only, no steps at all</td>
+<td>4/11</td>
+</tr>
+<tr>
+<td><code>{GOAL}</code> cut to the latest prompt</td>
+<td>10/11, <code>1c3c9422</code> splits into three</td>
+</tr>
+</tbody>
+</table>
+<p>The signal is a conjunction. The instruction says what the developer <em>intends</em>;
+the following steps say what actually <em>happened</em>. Without the instruction,
+<code>241955c7</code> cuts at "Regenerate the fixtures" as well as at the announced switch — it
+cannot tell which gap matters. Without the steps, it fires in 25 of 33 gaps.</p>
+<p>An empty <code>{PRIOR}</code> must render <code>(nothing yet)</code> rather than a blank block: on
+<code>95b6bde7</code> that alone flips the verdict. Deleting the section entirely fails the
+same way. A session with nothing behind it reads as one that has not started.</p>
+<p>Note the tension with the ratchet above — the accumulated goal helps here and
+ruins the per-step judge. The difference is that this is asked three times a
+session, not 357, so the goal never grows far.</p>
+<h3 id="two-bugs-the-score-could-not-see">Two bugs the score could not see<a class="headerlink" href="#two-bugs-the-score-could-not-see" title="Permanent link">&para;</a></h3>
+<p><strong>The old judge cut <code>263d65ce</code> at step 98</strong> — deep inside the article work — and
+scored 2/2 for it, because the count was right and both <code>must_contain</code> needles
+landed in the larger half. The first task ends at <strong>step 9</strong>. On placement the
+per-step judge was 1/2 and the gated one is 2/2, so "10/11 either way" was
+flattering it.</p>
+<p><code>score.py</code> now pins <code>truth.boundary_after</code> on the two multi-task fixtures. It
+is the fourth measurement this year that agreed with a wrong answer, after
+counting pre-fold episodes, the harness printing <code>ok</code> with Ollama down, and a
+<code>min_steps</code> guard silently swallowing a bad cut in <code>95b6bde7</code>.</p>
+<p><strong><code>gaps()</code> showed only the first prompt in a gap.</strong> <code>1c3c9422</code> is the only gap
+in the corpus holding two, and it was the only gap that failed:</p>
+<div class="highlight"><pre><span></span><code>1. a question about how the agent had gone about it
+2. the opening request, restated: look the format up in the docs rather than
+   answer from memory
+</code></pre></div>
+<p>Only the first reached the model, which read it as a new job. Measured on that
+gap: first alone → new job (wrong); last alone, or both in order → same job.
+That session is the <em>before</em> of the procedure <code>2095a8af</code> and <code>71448e61</code> record —
+the agent answered from sixteen local <code>grep</code>/<code>Read</code> calls without touching MCP,
+was challenged, and the request was restated. Both later sessions open with the
+restated wording. Provenance that is not recoverable from the steps, and without
+it those two prompts look like a topic change rather than one correction.</p>
+<h3 id="what-it-costs-and-what-it-gives-up">What it costs and what it gives up<a class="headerlink" href="#what-it-costs-and-what-it-gives-up" title="Permanent link">&para;</a></h3>
+<p>One call per prompt instead of one per tool call, and <strong>off the hot path</strong>: the
+judge runs at <code>SessionEnd</code>, because the question needs the steps that came after
+a gap. That removes a synchronous ~1.5s model call from every tool call a
+developer makes. <code>skill-plus-plus keep</code> folds mid-session, so it judges the buffer first,
+and banks the work as one task if no model answered — an explicit save is a
+person saying "save this", not a detector guessing.</p>
+<p>Given up: <strong>a boundary with no prompt in the gap</strong> — a task ending where the
+developer says nothing. No live session shows that shape, and the per-step judge
+could see it in principle, so this is a trade rather than a free win.</p>
+<h3 id="framings-rejected-and-what-a-call-costs">Framings rejected, and what a call costs<a class="headerlink" href="#framings-rejected-and-what-a-call-costs" title="Permanent link">&para;</a></h3>
+<p>Moved here from <code>skill_plus_plus/boundary.py</code>, so that it is not tried again. On a
+13-case probe of the gap question:</p>
+<ul>
+<li>the step alone, with no goal and no span: 4/13, and every correct answer was a
+  "no" — it answered "no" to everything, as the first attempt at this did;</li>
+<li>the same plus the goal and the steps behind it: also 4/13, same shape. The
+  context alone changes nothing;</li>
+<li>adding what an <em>ending is</em>: 11/13. This is the whole difference;</li>
+<li>adding a deterministic prior ("that step only looked things up") for the model
+  to confirm or override: 10/13, and it broke a case that had been passing. Not
+  kept.</li>
+</ul>
+<p>Latency, measured warm on <code>gemma3n:e4b</code>, the default until 2026-09:</p>
+<ul>
+<li>the one-word answer instruction took a call from 4.42 s to 0.49 s, because
+  generation length dominates, not prompt processing; ~0.73 s per call with the
+  full context prompt;</li>
+<li><code>think=False</code> changed nothing on that model, which cannot think: 1.10 s
+  against 1.09 s over three runs each. An earlier 11.5 s was the model loading,
+  and <code>think=True</code> returns HTTP 400. On a model that can think, the same
+  one-word question took 113.8 s against 0.5 s (<code>qwen3.5:9b</code>, <code>local.ask</code>),
+  which is why the judge keeps thinking off on <code>gemma4:e4b</code>.</li>
+</ul>
+<h2 id="gemma4e4b-as-the-judge-more-to-read-one-input-at-a-time">gemma4:e4b as the judge: more to read, one input at a time<a class="headerlink" href="#gemma4e4b-as-the-judge-more-to-read-one-input-at-a-time" title="Permanent link">&para;</a></h2>
+<p>Measured 21 Sep 2026 on the 21 live sessions, <code>tests/benchmarks/judge_replay.py</code>
+with <code>SKILL_PLUS_PLUS_MATCH=0</code> so a cut episode is never merged back before it is
+counted, one model resident, every run valid (45/45 gaps answered).</p>
+<p><strong>Read the gaps, not the sessions.</strong> Only 2 of the 45 gaps are real boundaries
+(<code>241955c7</code> step 6, <code>263d65ce</code> step 9). A judge that answers "no" everywhere
+scores 19/21 — gemma3n's score, and gemma4's at the default settings, where it
+answers "no" to all 45. A judge that cuts exactly at the two scores 21/21. Both
+checked with no model before any run was trusted.</p>
+<h3 id="thinking-off-each-input-alone-against-the-defaults">Thinking off: each input alone, against the defaults<a class="headerlink" href="#thinking-off-each-input-alone-against-the-defaults" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>dimension</th>
+<th>values</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>steps before the gap</td>
+<td>4, 5, 6, 8, 10, 15, 20, all</td>
+<td>none — all history for both boundaries changed nothing</td>
+</tr>
+<tr>
+<td>steps after the gap</td>
+<td>4, 5, 6, 7</td>
+<td>none; one false cut at 6 (<code>263d65ce</code> step 31), gone at 7</td>
+</tr>
+<tr>
+<td>the developer's prompt</td>
+<td>800, 1600, full</td>
+<td>none (2 of 45 prompts exceed 400)</td>
+</tr>
+<tr>
+<td>other step fields</td>
+<td>200, 400, full</td>
+<td>none</td>
+</tr>
+<tr>
+<td><strong>tail of the assistant's last reply before the gap</strong></td>
+<td>200, <strong>400, 800</strong>, 1600, 3200, full</td>
+<td><strong>catches <code>241955c7</code> at 400–800, no false cuts</strong></td>
+</tr>
+<tr>
+<td>head of its reply to the new instruction</td>
+<td>200, 400, 800, 1600, full</td>
+<td>none</td>
+</tr>
+<tr>
+<td>what the step before the gap returned</td>
+<td>200, 400</td>
+<td>catches <code>241955c7</code> at 400 — unconfirmed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best: <code>--reply-before 400</code> — 20/21 against gemma3n's 19/21, 0 false cuts.</strong>
+It catches the "Separate job:" boundary and keeps its near-twin, <code>71448e61</code>
+step 5 (the same instruction, not a new job), at "no". At 400 characters the
+tail is the assistant delivering findings on the previous task and then asking
+a follow-up the developer ignores; at 1600 and beyond it reaches back into the
+unfinished investigation and the signal is gone. It works in a window, not as
+a trend.</p>
+<p>Controlled at the same slot, position and length on that gap: the real tail
+flips the verdict to "yes"; a tail from an unrelated session and neutral filler
+both leave it "no". Content, not length. The step-output catch has no such
+control and its text is raw source, so it is not counted.</p>
+<p><code>263d65ce</code> step 9 was never caught with thinking off.</p>
+<h3 id="thinking-on-at-the-defaults">Thinking on, at the defaults<a class="headerlink" href="#thinking-on-at-the-defaults" title="Permanent link">&para;</a></h3>
+<p><code>think=True</code>, a 4,096-token answer reserve and a 180s timeout: <strong>2/2 real
+boundaries caught — <code>263d65ce</code> step 9 for the first time — with 3 false cuts</strong>:
+<code>698c7529</code> steps 4 and 5 (the "Two things. Check every command…" review prompt
+and the "go" after it, gemma3n's own mistake) and <code>2095a8af</code> step 35 ("Before
+you commit — check the docstring"). 19/21. Clean answers on all 45; median
+2,061 characters of reasoning, ~506 tokens, 15.1s a gap against 1.3s.</p>
+<p>Timing caution: the reserve makes <code>num_ctx</code> differ on every call, and 44 of 45
+calls reloaded the model (6.4s each, 311s of the run's 1,013s). Pin the context
+before timing thinking runs.</p>
+<h3 id="thinking-on-with-the-reply-tail">Thinking on, with the reply tail<a class="headerlink" href="#thinking-on-with-the-reply-tail" title="Permanent link">&para;</a></h3>
+<p>The two levers fail in opposite directions — the reply tail makes gemma4 more
+discerning, thinking makes it more willing — so the combination was measured.
+On <code>263d65ce</code> alone it is right: step 9 caught, cut in the right place, and all
+seven later turns of that writing session ("give me 10 title drafts", "a few
+changes for the .md files") kept at "no". On the whole corpus it is not:</p>
+<table>
+<thead>
+<tr>
+<th>gap</th>
+<th>real</th>
+<th>thinking</th>
+<th>reply 400 + thinking</th>
+<th>reply 400</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>241955c7</code> step 6</td>
+<td>✓</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>263d65ce</code> step 9</td>
+<td>✓</td>
+<td>yes</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>698c7529</code> step 4, "Two things. Check every command…"</td>
+<td>✗</td>
+<td>yes</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>698c7529</code> step 5, "Looks good. What's next? go"</td>
+<td>✗</td>
+<td>yes</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>2095a8af</code> step 35, "Before you commit — check the docstring"</td>
+<td>✗</td>
+<td>yes</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>95b6bde7</code> step 1, a prompt redirecting the lookup to a docs tool</td>
+<td>✗</td>
+<td>—</td>
+<td>yes</td>
+<td>—</td>
+</tr>
+<tr>
+<td>sessions</td>
+<td></td>
+<td>19/21</td>
+<td>19/21</td>
+<td><strong>20/21</strong></td>
+</tr>
+</tbody>
+</table>
+<p>With thinking on, the same three false cuts appear whether the tail is shown or
+not, and the tail adds a fourth (harmless to the score: a cut after the first
+step leaves an episode too small to bank, and gemma3n cuts there too). The bet
+that the tail would keep the review prompt at "no" is refuted. Thinking is the
+only thing that ever finds <code>263d65ce</code> step 9, and on this corpus it always
+pays for it with the review-prompt session.</p>
+<p><strong>The best configuration measured stays <code>--reply-before 400</code>, thinking off.</strong></p>
+<h3 id="thinking-on-what-what-they-do-next-does">Thinking on: what "What they do next" does<a class="headerlink" href="#thinking-on-what-what-they-do-next-does" title="Permanent link">&para;</a></h3>
+<p>Why ask: at the review prompt, gemma4's reasoning agreed the instruction
+continued the task ("This is still focused on refining the content for the
+presentation"), then read the three steps after it — <code>ls</code>, <code>pytest</code>,
+<code>npm test</code> — as "a shift from content proposal/review to code testing/
+debugging" and answered "new job". The question's "that" comes straight after
+the steps, and thinking resolves it to them.</p>
+<p>Screened with thinking on, the context pinned at 8,192 tokens (per-prompt
+sizing reloaded the model on 44 of 45 calls), on the seven gaps that decide it,
+each judged under correct history — cuts only at the real boundaries:</p>
+<table>
+<thead>
+<tr>
+<th>gap</th>
+<th>V0 3 steps</th>
+<th>V1 none</th>
+<th>V2 1 step</th>
+<th>V3 2 steps</th>
+<th>V4 relabelled</th>
+<th>V5 + reply</th>
+<th>V6 reply instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>241955c7</code> step 6 ✓</td>
+<td>ok</td>
+<td>ok</td>
+<td>✗</td>
+<td>✗</td>
+<td>ok</td>
+<td>✗</td>
+<td>ok</td>
+</tr>
+<tr>
+<td><code>263d65ce</code> step 9 ✓</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>✗</td>
+<td>ok</td>
+</tr>
+<tr>
+<td><code>698c7529</code> step 4, review</td>
+<td>✗</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>✗</td>
+<td>✗</td>
+<td>ok</td>
+</tr>
+<tr>
+<td><code>698c7529</code> step 5, "go"</td>
+<td>ok</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>ok</td>
+</tr>
+<tr>
+<td><code>2095a8af</code> step 35, docstring</td>
+<td>✗</td>
+<td>✗</td>
+<td>ok</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><code>71448e61</code> step 5, the twin</td>
+<td>ok</td>
+<td>✗</td>
+<td>ok</td>
+<td>ok</td>
+<td>✗</td>
+<td>ok</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><code>263d65ce</code> step 31</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>ok</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td><strong>5/7</strong></td>
+<td>4/7</td>
+<td><strong>5/7</strong></td>
+<td>4/7</td>
+<td>3/7</td>
+<td>2/7</td>
+<td>4/7</td>
+</tr>
+</tbody>
+</table>
+<p>V4 relabels the section "In answer to that, the assistant then:"; V5 adds the
+head of the assistant's reply to the new instruction (400 characters); V6 shows
+that reply instead of the steps.</p>
+<ul>
+<li><strong>Thinking needs the section.</strong> Without it the review prompt is fixed, but
+  the "Separate job" twin and the "go" after the review become false cuts: the
+  steps are what show a look-up turning straight into the add it prepared, and
+  "go" turning into building the deck.</li>
+<li><strong>Rewording did not help.</strong> Tying the steps to the instruction (V4) made
+  gemma4 cut more, as if invited to judge whether the steps fit the request.
+  The assistant's own reply, added (V5), made every new request sound like a
+  continuation — "Using that as template. Added…" — and lost both real
+  boundaries; at the review prompt, "I checked all 30 commands…" was read and
+  the cut made anyway.</li>
+<li><strong>The steps mislead at one gap and are load-bearing at the others.</strong> Every
+  gap is right under some variant and no variant gets them all: these gaps sit
+  near gemma4's edge with thinking on, and small input changes flip them in
+  inconsistent directions.</li>
+</ul>
+<p>One pattern is visible and deliberately not claimed: cutting only where V0 and
+V6 both say "yes" gets 6/7, each vetoing the other's false cuts. It was found
+by looking at these same seven gaps, and would double the thinking cost.</p>
+<p>The step-count results also show why 698c7529 step 5 was a false cut in the
+full run: step 4 had just been cut, so step 5 was judged as the start of a
+fresh task. Given correct history, the default reads it as a continuation.</p>
+<p><strong>Conclusion unchanged: thinking on, the defaults are as good as any framing
+of the next steps; the best configuration remains <code>--reply-before 400</code>,
+thinking off.</strong> Nothing here changes a default: the
+production judge is still gemma3n with no reply shown, and gemma3n has not been
+measured with the reply tail.</p>
+<h2 id="the-question-restructured">The question restructured<a class="headerlink" href="#the-question-restructured" title="Permanent link">&para;</a></h2>
+<p>Measured 24 Sep 2026: <code>gemma4:e4b</code>, thinking off, <code>SKILL_PLUS_PLUS_MATCH=0</code>,
+every run valid (no gap unanswered). Three sets:</p>
+<table>
+<thead>
+<tr>
+<th>set</th>
+<th>sessions</th>
+<th>real boundaries</th>
+<th>gaps that are not</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public recordings</td>
+<td>22</td>
+<td>9</td>
+<td>77</td>
+</tr>
+<tr>
+<td>private sessions</td>
+<td>21</td>
+<td>2</td>
+<td>43</td>
+</tr>
+<tr>
+<td>holdout: the README-video demo recordings</td>
+<td>8</td>
+<td>4</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>The holdout's truth comes from the recording script, written before any of the
+variants below existed. It was kept outside the repo while the variants were
+measured, and published after, on 2026-09-25, as the <code>*-demo-*</code> fixtures in
+<code>tests/fixtures/sessions/</code>: the GitHub repo it reads is a demo repo with
+invented data. The public set counts 30 sessions from then on.</p>
+<h3 id="why-the-prose-question-missed-every-code-switch">Why the prose question missed every code switch<a class="headerlink" href="#why-the-prose-question-missed-every-code-switch" title="Permanent link">&para;</a></h3>
+<p>The three public misses were all code sessions: c-2said's announced switch to
+a Makefile, c-3's unannounced switch to a refactor, c-same's second feature of
+the same kind. At c-2said the question was <em>"Is that a new job, unrelated to
+the request above?"</em>, and the answer was "no". One change at a time, on all
+seven gaps of that session:</p>
+<table>
+<thead>
+<tr>
+<th>variant</th>
+<th>the switch</th>
+<th>the six follow-ups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>as recorded</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>"unrelated to" → "separate from"</td>
+<td><strong>yes</strong></td>
+<td>no</td>
+</tr>
+<tr>
+<td>the message without "look at how the tests are run"</td>
+<td>no</td>
+<td>–</td>
+</tr>
+<tr>
+<td>+ the last 400 characters of the assistant's reply ("Committed <code>e37d5f3</code>…")</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>an ending question: "Was the request above already finished before they said this?"</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>ending and beginning together</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>With thinking on, the reasoning named the cause: <em>"The request immediately
+preceding the action was: 'I want a Makefile…' … The action taken is creating
+and using the Makefile … It is not an unrelated job."</em> The model read "the
+request above" as the <strong>new</strong> message, the one printed right above the
+question, and checked whether the steps after it fitted it. They always do.
+The ending question failed the same way: "was the request above finished"
+became "was the Makefile finished". Knowledge work passed only because a new
+task there is unrelated to both readings.</p>
+<h3 id="sections-instead-of-prose">Sections instead of prose<a class="headerlink" href="#sections-instead-of-prose" title="Permanent link">&para;</a></h3>
+<p>V1 kept every input and changed the form: named sections (the earlier task
+with the assistant's last actions, the new message, what the assistant did
+after it), one line per action, the message quoted, and a question that names
+both sides: <em>"Does the new message start a new task, separate from the earlier
+task?"</em> V2–V5 each changed one thing on V1: a shorter first sentence, a
+<code># Your goal:</code> line, the developer's command descriptions, and the new message
+grouped with what followed it.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public: caught / false cuts</th>
+<th>private</th>
+<th>holdout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V0, the prose question</td>
+<td>6/9 · 0/77</td>
+<td>0/2 · 0/43</td>
+<td>4/4 · 0/23</td>
+</tr>
+<tr>
+<td>V1, sections</td>
+<td>9/9 · 0/77</td>
+<td>2/2 · <strong>10/43</strong></td>
+<td>4/4 · <strong>2/23</strong></td>
+</tr>
+<tr>
+<td>V2–V5</td>
+<td>9/9 · 0–1/77</td>
+<td>2/2 · 8–10/43</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p>V1 fixed all three code sessions, and found <code>263d65ce</code> step 9, which thinking
+off had never found. It also cut at follow-ups: six false cuts appeared in every
+variant, four of them the same instruction in different sessions, to
+regenerate a generated file from the case just added. The prose question's
+zero false cuts had been a no-sayer's; it
+caught none of the private boundaries. Remove the confusion, and what shows is
+that the prompt never said how big a task is. V2–V5 moved single gaps at the
+model's edge and fixed none of the six.</p>
+<h3 id="what-counts-as-a-new-task">What counts as a new task<a class="headerlink" href="#what-counts-as-a-new-task" title="Permanent link">&para;</a></h3>
+<p>V6 added a definition before the question: a new task could be done even if
+the earlier task had never happened, in the same project and for the same kind
+of work; it is still the earlier task when the message continues, checks,
+corrects, redoes, finishes or builds on what that task produced.</p>
+<p>It removed all ten private false cuts and both on the holdout, but missed c-3
+and c-same again. Asked with thinking on at those two, V6 answered "yes" both
+times, by its own test: <em>"Could the developer ask to simplify <code>wordfreq.py</code>
+without ever having created or committed a Makefile? Yes."</em> The definition was
+right; the one-word answer could not run the counterfactual. V7 names the
+observable signal that reasoning turned on, and narrows "redoes", a suspect
+the probe did not confirm:</p>
+<blockquote>
+<p>A new task has a goal of its own: it could be done even if the earlier task
+had never happened. That holds in the same project, and for the same kind of
+work on another file, feature or document.</p>
+<p>It is still the earlier task when the new message works on what the earlier
+task produced: it continues, checks, corrects, finishes or builds on it, or
+redoes it because the first attempt was not right.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>private</th>
+<th>holdout</th>
+<th>all</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V0, the prose question</td>
+<td>6/9 · 0/77</td>
+<td>0/2 · 0/43</td>
+<td>4/4 · 0/23</td>
+<td>10/15 · 0/143</td>
+</tr>
+<tr>
+<td>V6</td>
+<td>7/9 · 0/77</td>
+<td>1/2 · 0/43</td>
+<td>4/4 · 0/23</td>
+<td>12/15 · 0/143</td>
+</tr>
+<tr>
+<td><strong>V7</strong></td>
+<td><strong>9/9 · 0/77</strong></td>
+<td><strong>1/2 · 0/43</strong></td>
+<td><strong>4/4 · 0/23</strong></td>
+<td><strong>14/15 · 0/143</strong></td>
+</tr>
+</tbody>
+</table>
+<p>V7 is the default. Sessions right: public 19 → 22 of 22, private 19 → 20 of 21,
+holdout 8 of 8 both. The median prompt grew from about 1,300 to 1,800
+characters and a gap from 1.15 s to 1.30 s at the median, at session end.</p>
+<p>The new cuts put five more episodes into the public ledger, so merging was
+measured again (<code>recurrence.py</code>, <code>nomic-embed-text</code>): still 0 wrong merges;
+6 of 7 repeated procedures in one candidate (5 of 6 before), the two Makefile
+runs and the three refactors among them; code on another subject 4/53 (1/23
+before, on fewer pairs), with add-feature-with-tests across 7 entries.</p>
+<p>With the demo recordings published, the public ledger holds 42 episodes from
+30 sessions, and merging was measured once more: still 0 wrong merges, the
+seven sprint reviews in one candidate (none of them joined the talk decks), the
+same goal driven differently 6/6 code and 25/26 procedure. Knowledge work on
+another subject fell from 12/12 to 16/26, and 5 of 8 repeated procedures are in
+one candidate: the takes' LinkedIn posts and action items read the same notes
+as the catalogue's, but inside a chat of three tasks, and most of them stayed
+apart. A duplicate, as the floors intend, rather than a wrong merge.</p>
+<p>The rows by how alike the runs are rest on one <code>truth.level</code> per session, and
+that counts some pairs in the wrong row: the takes' posts read the same notes
+as P-F1–3 yet count as another subject, and the P-V talk decks read three
+different documents yet count as the same goal. The README therefore reports
+what no label decides: runs and candidates per procedure, and the wrong merges,
+the number that matters most.</p>
+<p>What this does not show:</p>
+<ul>
+<li><strong>The code switches were recovered on the sessions the wording was tuned
+  against.</strong> The holdout has no code session with more than one task; what it
+  shows is the other direction, no new false cut at unseen follow-ups ("Fix
+  those…", "Approved. Build it…"), where V1 cut twice. New code recordings with
+  several tasks are the test this still needs.</li>
+<li><strong>Which of V7's two changes recovered c-3 and c-same</strong> was not separated.</li>
+<li><strong><code>263d65ce</code> step 9 is still missed.</strong> With thinking on, V6 called it a
+  continuation: the new message asks for an article that includes what the
+  task before it was about. A borderline case, and the only miss left.</li>
+</ul>
+<h3 id="a-finished-commit-said-in-one-line">A finished commit, said in one line<a class="headerlink" href="#a-finished-commit-said-in-one-line" title="Permanent link">&para;</a></h3>
+<p>Measured 28 Sep 2026 with <code>gemma4:e4b-it-qat</code> (Q4_0, 6.1 GB on disk against
+9.6 GB for <code>gemma4:e4b</code>), thinking off, V7. It misses one switch that
+<code>gemma4:e4b</code> catches, c-same: public 29/30 sessions · 12/13 · 0/100, private
+20/21 · 1/2 · 0/43, the same private result as <code>gemma4:e4b</code>. At c-same it
+answers "no" right after <code>git commit</code>, which the question shows only as the
+last action, inside a heredoc line.</p>
+<p>Rewording the definition came first and was dropped. Three rewrites of its
+"same kind of work" sentence each flipped c-same on both models, and the
+plainest, <em>"Doing the same kind of work again on another file, feature or
+document is a new task, even in the same project"</em>, went through the whole
+check: public 13/13 · 0/100 on both models, and it caught <code>263d65ce</code> step 9, but
+private false cuts went from 0 to 5 on <code>gemma4:e4b-it-qat</code> and to 1 on
+<code>gemma4:e4b</code>, all follow-ups inside one task (a lookup redone through another
+tool, the next case added, a generated file regenerated). A rule general enough
+to fix one switch reached five follow-ups. The other two were not measured: one
+keyed on the words "the same kind of thing", and one on "once the earlier task
+is done", which asks the model to decide the very thing the question asks.</p>
+<p><code>SHOW_COMPLETION</code> states a fact instead. When the assistant's reply before the
+gap ended in a completion marker that succeeded, with only reads after it, one
+line follows the earlier task's actions:</p>
+<blockquote>
+<p>Before the new message, <code>git commit</code> succeeded and nothing was changed after it.</p>
+</blockquote>
+<p>The definition is unchanged, so a message that works on what was committed can
+still be read as the same task. The line looks only at the reply to the last
+message: a first version walked on past a reply that only read ("suggest how,
+don't change anything yet") to the previous task's commit, and flagged
+"Implement it." at four gaps that are one task.</p>
+<p>Before any model ran, the line appears at 5 of 158 gaps, all real switches
+(c-2said, c-3 twice, c-2unsaid, c-same), and at no private gap: the seven
+private sessions with a commit end on it.</p>
+<table>
+<thead>
+<tr>
+<th><code>gemma4:e4b-it-qat</code></th>
+<th>public: sessions · caught · false cuts</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V7</td>
+<td>29/30 · 12/13 · 0/100</td>
+<td>20/21 · 1/2 · 0/43</td>
+</tr>
+<tr>
+<td>V7 + the line</td>
+<td><strong>30/30 · 13/13 · 0/100</strong></td>
+<td>20/21 · 1/2 · 0/43</td>
+</tr>
+</tbody>
+</table>
+<p>With the line, the smaller model gives the same verdict as <code>gemma4:e4b</code> at all
+158 gaps. Since 29 Sep 2026 both are the defaults: the line is on
+(<code>judge_replay.py --no-completion</code> measures without it), and
+<code>gemma4:e4b-it-qat</code> is the local model. On an 18 GB Mac a fold needs about
+7.0 GB of free memory with it, against 12.2 GB with <code>gemma4:e4b</code>, and the
+lowest free memory while folding the eight demo recordings was 7.2 GB, at
+normal pressure.</p>
+<p>What this does not show:</p>
+<ul>
+<li><strong>A follow-up right after a commit.</strong> No recording has one: every message
+  after a commit in the public set starts a new task. "Commit it." followed by
+  "Push it." or "CI fails, fix it." is where the line could cause a false cut,
+  and the line went on before that was recorded.</li>
+<li><strong><code>gemma4:e4b</code> with the line.</strong> It already catches all five flagged switches.</li>
+<li><strong>Naming and summaries on <code>gemma4:e4b-it-qat</code>.</strong> The local model also names
+  candidates and writes the review page's summaries; only its cuts were
+  compared.</li>
+</ul>
+<h2 id="same-procedure-decided-by-embedding">Same procedure, decided by embedding<a class="headerlink" href="#same-procedure-decided-by-embedding" title="Permanent link">&para;</a></h2>
+<p>Whether a saved episode is a repeat of an existing candidate used to be decided
+by a lexical <strong>signature</strong> — the steps reduced to <code>read | edit:.json |
+bash:python3 | bash:git add</code> — compared with <code>SequenceMatcher</code>, with a background
+pass that let only pairs above 0.40 reach an embedding. On the real ledger:</p>
+<ul>
+<li>Six entries a person tagged good, all adding eval cases, scored 0.12–0.66
+  against each other. Incidental steps — <code>ls</code>, <code>cd</code>, <code>source</code>, <code>git log</code> —
+  outweighed the procedure.</li>
+<li><code>similarity()</code> was asymmetric. The two "cover course reimbursement fact" entries
+  scored 0.365 in ledger order against the 0.40 filter, 0.410 the other way, so an
+  embedding that rates them 0.98 never saw them.</li>
+<li>The background pass had not run since the day Ollama went down.</li>
+<li>Ids were the signature, so a miss on identical work overwrote the existing
+  entry, parked or promoted status included.</li>
+</ul>
+<p>The reason given for lexical matching — no model inside a hook — stopped holding
+when <code>SessionEnd</code> began waiting on the boundary judge.</p>
+<p><strong>Now:</strong> each episode is embedded once at fold time and compared by cosine with a
+cached vector for every entry of any status; at or above <code>SKILL_PLUS_PLUS_MATCH_FLOOR</code> it
+joins that entry. Ids are random. The background pass is gone.</p>
+<h3 id="the-yardstick">The yardstick<a class="headerlink" href="#the-yardstick" title="Permanent link">&para;</a></h3>
+<p><code>tests/fixtures/sessions/recurrence.py</code> folds all eleven live sessions into one
+ledger in the order they started and scores where each banked episode lands
+against a hand-written family label:</p>
+<table>
+<thead>
+<tr>
+<th>family</th>
+<th>runs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add-eval-case</td>
+<td>7 — the three tutorial-card sessions, <code>a8b61dae</code>, <code>241955c7</code> task 2, and the two glossary fact sessions <code>d5fd2e59</code>, <code>a7be1ef5</code></td>
+</tr>
+<tr>
+<td>coverage-writeup</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Card and fact cases were two families for a while. Compared step by step
+(<code>d5fd2e59</code> against <code>241955c7</code>'s chart case) they are the same work — read
+<code>cases.json</code>, edit it, check the JSON, regenerate, commit — and the steps that
+differ do the same job with other commands (<code>ls</code> and <code>head</code> against <code>find</code> and
+<code>grep</code>, both locating <code>generate_fixtures.py</code>). What tells them apart is only in
+the prompt and in the JSON written, and two fact runs were too few to hold a
+family only the prompt could separate.</p>
+<p>Scored as <strong>wrong runs</strong> — a run placed in an entry started by a different
+procedure — and <strong>missing merges</strong> — how many extra entries a procedure is spread
+over. Wrong runs must be zero. Pair counts, used first, grew with the square of a
+family's size, so the eval-case family was most of every number.</p>
+<h3 id="what-is-embedded">What is embedded<a class="headerlink" href="#what-is-embedded" title="Permanent link">&para;</a></h3>
+<p>The first shipped text was <code>as_text</code>: the first prompt, then each step's command.
+The prompt was the problem. <code>_intents_for</code> puts first the last prompt before any
+work, which in three card-case sessions was the same scripted sentence, an
+instruction to look the format up with a docs tool. That sentence held those three
+together at 0.97 and pulled <code>95b6bde7</code> — a docs comparison that edits nothing,
+opening with the same lookup — to 0.914, six thousandths under the floor.</p>
+<p>Now the steps alone, one numbered line each, cut at 120 characters:</p>
+<div class="highlight"><pre><span></span><code>1. Read ${HOME}/ai_projects/acme/backend/acme_agent/eval/cases.json
+2. Edit ${HOME}/ai_projects/acme/backend/acme_agent/eval/cases.json
+3. Bash python3 -c "import json; json.load(open('${HOME}/ai_projects/acme/backend/acme_agent/eval/cases.json')
+</code></pre></div>
+<p>The text is cut on a step boundary at 5,000 characters. That was meant to keep it
+inside nomic-embed-text's 2,048 tokens, and did not: real runs cost 2.11 to 2.4
+characters a token, and two ledger entries of 4,886 and 4,979 characters (174 and
+47 steps before the cut) were refused. The legacy <code>/api/embeddings</code> endpoint
+answered HTTP 500, read as "model unreachable", so every fold after them in the
+same project crashed. Embeddings now go through <code>/api/embed</code> with <code>truncate</code>,
+which cuts at the model's own limit and keeps the head, and the log records each
+truncation. Same vectors on the same text: cosine 1.000000 between the two
+endpoints, and a real pair scores 0.563799 on both.</p>
+<p>Over the full uncapped text, 4 of 52 texts exceed the limit (30 ledger entries,
+11 held session files, 11 fixtures): three ledger entries whose sessions were
+banked as one long episode, and the 99-step fixture. At least the first 43 steps
+of each fit.</p>
+<h3 id="measured">Measured<a class="headerlink" href="#measured" title="Permanent link">&para;</a></h3>
+<p>Wrong runs / missing merges, eleven live sessions, one eval-case family:</p>
+<table>
+<thead>
+<tr>
+<th>floor</th>
+<th>first prompt + commands</th>
+<th><strong>numbered steps</strong></th>
+<th>signature, embedded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.86</td>
+<td>3 / 2</td>
+<td>1 / 2</td>
+<td>1 / 1</td>
+</tr>
+<tr>
+<td>0.90</td>
+<td>1 / 3</td>
+<td>1 / 2</td>
+<td>1 / 4</td>
+</tr>
+<tr>
+<td>0.92</td>
+<td>0 / 4</td>
+<td>1 / 3</td>
+<td>0 / 4</td>
+</tr>
+<tr>
+<td><strong>0.93 (shipped)</strong></td>
+<td>0 / 4</td>
+<td><strong>0 / 4</strong></td>
+<td>0 / 4</td>
+</tr>
+</tbody>
+</table>
+<p>The wrong run left from 0.86 to 0.92 is <code>95b6bde7</code> joining the card cases at
+0.921. At 0.93 the eval cases sit in four entries: the three long card runs that
+open with the doc lookup (0.939–0.969 to each other), <code>241955c7</code> task 2 with the
+course case (0.930), and the holidays case and <code>a8b61dae</code> alone. The long and short
+eval-case runs never score above 0.822 against each other: the long ones carry a
+dozen lookups and searches the short ones do not. The two coverage write-ups
+score 0.846 and stay apart.</p>
+<p><strong>The floor is set by wrong runs, not by merge count.</strong> A wrong merge silently
+mixes two procedures into one skill; a missed merge leaves a duplicate a person
+can still see and fold.</p>
+<p>Tried and rejected on the same sessions: the signature string embedded (card and
+fact runs look identical, and <code>95b6bde7</code> shares its first three shapes with the
+card cases); structured steps without commands (anything nearly empty scores 1.0
+against anything else); padding short runs with placeholders (short runs grow
+alike, one more wrong run at 0.92 and 0.95); prompts in any selection (the
+prompt of the first edit did best, but 36 of 98 real prompts are five words or
+fewer — "option 1", "do it again" — which would embed identically).</p>
+<h3 id="conversation-text-replaces-commands-where-a-run-has-replies">Conversation text replaces commands where a run has replies<a class="headerlink" href="#conversation-text-replaces-commands-where-a-run-has-replies" title="Permanent link">&para;</a></h3>
+<p>Measured once capture kept each prompt's reply (<code>capture._turns</code>), on fourteen
+live sessions — the eleven above plus three runs of one conversation-driven
+procedure, <em>propose slide content, fact-check it, build the deck</em> — banked as 18
+episodes with the real fold order replayed per input. "Danger" is the highest
+score between two different procedures:</p>
+<table>
+<thead>
+<tr>
+<th>embedded</th>
+<th>danger</th>
+<th>no wrong merge at</th>
+<th>correct merges of 32</th>
+<th>largest entry: eval case / presentation / coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numbered steps (commands)</td>
+<td>0.921</td>
+<td>0.93</td>
+<td>4</td>
+<td>3 / 1 / 1</td>
+</tr>
+<tr>
+<td>step descriptions</td>
+<td>0.846</td>
+<td>0.85–0.90</td>
+<td>4–7</td>
+<td>3 / 2 / 1</td>
+</tr>
+<tr>
+<td>prompts only</td>
+<td>0.864</td>
+<td>0.88</td>
+<td>3</td>
+<td>2 / 2 / 2</td>
+</tr>
+<tr>
+<td><strong>prompts and replies</strong></td>
+<td><strong>0.854</strong></td>
+<td><strong>0.84–0.88</strong></td>
+<td><strong>6–7</strong></td>
+<td><strong>3 / 2 / 2</strong></td>
+</tr>
+<tr>
+<td>descriptions and prompts</td>
+<td>0.868</td>
+<td>0.88</td>
+<td>5</td>
+<td>2 / 2 / 2</td>
+</tr>
+</tbody>
+</table>
+<p>Shipped: prompts and replies at <strong>0.85</strong>, for runs that carry a reply; steps at
+0.93 otherwise. What is embedded was then narrowed further — see <em>One change at
+a time</em> below. Only like is compared with like — the two texts score on
+different scales. The real fold reproduces the replay: 6 of 32 merged, 0 wrong,
+the coverage write-ups in one entry for the first time, an eval-case entry at 3.</p>
+<h3 id="one-change-at-a-time-what-the-conversation-text-keeps">One change at a time: what the conversation text keeps<a class="headerlink" href="#one-change-at-a-time-what-the-conversation-text-keeps" title="Permanent link">&para;</a></h3>
+<p>Five more live runs (two talk decks, three LinkedIn posts, over three of the
+project's documents) made the failure measurable: <strong>two procedures over
+one document scored higher against each other (0.852) than two runs of one
+procedure over different documents (0.831).</strong> The text was following the
+material.</p>
+<p><code>tests/benchmarks/merge_ladder.py</code> scores one change at a time over every live
+session — 23 episodes from 19 sessions — at the <em>safe floor</em>, the first floor
+above the highest score between two different procedures:</p>
+<table>
+<thead>
+<tr>
+<th>step</th>
+<th>rendering</th>
+<th>danger</th>
+<th>safe</th>
+<th>merged</th>
+<th>2-proc-2-file gap</th>
+<th>kept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R0</td>
+<td>prompts and whole replies</td>
+<td>0.854</td>
+<td>0.86</td>
+<td>10/46</td>
+<td>-0.021</td>
+<td>baseline</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>+ file names → <code>&lt;file&gt;</code></td>
+<td>0.848</td>
+<td>0.85</td>
+<td>12/46</td>
+<td>+0.022</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>R1 + deliverable blocks removed by markdown shape</td>
+<td>0.854</td>
+<td>0.86</td>
+<td>10/46</td>
+<td>+0.098</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>R1 + each reply cut to 300 chars</td>
+<td>0.849</td>
+<td>0.85</td>
+<td>12/46</td>
+<td>+0.057</td>
+<td>✅ shipped</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>R3 without replies</td>
+<td>0.837</td>
+<td>0.84</td>
+<td>19/46</td>
+<td>+0.161</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<p><strong>R2</strong> moved the danger line onto a coding pair (<code>add-eval-case</code> ~
+<code>compare-adk-docs</code>, 0.854): coding replies carry their topic in plain sentences,
+which a markdown-shape filter cannot see, so removing bullets and drafts only
+un-diluted the topic where it was already invisible.</p>
+<p><strong>R4</strong> looked best and measures the test, not the procedure: all seven added
+merges were <code>create-presentation</code> pairs whose prompts were scripted and pasted
+word for word, while the unscripted coding sessions gained nothing (4/21 either
+way). Two later runs phrased by the developer scored 0.882 and 0.837 against the
+same candidate — the spread prompts alone cannot survive.</p>
+<p>After the removals, ingredients were added one at a time, on top of R3:</p>
+<table>
+<thead>
+<tr>
+<th>step</th>
+<th>adds</th>
+<th>danger</th>
+<th>safe</th>
+<th>merged</th>
+<th>gap</th>
+<th>kept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>the skills/MCP a turn used</td>
+<td>0.848</td>
+<td>0.85</td>
+<td>13/61</td>
+<td>+0.071</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>the file kinds produced, and whether one was handed over</td>
+<td>0.849</td>
+<td>0.85</td>
+<td><strong>14/61</strong></td>
+<td>+0.072</td>
+<td>✅ shipped</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>the tool sequence</td>
+<td>0.849</td>
+<td>0.85</td>
+<td>14/61</td>
+<td>+0.075</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>the agent's step descriptions</td>
+<td>0.850</td>
+<td>0.86</td>
+<td>12/61</td>
+<td>+0.083</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>one topic-free sentence per turn from <code>gemma3n:e4b</code></td>
+<td>0.855</td>
+<td>0.86</td>
+<td>14/61</td>
+<td>+0.063</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<p>A3 adds nothing: two ways of building a deck share no tokens (<code>Skill, Bash x4,
+Write, Bash x11, SendUserFile</code> against <code>Artifact x2, Bash, Write x7, Artifact
+x2</code>), so it only strengthens runs that already executed alike. A4 raises
+same-procedure pairs <em>and</em> one different-procedure pair past the 0.85 boundary,
+which steps the floor to 0.86 and costs two merges. A5 raises unrelated pairs
+faster than related ones: asked to describe the kind of work without subjects, a
+small model writes one house style ("Generated a presentation outline…",
+"Drafted a short social media update…"), and the shared frame is similarity no
+procedure earned.</p>
+<p>The wall is a real pair, not noise: <code>assemble-article ~ create-presentation</code> at
+0.849. Writing an article from documents and building a deck from documents are
+close procedures, and nothing measured here separates them further — which is
+what sets the floor at 0.85.</p>
+<p><strong>R3 shipped, then A1 and A2.</strong> The lowest floor with no wrong merge now equals the safe floor,
+so no merge survives on fold order; the text is 73% shorter (104k → 28k
+characters over 19 sessions), so nothing reaches the embedding's token limit;
+and the real fold unifies the three LinkedIn runs and the two coverage
+write-ups with no wrong merge. With A1 and A2 the corpus reaches 14 of 61 with
+the danger line unmoved, and on the real ledger the two scripted presentation
+runs cross the floor (0.856). The unscripted Artifact-built decks stay apart
+(0.745-0.807): every ingredient that helped describes execution, and they
+executed differently.</p>
+<p>Why commands lost here: three runs of the presentation procedure scored
+0.66–0.83 on them — scratchpad paths, <code>sed</code> against <code>Read</code>, and a run that also
+fixed the docs. Why the floor moved down safely: 0.88 clears the danger line by
+0.026, against 0.009 for commands at 0.93. The presentation pieces reach 2, not
+3: two of the three runs are cut at the review prompt (see the live fixtures'
+<code>expected_fail</code>), and a piece does not look like a whole run.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.sections", "navigation.top", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

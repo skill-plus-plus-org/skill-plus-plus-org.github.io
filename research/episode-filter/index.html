@@ -1,0 +1,2381 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Spot the work you keep repeating in Claude Code, and turn it into reviewed skills.">
+      
+      
+      
+        <link rel="canonical" href="https://skill-plus-plus-org.github.io/research/episode-filter/">
+      
+      
+        <link rel="prev" href="../benchmarks/">
+      
+      
+        <link rel="next" href="../../design/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>The episode filter - Skill++</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-episode-filter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Skill++" class="md-header__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Skill++
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The episode filter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Skill++" class="md-nav__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Skill++
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research log
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The episode filter
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The episode filter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-it-asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question it asks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-not-in-the-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is not in the hook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fail-safe-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fail-safe direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-known-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The known miss
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still open
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-larger-run-14-real-candidates-and-the-false-drop-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The larger run: 14 real candidates, and the false-drop count
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The larger run: 14 real candidates, and the false-drop count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-positive-control-exists-after-all--and-it-passes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The positive control exists after all — and it passes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-14-of-14-number-cannot-tell-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the 14-of-14 number cannot tell you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-false-drop-is-not-a-data-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The false drop is not a data artefact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-borderline-case-is-a-segmentation-failure-not-a-filter-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One borderline case is a segmentation failure, not a filter failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-size-is-a-constraint-here-unlike-on-the-coarser-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model size is a constraint here, unlike on the coarser question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verdict-on-running-it-unattended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verdict on running it unattended
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-writes-the-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who writes the skill
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who writes the skill">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-plus-plus-draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        skill-plus-plus draft &lt;id&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-drafts-it-never-installs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It drafts; it never installs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-wiring-facts-that-will-bite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two wiring facts that will bite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-harder-set-and-a-much-worse-false-drop-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The harder set, and a much worse false-drop rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The harder set, and a much worse false-drop rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cause-is-untrimmed-exploration-not-the-judgement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The cause is untrimmed exploration, not the judgement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-follows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What follows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-featpattern-detection-what-is-and-is-not-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with feat/pattern-detection: what is and is not measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-comparison-that-matters-detection-from-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The comparison that matters: detection from observation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The comparison that matters: detection from observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-still-has-to-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What still has to land
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-porting-the-exploration-trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After porting the exploration trim
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="After porting the exploration trim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-1--six-scenarios-hook-path-5-of-6-unchanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 1 — six scenarios, hook path: 5 of 6, unchanged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-2--seven-fixtures-75--67-false-drops-and-two-new-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 2 — seven fixtures: 75% → 67% false drops, and two new findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-finding-that-matters-more-than-either-recurrence-is-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The finding that matters more than either: recurrence is ignored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-3--real-ledger-unchanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 3 — real ledger: unchanged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-the-remaining-false-drops-actually-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the remaining false drops actually come from
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranking-instead-of-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranking instead of parking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranking instead of parking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-rule-that-outranks-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rule that outranks the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-three-sets-after-the-trim-and-the-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All three sets, after the trim and the guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is left
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-installing-it-found-in-the-first-hour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What installing it found in the first hour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What installing it found in the first hour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automation-observed-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation observed itself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-harness-envelope-became-a-candidate-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A harness envelope became a candidate title
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-says-about-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this says about testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design (historical)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-it-asks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question it asks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-is-not-in-the-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it is not in the hook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fail-safe-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fail-safe direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-known-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The known miss
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still open
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-larger-run-14-real-candidates-and-the-false-drop-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The larger run: 14 real candidates, and the false-drop count
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The larger run: 14 real candidates, and the false-drop count">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-positive-control-exists-after-all--and-it-passes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The positive control exists after all — and it passes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-14-of-14-number-cannot-tell-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the 14-of-14 number cannot tell you
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-false-drop-is-not-a-data-artefact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The false drop is not a data artefact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-borderline-case-is-a-segmentation-failure-not-a-filter-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One borderline case is a segmentation failure, not a filter failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-size-is-a-constraint-here-unlike-on-the-coarser-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model size is a constraint here, unlike on the coarser question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verdict-on-running-it-unattended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verdict on running it unattended
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-writes-the-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who writes the skill
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Who writes the skill">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-plus-plus-draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        skill-plus-plus draft &lt;id&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-drafts-it-never-installs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        It drafts; it never installs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-wiring-facts-that-will-bite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two wiring facts that will bite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-harder-set-and-a-much-worse-false-drop-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The harder set, and a much worse false-drop rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The harder set, and a much worse false-drop rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-cause-is-untrimmed-exploration-not-the-judgement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The cause is untrimmed exploration, not the judgement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-follows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What follows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-featpattern-detection-what-is-and-is-not-measured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with feat/pattern-detection: what is and is not measured
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-comparison-that-matters-detection-from-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The comparison that matters: detection from observation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The comparison that matters: detection from observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-still-has-to-land" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What still has to land
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-porting-the-exploration-trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After porting the exploration trim
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="After porting the exploration trim">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-1--six-scenarios-hook-path-5-of-6-unchanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 1 — six scenarios, hook path: 5 of 6, unchanged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-2--seven-fixtures-75--67-false-drops-and-two-new-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 2 — seven fixtures: 75% → 67% false drops, and two new findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-finding-that-matters-more-than-either-recurrence-is-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The finding that matters more than either: recurrence is ignored
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-3--real-ledger-unchanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set 3 — real ledger: unchanged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-the-remaining-false-drops-actually-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the remaining false drops actually come from
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranking-instead-of-parking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranking instead of parking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranking instead of parking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-rule-that-outranks-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rule that outranks the model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-three-sets-after-the-trim-and-the-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All three sets, after the trim and the guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is left
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-installing-it-found-in-the-first-hour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What installing it found in the first hour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What installing it found in the first hour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automation-observed-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation observed itself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-harness-envelope-became-a-candidate-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A harness envelope became a candidate title
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-says-about-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this says about testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-episode-filter">The episode filter<a class="headerlink" href="#the-episode-filter" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Part of the <a href="../">research log</a>, which says where things stand now.
+The sessions cited below by tag are a private set, not in the repo.</p>
+</blockquote>
+<p>Segmentation answers <em>where</em> a task ended. It cannot answer whether the task was
+worth keeping, and the difference is arithmetic rather than tuning: <strong>a partition
+cannot discard anything.</strong> Cut a session more accurately and every step still
+lands in some episode, so the material is unchanged. Measured elsewhere at 0%
+reduction on real sessions. Meanwhile the premise of the whole tool is that most
+sessions contain nothing worth keeping.</p>
+<p>So something has to be able to say no. That is <code>skill-plus-plus sift</code>.</p>
+<h2 id="the-question-it-asks">The question it asks<a class="headerlink" href="#the-question-it-asks" title="Permanent link">&para;</a></h2>
+<p>Not <em>"did this finish"</em>. Finishing is easy to detect and tells you nothing — a
+one-off fix ends in a commit exactly like a release procedure does. The question
+is:</p>
+<blockquote>
+<p>Would someone follow these same steps again for a different case?</p>
+</blockquote>
+<p>One episode in, one word out (<code>prompts/reusable.md</code>). That shape is the whole
+reason a small local model can do it: the same model that returned
+<code>task_count=40</code> for a two-task session answers a single yes/no correctly.</p>
+<h2 id="why-it-is-not-in-the-hook">Why it is not in the hook<a class="headerlink" href="#why-it-is-not-in-the-hook" title="Permanent link">&para;</a></h2>
+<p>A hook that waits on a model adds that wait to every session and breaks when the
+model is not installed. <code>sift</code> is a command you run, and it is a dry run unless
+<code>--apply</code>.</p>
+<h2 id="the-fail-safe-direction">The fail-safe direction<a class="headerlink" href="#the-fail-safe-direction" title="Permanent link">&para;</a></h2>
+<p>This is the only step in the pipeline that can throw work away, so every
+uncertain answer <strong>keeps</strong> the episode:</p>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yes</code></td>
+<td>kept</td>
+</tr>
+<tr>
+<td><code>no</code></td>
+<td>parked as <code>one-off</code></td>
+</tr>
+<tr>
+<td>model unreachable</td>
+<td><strong>kept</strong>, counted under <em>no opinion</em></td>
+</tr>
+<tr>
+<td>answer neither yes nor no</td>
+<td><strong>kept</strong>, counted under <em>no opinion</em></td>
+</tr>
+</tbody>
+</table>
+<p>An episode wrongly kept costs one line in a review list. An episode wrongly
+dropped is never seen again. <em>No opinion</em> is reported separately and never folded
+into "method" — a dead daemon must not read as "none of this is a procedure".</p>
+<p>Nothing is deleted. <code>one-off</code> is a status, <code>skill-plus-plus reopen &lt;id&gt;</code> reverses it, and
+<code>ready()</code> already gates on status so a parked entry leaves the review queue
+without any further wiring.</p>
+<h2 id="measured">Measured<a class="headerlink" href="#measured" title="Permanent link">&para;</a></h2>
+<p><strong>Four hand-built cases, <code>gemma3n:e4b</code>, 1.3–3.5s each — 4 of 4.</strong> Including the
+two that matter: a grep sweep ending in a commit was rejected (the case both
+competing designs got wrong), and a deploy runbook with no commit at all was
+kept, so the filter is not just proxying for "was there a marker".</p>
+<p><strong>The six scenarios, replayed end to end — 4 of 6 became 5 of 6.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>banked</th>
+<th>after sift</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>refine</code></td>
+<td>1</td>
+<td>kept</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>retry</code></td>
+<td>1</td>
+<td><strong>dropped</strong></td>
+<td>✗ <strong>false drop</strong></td>
+</tr>
+<tr>
+<td><code>distinct-tasks</code></td>
+<td>2</td>
+<td>kept 2</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>explore-then-fix</code></td>
+<td>1 (10 steps)</td>
+<td>dropped</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>mid-investigation</code></td>
+<td>1</td>
+<td>dropped</td>
+<td>✓ fixed a false positive</td>
+</tr>
+<tr>
+<td><code>recurs</code></td>
+<td>1 at ×2</td>
+<td>kept, ×2 intact</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Three real candidates from a live ledger — 3 of 3 parked</strong>: a pasted chat
+message, an entry titled with a developer's prompt, and a <code>git add</code> line. All
+three are the junk that made the review queue useless.</p>
+<h2 id="the-known-miss">The known miss<a class="headerlink" href="#the-known-miss" title="Permanent link">&para;</a></h2>
+<p><code>retry</code> — <em>"the staging migration is failing, get it green"</em>, six steps ending in
+a passing test — was dropped. It carries reusable knowledge (scale to zero
+first, then migrate), so a person would likely keep it. That is a <strong>false drop</strong>,
+the expensive direction, and the fail-safe does not catch it because the model
+was not uncertain; it was confidently wrong.</p>
+<p>Fixing one failing migration genuinely is one particular job, so the prompt is
+not obviously wrong either — the boundary between "this instance" and "this kind
+of task" is where the remaining error lives. Worth more cases before trusting
+<code>--apply</code> unattended.</p>
+<h2 id="still-open">Still open<a class="headerlink" href="#still-open" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>n is small.</strong> Ten cases total, six of them synthetic and written by someone
+  who knew the answer. The three real ones are the only unbiased evidence.</li>
+<li><strong>Two models, one of them unusable.</strong> <code>gemma3n:e4b</code> works; a 1.2B keeps 79%
+  of a junk corpus. Nothing between them has been tried, and nothing larger.</li>
+<li><strong>No recurrence interaction.</strong> An episode parked on its first sighting never
+  gets to recur. Whether a second sighting should reopen it — as a recurring
+  ignored workflow does elsewhere — is undecided.</li>
+</ul>
+<hr />
+<h2 id="the-larger-run-14-real-candidates-and-the-false-drop-count">The larger run: 14 real candidates, and the false-drop count<a class="headerlink" href="#the-larger-run-14-real-candidates-and-the-false-drop-count" title="Permanent link">&para;</a></h2>
+<p>A 1.4 MB ledger from real work — the pre-clear backup of a developer building
+this tool. 14 candidates, <code>gemma3n:e4b</code>, 1.5–6.7s each.</p>
+<p><strong>All 14 were dropped.</strong> Labelled by hand afterwards:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>count</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correct drops</td>
+<td><strong>11</strong></td>
+<td>diff review, an install smoke-test, "is this a good direction?", 216 steps of SVG and browser work, writing a module, "did it record?" debugging, a 189-step website analysis, hero-copy editing, a Desktop investigation, two bug fixes</td>
+</tr>
+<tr>
+<td><strong>Likely false drop</strong></td>
+<td><strong>1</strong></td>
+<td><code>9b7fc39f8457</code> — grep tracked files for secrets and personal data → check the diff → commit. Pre-commit hygiene is a method someone repeats</td>
+</tr>
+<tr>
+<td>Borderline</td>
+<td>2</td>
+<td><code>9a881ce54ffd</code>, <code>c976ef423f6f</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>False-drop rate: 1 in 14 (7%) strict, 3 in 14 (21%) counting borderline.</strong></p>
+<h3 id="the-positive-control-exists-after-all--and-it-passes">The positive control exists after all — and it passes<a class="headerlink" href="#the-positive-control-exists-after-all--and-it-passes" title="Permanent link">&para;</a></h3>
+<p>The same backup holds four entries the developer had already judged, which is
+real ground truth rather than a fixture: two <strong>promoted</strong> into live skills, one
+<strong>dismissed</strong>, one <strong>ignored</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>Human</th>
+<th>Filter</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weekly manager update email</td>
+<td>promoted</td>
+<td><strong>keep</strong></td>
+<td>✓ 1.8s</td>
+</tr>
+<tr>
+<td>Tool evaluation note</td>
+<td>promoted</td>
+<td><strong>keep</strong></td>
+<td>✓ 2.2s</td>
+</tr>
+<tr>
+<td><code>vim app.py</code> (an install probe)</td>
+<td>ignored</td>
+<td><strong>drop</strong></td>
+<td>✓ 1.4s</td>
+</tr>
+<tr>
+<td>Author a new skill from a description</td>
+<td>dismissed</td>
+<td>keep</td>
+<td>✗ 47.4s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3 of 4, and zero false drops on the two known methods.</strong> That is the result
+that matters: 14 of 14 was the corpus, not a filter that says no to everything.</p>
+<p>The miss is a false <em>keep</em> — the cheap direction, one line in a review list —
+and it is defensible. That entry is a dictated four-step procedure; it was
+dismissed for being redundant with an existing command, which is a different
+question from whether it is a method. The 47s also stands out: its steps are
+long prose blocks rather than commands, and cost ~20x the usual call.</p>
+<h3 id="what-the-14-of-14-number-cannot-tell-you">What the 14-of-14 number cannot tell you<a class="headerlink" href="#what-the-14-of-14-number-cannot-tell-you" title="Permanent link">&para;</a></h3>
+<p><strong>There were no keeps, so there is no positive control here.</strong> A filter that
+dropped everything unconditionally would score identically on this corpus. The
+evidence that it <em>can</em> keep is the scenario set, where it kept <code>refine</code>,
+<code>distinct-tasks</code> (both) and <code>recurs</code> — not this run.</p>
+<p>That said, 14 of 14 is plausible rather than alarming for this corpus: it is a
+developer's own feature work, investigations and bug fixes. Genuine repeatable
+procedures are rare in that population, which is exactly the premise the tool
+rests on. It is also the uncomfortable implication — if a real ledger yields no
+methods, the filter is working and the <em>product</em> still has nothing to offer.</p>
+<h3 id="the-false-drop-is-not-a-data-artefact">The false drop is not a data artefact<a class="headerlink" href="#the-false-drop-is-not-a-data-artefact" title="Permanent link">&para;</a></h3>
+<p>The obvious explanation was the title: that entry's <code>{ASK}</code> was a raw shell
+command rather than a stated intent, so the model had no request to judge
+against. Tested by re-asking with the same steps under three framings — the
+command as banked, an explicit <em>"check nothing personal or secret is in tracked
+files, then commit"</em>, and a terse <em>"commit safely"</em>.</p>
+<p><strong><code>no</code> all three times.</strong> The title is not the cause; the model consistently
+reads that sequence as one particular job. There is a defensible reading behind
+it — the generalisable part is a <em>rule</em> ("never commit secrets"), not a
+multi-step procedure — but by the labelling above it is still a false drop, and
+it sits on the same boundary as the <code>retry</code> miss: <em>this instance</em> versus <em>this
+kind of task</em>.</p>
+<h3 id="one-borderline-case-is-a-segmentation-failure-not-a-filter-failure">One borderline case is a segmentation failure, not a filter failure<a class="headerlink" href="#one-borderline-case-is-a-segmentation-failure-not-a-filter-failure" title="Permanent link">&para;</a></h3>
+<p><code>9a881ce54ffd</code> is 93 steps of documentation editing with a real, reusable
+procedure buried inside it — bundle a skill, open the settings page, upload it.
+The filter judged the episode correctly: taken whole, it is not a method. The
+defect is that it was ever one episode. Better boundaries would surface the
+procedure; no filter can extract it from an episode that large.</p>
+<h2 id="model-size-is-a-constraint-here-unlike-on-the-coarser-question">Model size is a constraint here, unlike on the coarser question<a class="headerlink" href="#model-size-is-a-constraint-here-unlike-on-the-coarser-question" title="Permanent link">&para;</a></h2>
+<p>The same 14 entries, two models:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>keep</th>
+<th>drop</th>
+<th>wall clock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gemma3n:e4b</code></td>
+<td>0</td>
+<td>14</td>
+<td>6s (warm cache; 1.5–6.7s per call cold)</td>
+</tr>
+<tr>
+<td><code>lfm2.5-thinking:1.2b</code></td>
+<td><strong>11</strong></td>
+<td>3</td>
+<td>170s</td>
+</tr>
+</tbody>
+</table>
+<p>The 1.2B kept an install smoke-test, a 216-step SVG session, a website analysis,
+"did you test it with different scenarios", "yes fix both bugs" and six more —
+<strong>a false-keep rate near 79% on a corpus that is almost entirely one-off work.</strong>
+As a filter it is unusable: it says yes to nearly everything.</p>
+<p>This is worth stating flatly because the opposite result holds one question
+earlier. On <em>triage</em> — "is this session worth reading at all" — a 1.2B answered
+correctly, and the conclusion drawn there was that model size was not the
+constraint. <strong>That does not transfer.</strong> Deciding whether a sequence generalises
+is materially harder than noticing a session contains work, and the same model
+that handles the first fails the second.</p>
+<p>Also note the speed inversion: the 1.2B took 28x longer, because it is a
+<em>thinking</em> model and spends tokens reasoning before answering. Smaller is not
+faster.</p>
+<p>One aside: the 1.2B did keep <code>9b7fc39f8457</code>, the entry labelled above as a
+likely false drop — agreeing with the human label on the single ambiguous case
+while getting ten obvious ones wrong. Not evidence of anything except that a
+permissive filter is right by accident on the cases where keeping is correct.</p>
+<h2 id="verdict-on-running-it-unattended">Verdict on running it unattended<a class="headerlink" href="#verdict-on-running-it-unattended" title="Permanent link">&para;</a></h2>
+<p><strong>Deliberately, yes. Unattended, not yet.</strong></p>
+<p>For it: zero false drops on the two known methods, both kept in under 3s. The
+one ground-truth miss is a false keep, which costs a line in a list. Nothing is
+deleted, and <code>reopen</code> reverses any verdict.</p>
+<p>Against it: 1 likely false drop in 14 unlabelled candidates, and it survives
+rephrasing — the model is consistently wrong there rather than uncertain, so the
+fail-safe does not catch it. Two known methods is also a thin positive control.</p>
+<p>So run it as a command and read what it parked. Do not put it in a cron or a
+hook until the labelled set is larger than four.</p>
+<hr />
+<h2 id="who-writes-the-skill">Who writes the skill<a class="headerlink" href="#who-writes-the-skill" title="Permanent link">&para;</a></h2>
+<p>The filter decides <em>which</em> candidates deserve a model call. It does not write
+anything. That split is the point, and it is measured rather than assumed: a 7B
+asked to write a <code>SKILL.md</code> body transcribes the run instead of generalising it,
+names the repository it happened to touch, and picks procedures a frontier judge
+rejects — one call or four decomposed ones.</p>
+<p>So the pipeline is four stages, and only the last one costs anything:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Who</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capture</td>
+<td>hooks</td>
+<td>free</td>
+</tr>
+<tr>
+<td>cut the session into episodes at <code>SessionEnd</code></td>
+<td><code>segment.py</code></td>
+<td>free</td>
+</tr>
+<tr>
+<td><strong>discard the one-off ones</strong></td>
+<td>local model, <code>sift</code></td>
+<td>free</td>
+</tr>
+<tr>
+<td><strong>write the body</strong></td>
+<td>the developer's own agent, <code>draft</code></td>
+<td>one call</td>
+</tr>
+</tbody>
+</table>
+<h3 id="skill-plus-plus-draft"><code>skill-plus-plus draft &lt;id&gt;</code><a class="headerlink" href="#skill-plus-plus-draft" title="Permanent link">&para;</a></h3>
+<p>Invokes whatever agent the developer already uses, via a <strong>command template</strong>
+rather than an API call:</p>
+<div class="highlight"><pre><span></span><code>SKILL_PLUS_PLUS_AGENT="claude -p {PROMPT} --no-session-persistence ..."
+</code></pre></div>
+<p>That is deliberate. No API key is held, no vendor is baked in, and the agent is
+already authenticated as the developer — a Cursor user's model writes it in
+Cursor. <code>{PROMPT}</code> is the only substitution, and the prompt itself is a markdown
+file (<code>commands/skill-plus-plus-draft.md</code>), not code.</p>
+<h3 id="it-drafts-it-never-installs">It drafts; it never installs<a class="headerlink" href="#it-drafts-it-never-installs" title="Permanent link">&para;</a></h3>
+<p>Drafts land in <code>&lt;root&gt;/drafts/</code> and promotion stays a human act. The prompt says
+so twice, and a test asserts that a draft leaves <code>status</code> and <code>skill_path</code>
+untouched.</p>
+<p>This matters more here than anywhere else in the tool. <code>draft</code> runs when nobody
+is watching, so the agent cannot ask the up-to-three questions the interactive
+review asks. Instead every question it would have asked becomes a line under
+<code>## Open questions</code> — a draft that admits two gaps is worth more than one that
+invents the answers. And an unapproved skill appearing in the skills directory
+is precisely the failure the whole design exists to prevent.</p>
+<p>The prompt also permits writing <strong>nothing</strong>: if the evidence says this was one
+particular bug after all, the agent says so in a line and stops. That is not
+treated as an error, because it is the filter being right in a place the filter
+could not see.</p>
+<h3 id="two-wiring-facts-that-will-bite">Two wiring facts that will bite<a class="headerlink" href="#two-wiring-facts-that-will-bite" title="Permanent link">&para;</a></h3>
+<p><strong>Installing the CLI does not authenticate it.</strong> <code>npm install -g
+@anthropic-ai/claude-code</code> puts <code>claude</code> on PATH and it still exits 1 with
+<code>Not logged in</code> until someone runs it once and authenticates. <code>draft</code> cannot do
+that step and should not try.</p>
+<p><strong>A failed agent and a declining agent look identical from outside.</strong> Both write
+no file. The first version of <code>draft</code> reported them with one message — "the
+agent judged there was nothing here, or it failed" — which meant an
+unauthenticated CLI read as a considered judgement that the work was not worth
+keeping. The exit code separates them and is now the thing that decides: non-zero
+is a failure on stderr with a non-zero return, zero-with-no-file is a decline.
+Found by running it for real; no fixture would have produced it.</p>
+<p><strong><code>claude</code> is usually not on PATH</strong>, even on a machine where Claude Code is in
+daily use — only a version-pinned binary inside the application bundle. So the
+dry run prints whether the agent resolves before you spend anything, rather than
+failing halfway through.</p>
+<p><strong>The tool pattern is relative.</strong> <code>Bash(python3 bin/skill-plus-plus *)</code> only matches if
+the agent runs from the package root, so <code>draft</code> sets that cwd itself. An
+earlier version allowed <code>Bash(skill-plus-plus *)</code> — a binary that does not exist — and
+would have allowed the agent nothing at all. <code>shlex</code> had also split that
+pattern in two at the space inside the parentheses. Both are pinned by tests.</p>
+<hr />
+<h2 id="the-harder-set-and-a-much-worse-false-drop-rate">The harder set, and a much worse false-drop rate<a class="headerlink" href="#the-harder-set-and-a-much-worse-false-drop-rate" title="Permanent link">&para;</a></h2>
+<p>The 14-candidate run above was a corpus with almost no real procedures in it, so
+it could only measure precision. The seven-fixture set has known procedures, and
+the result is far worse.</p>
+<table>
+<thead>
+<tr>
+<th>Fixture</th>
+<th>Ground truth</th>
+<th>segmented</th>
+<th>after sift</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>big</code> (433 KB)</td>
+<td>one procedure</td>
+<td>2 (60–61 steps)</td>
+<td><strong>0</strong></td>
+<td>✗ dropped it</td>
+</tr>
+<tr>
+<td><code>incomplete</code></td>
+<td>nothing</td>
+<td>2</td>
+<td><strong>0</strong></td>
+<td>✓ fixed</td>
+</tr>
+<tr>
+<td><code>two</code></td>
+<td>two procedures</td>
+<td>4</td>
+<td><strong>1</strong></td>
+<td>✗ dropped one</td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td>one, redacted</td>
+<td>1 ✓</td>
+<td><strong>0</strong></td>
+<td>✗ dropped it</td>
+</tr>
+<tr>
+<td><code>barren</code></td>
+<td>nothing</td>
+<td>2</td>
+<td><strong>0</strong></td>
+<td>✓ fixed</td>
+</tr>
+</tbody>
+</table>
+<p>It removed the junk in both fixtures that were meant to yield nothing. It also
+<strong>dropped 3 of the 4 real procedures</strong> — a 75% false-drop rate where real
+procedures actually exist, against the 7% measured on a corpus that had almost
+none.</p>
+<p>That is the number to quote, not the 7%.</p>
+<h3 id="the-cause-is-untrimmed-exploration-not-the-judgement">The cause is untrimmed exploration, not the judgement<a class="headerlink" href="#the-cause-is-untrimmed-exploration-not-the-judgement" title="Permanent link">&para;</a></h3>
+<p><code>secrets</code> is the clearest case. Its title states its own recurrence — <em>"push
+today's metrics to the dashboard </em><em>like we did last week</em><em>"</em> — and the method is
+three steps: check the API version, POST the metrics, read them back. Those three
+sit under <strong>six leading greps</strong>, because <code>segment.py</code> has no exploration trim.</p>
+<p>Tested directly, same model, same entry:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>as banked — 6 greps then 3 real steps</td>
+<td><strong>drop</strong></td>
+</tr>
+<tr>
+<td>leading exploration trimmed — 3 steps</td>
+<td><strong>keep</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So the filter is not misjudging the procedure. It is judging an episode in which
+the procedure is outnumbered two to one by looking around, and answering
+reasonably about what it was shown.</p>
+<p><code>big</code> fails the same way from the other end: segmentation over-merged it into two
+60-step blobs, one of them at ×7. A 60-step over-merged blob genuinely is not a
+method, so sift rejected it correctly — and the session's real procedure went
+with it. Correct rejection of a badly-cut episode still loses the work.</p>
+<h3 id="what-follows">What follows<a class="headerlink" href="#what-follows" title="Permanent link">&para;</a></h3>
+<p><strong>A filter is only as good as the episodes it is given.</strong> This is the mirror of
+the finding that motivated the filter in the first place: a partition cannot
+discard, and now — a discard cannot repair a partition. Both stages have to be
+right.</p>
+<p>The missing piece is already identified and already written elsewhere:
+<code>trim_leading_exploration</code> on <code>feat/ignore-list-and-drift-tracking</code>, which is
+that branch's one genuine contribution and the exact thing <code>segment.py</code> lacks.
+It should fix <code>secrets</code> and <code>explore-then-fix</code> together, and it is mechanical
+code rather than judgement.</p>
+<p>Until it is ported, <strong>this branch is not better than <code>feat/pattern-detection</code></strong>
+on the evidence available, and the honest comparison is in the next section.</p>
+<h2 id="comparison-with-featpattern-detection-what-is-and-is-not-measured">Comparison with <code>feat/pattern-detection</code>: what is and is not measured<a class="headerlink" href="#comparison-with-featpattern-detection-what-is-and-is-not-measured" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>this branch</th>
+<th><code>pattern-detection</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Six symmetric scenarios</td>
+<td><strong>5 of 6</strong>, verified here</td>
+<td>5 of 6, <strong>claimed, not verified</strong></td>
+</tr>
+<tr>
+<td>Seven-fixture set</td>
+<td>drops 3 of 4 real procedures</td>
+<td>claimed to handle them; its own fixtures</td>
+</tr>
+<tr>
+<td>Cost per session</td>
+<td>free until <code>draft</code></td>
+<td>one frontier call per session</td>
+</tr>
+<tr>
+<td>Runs unattended</td>
+<td>yes</td>
+<td>no — someone types <code>/log-session</code></td>
+</tr>
+<tr>
+<td>Long sessions</td>
+<td>fails: over-merged then dropped</td>
+<td>windowing built for exactly this</td>
+</tr>
+<tr>
+<td>Loop closed on real work</td>
+<td>no</td>
+<td>claimed, unverifiable on this machine</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern-detection arm cannot be scored here: every case costs a frontier
+call, and <code>claude</code> is not on this machine's PATH. So the one comparable number is
+a tie in which only one side has been checked, and on the harder set this branch
+loses outright.</p>
+<p><strong>Verdict: not better yet.</strong> The architecture is the more promising one — free,
+unattended, and it gets recurrence — but a 75% false-drop rate where procedures
+exist is disqualifying until the trim lands.</p>
+<hr />
+<h2 id="the-comparison-that-matters-detection-from-observation">The comparison that matters: detection from observation<a class="headerlink" href="#the-comparison-that-matters-detection-from-observation" title="Permanent link">&para;</a></h2>
+<p>The section above compares against <code>feat/pattern-detection</code> on its own axis —
+reading a finished transcript. That is the wrong axis if the goal is to
+<strong>observe</strong> rather than to read a transcript once, so here is the other one,
+measured rather than argued.</p>
+<p><code>feat/pattern-detection</code>'s hook dispatch handles <code>UserPromptSubmit</code>,
+<code>PostToolUse</code> and <code>SessionEnd</code>, and its <code>SessionEnd</code> calls the <strong>old
+<code>fold_session</code></strong> — one ledger entry per whole session, no segmentation, inherited
+from <code>main</code>. Nothing in its hook path queues or windows anything. All of its
+intelligence is in <code>/log-session</code>, which needs a transcript, a frontier call, and
+somebody to type it.</p>
+<p>Same harness, same six fixtures, same three-hook event stream, zero frontier
+calls:</p>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Detection on the hook path</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feat/ignore-list-and-drift-tracking</code></td>
+<td>folds live at <code>Stop</code>, plus budgets</td>
+<td><strong>2 of 6</strong></td>
+</tr>
+<tr>
+<td><code>feat/pattern-detection</code></td>
+<td>one entry per whole session</td>
+<td><strong>2 of 6</strong></td>
+</tr>
+<tr>
+<td><code>segmentation-fixture</code></td>
+<td>segments at <code>SessionEnd</code></td>
+<td><strong>4 of 6</strong></td>
+</tr>
+<tr>
+<td><strong>this branch</strong></td>
+<td>segments, then discards one-offs</td>
+<td><strong>5 of 6</strong></td>
+</tr>
+</tbody>
+</table>
+<p>What pattern-detection's hook path did, on every one of the six: banked exactly
+one entry. So it merged <code>distinct-tasks</code>' two tasks into one, banked
+<code>mid-investigation</code> where nothing should be banked, left <code>explore-then-fix</code> at
+ten untrimmed steps, and recorded <code>recurs</code> at ×1 rather than ×2 — the signature
+drift that <code>segment.py</code> exists to fix, reproduced.</p>
+<p><strong>This is not a criticism of that branch as designed.</strong> Its hook is deliberately
+vestigial; it was never meant to detect. But it does answer the question directly:
+if the requirement is observation rather than a one-time transcript job, that
+branch does not compete on it, and everything it wins — windowing, long
+transcripts, a closed loop — sits on the axis being set aside. Everything it
+costs — a frontier call per session, a human typing a command, no unattended
+operation — is what the observation path is meant to avoid.</p>
+<h3 id="what-still-has-to-land">What still has to land<a class="headerlink" href="#what-still-has-to-land" title="Permanent link">&para;</a></h3>
+<p>The 5 of 6 above and the 75% false-drop rate on the seven-fixture set are both
+true, and both are about the same missing piece. <code>segment.py</code> has no exploration
+trim, so a real procedure arrives diluted by the greps that found it, and the
+filter — judging what it was shown — says no. Porting
+<code>trim_leading_exploration</code> is the next thing, not a better prompt.</p>
+<hr />
+<h2 id="after-porting-the-exploration-trim">After porting the exploration trim<a class="headerlink" href="#after-porting-the-exploration-trim" title="Permanent link">&para;</a></h2>
+<p><code>trim_leading_exploration</code> and its read-only vocabulary are now in <code>segment.py</code>,
+ported from <code>feat/ignore-list-and-drift-tracking</code>. Prompt sentinels survive the
+trim — they carry the intent an episode is titled from — and nothing is ever
+trimmed below two substantive steps.</p>
+<p>All three sets re-run.</p>
+<h3 id="set-1--six-scenarios-hook-path-5-of-6-unchanged">Set 1 — six scenarios, hook path: <strong>5 of 6, unchanged</strong><a class="headerlink" href="#set-1--six-scenarios-hook-path-5-of-6-unchanged" title="Permanent link">&para;</a></h3>
+<p>The trim did what it was ported for: <code>explore-then-fix</code> now banks <strong>2 steps
+instead of 10</strong>. It is still dropped by the filter, which is correct — a one-off
+bug hunt is not a procedure. <code>retry</code> is still the one false drop, and it was
+never an exploration problem.</p>
+<h3 id="set-2--seven-fixtures-75--67-false-drops-and-two-new-findings">Set 2 — seven fixtures: 75% → 67% false drops, and two new findings<a class="headerlink" href="#set-2--seven-fixtures-75--67-false-drops-and-two-new-findings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fixture</th>
+<th>Ground truth</th>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>secrets</code></td>
+<td>1 procedure</td>
+<td>dropped ✗</td>
+<td><strong>kept ✓ — fixed</strong></td>
+</tr>
+<tr>
+<td><code>barren</code></td>
+<td>nothing</td>
+<td>0 ✓</td>
+<td><strong>1 kept ✗ — regressed</strong></td>
+</tr>
+<tr>
+<td><code>new</code>/<code>match(a)</code></td>
+<td>the bug-filing procedure</td>
+<td>—</td>
+<td>banked, then dropped ✗</td>
+</tr>
+<tr>
+<td><code>match(b)</code></td>
+<td>the same, ×2</td>
+<td>—</td>
+<td>banked <strong>at ×2</strong>, then dropped ✗</td>
+</tr>
+<tr>
+<td><code>big</code></td>
+<td>1 procedure in 433 KB</td>
+<td>0 ✗</td>
+<td>0 ✗</td>
+</tr>
+<tr>
+<td><code>incomplete</code></td>
+<td>nothing</td>
+<td>0 ✓</td>
+<td>0 ✓</td>
+</tr>
+<tr>
+<td><code>two</code></td>
+<td>2 procedures</td>
+<td>1 of 2</td>
+<td>1 of 2</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>secrets</code> confirms the hypothesis end to end.</strong> Nine steps became three, and
+the same model flipped from <em>"one particular job"</em> to <em>"a method worth
+repeating"</em>. The filter had been judging a procedure outnumbered two to one by
+the greps that found it.</p>
+<p><strong><code>barren</code> regressed, and that is the trim's own cost.</strong> Trimming left a tidy
+two-step <code>merge main in</code>, which reads like a method precisely because the noise
+around it is gone. Cleaner episodes are easier to judge in both directions.</p>
+<h3 id="the-finding-that-matters-more-than-either-recurrence-is-ignored">The finding that matters more than either: recurrence is ignored<a class="headerlink" href="#the-finding-that-matters-more-than-either-recurrence-is-ignored" title="Permanent link">&para;</a></h3>
+<p><code>match(b)</code> banked the bug-filing procedure <strong>at ×2</strong> — recognised as the same
+work across two sessions, which is the thing the capture branch never managed at
+all. Then <code>sift</code> dropped it.</p>
+<p>That is backwards. An episode the developer has actually performed twice is
+behavioural evidence that it is a method, and it is stronger evidence than a
+model's reading of the steps. The filter never sees the count: <code>is_reusable</code>
+renders intent and steps and nothing else.</p>
+<p>The rule that follows is simple and does not need a model: <strong>never discard
+something that has been done more than once.</strong> Recurrence is the whole promotion
+gate in this design, and the one stage that can discard is currently allowed to
+veto it.</p>
+<h3 id="set-3--real-ledger-unchanged">Set 3 — real ledger: unchanged<a class="headerlink" href="#set-3--real-ledger-unchanged" title="Permanent link">&para;</a></h3>
+<p>14 of 14 dropped, 3 of 4 against human labels, both promoted skills kept. The
+trim runs at segmentation time, so entries already banked by another branch's
+segmentation are unaffected.</p>
+<h3 id="where-the-remaining-false-drops-actually-come-from">Where the remaining false drops actually come from<a class="headerlink" href="#where-the-remaining-false-drops-actually-come-from" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Fixture</th>
+<th>Fixable by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exploration diluting the method</td>
+<td><code>secrets</code></td>
+<td><strong>done</strong> — the trim</td>
+</tr>
+<tr>
+<td>recurrence ignored</td>
+<td><code>match(b)</code>, <code>new</code></td>
+<td>a count check, no model needed</td>
+</tr>
+<tr>
+<td>episodes over-merged into 60-step blobs</td>
+<td><code>big</code></td>
+<td>segmentation, not the filter</td>
+</tr>
+<tr>
+<td>genuine boundary judgement</td>
+<td><code>retry</code></td>
+<td>unresolved; may not be resolvable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ranking-instead-of-parking">Ranking instead of parking<a class="headerlink" href="#ranking-instead-of-parking" title="Permanent link">&para;</a></h2>
+<p>The measured verdict on letting a local model decide: <strong>it is a good junk
+detector and a poor procedure detector.</strong> It dropped 11 of 11 clear junk entries
+correctly and 4 of 6 real procedures along with them. Since a false keep costs a
+line in a list and a false drop is never seen again, its error was entirely in
+the expensive direction, and rephrasing did not help — it was confidently wrong,
+not uncertain, so the fail-safe never fired.</p>
+<p>So <code>sift</code> no longer decides. It <strong>ranks</strong>: writes a <code>hint</code> of <code>method</code>,
+<code>one-off</code> or empty onto each candidate, and <code>skill-plus-plus review</code> lists repeatable
+first and doubtful last. Nothing leaves the queue. <code>--park</code> still exists, is
+opt-in, and prints what it costs.</p>
+<p><strong>False drops are now structurally impossible in the default path</strong>, which is a
+better guarantee than any accuracy number.</p>
+<h3 id="the-rule-that-outranks-the-model">The rule that outranks the model<a class="headerlink" href="#the-rule-that-outranks-the-model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>if entry.occurrences &gt;= 2:  -&gt;  "method", without asking
+</code></pre></div>
+<p>An episode the developer has actually performed twice is behavioural evidence,
+and it beats a model reading the steps. This was not theoretical: <code>match(b)</code>
+banked the bug-filing procedure at ×2 — recurrence firing, which the capture
+branch never achieved — and the model discarded it anyway. <code>big</code>'s ×7 entry went
+the same way. Both now rank as methods without a model call, which is also
+cheaper.</p>
+<h3 id="all-three-sets-after-the-trim-and-the-guard">All three sets, after the trim and the guard<a class="headerlink" href="#all-three-sets-after-the-trim-and-the-guard" title="Permanent link">&para;</a></h3>
+<p><strong>Set 1 — six scenarios.</strong> Segmentation <strong>4 of 6 → 5 of 6</strong>: the trim fixed
+<code>explore-then-fix</code>, which now banks 2 steps rather than 10. Five of six hints
+are right; <code>retry</code> is ranked <code>one-off</code> and should not be. Nothing lost.</p>
+<p><strong>Set 2 — seven fixtures.</strong> Was 4 of 6 real procedures dropped. Now <strong>none are
+dropped</strong> and 4 of 6 are ranked <code>method</code> — <code>match(b)</code> (×2) and <code>big</code> (×7) via
+the guard, <code>secrets</code> via the trim, one of <code>two</code> via the model. The two ranked
+<code>one-off</code> in error are still in the queue, just lower. <code>barren</code>'s <code>merge main
+in</code> is ranked <code>method</code> in error, which is the trim's cost: a tidy two-step
+episode reads like a method precisely because the noise is gone.</p>
+<p><strong>Set 3 — real ledger.</strong> All 14 stay, all ranked <code>one-off</code>, which matches the
+hand labelling of 11 clear correct plus 1 likely wrong and 2 borderline — and
+the one likely-wrong entry is now merely ranked low rather than parked. Against
+the four human labels: <strong>3 of 4</strong>, both promoted skills ranked <code>method</code>. The
+miss is the dismissed entry ranked <code>method</code>, still the cheap direction.</p>
+<h3 id="what-is-left">What is left<a class="headerlink" href="#what-is-left" title="Permanent link">&para;</a></h3>
+<p><code>retry</code> and <code>barren</code> are both genuine boundary judgements — <em>this instance</em>
+versus <em>this kind of task</em> — and neither the trim nor the guard touches them.
+They are now ordering errors rather than losses, which is the right place for an
+unresolved judgement to live.</p>
+<p><code>big</code> remains a segmentation problem: two over-merged 60-step blobs. The ×7 one
+ranks as a method on recurrence, so it now reaches review, but it reaches it as
+a 61-step blob.</p>
+<hr />
+<h2 id="what-installing-it-found-in-the-first-hour">What installing it found in the first hour<a class="headerlink" href="#what-installing-it-found-in-the-first-hour" title="Permanent link">&para;</a></h2>
+<p>Two failure modes, neither reachable from a fixture, both in the live ledger
+within an hour of the branch going live.</p>
+<h3 id="automation-observed-itself">Automation observed itself<a class="headerlink" href="#automation-observed-itself" title="Permanent link">&para;</a></h3>
+<p><code>skill-plus-plus draft</code> spawns an agent session. That session has hooks too, so its own
+poking around was captured and banked — two candidates titled
+<code>/skill-plus-plus-draft 8a494bc02d67</code>, holding the draft agent's <code>find</code>, <code>ls</code> and
+<code>echo ok</code>. <strong>Using the tool manufactured work for the tool.</strong></p>
+<p><code>feat/pattern-detection</code> hit the same thing at a scale that makes the point
+better: <strong>158 of 174</strong> queue entries were <code>claude -p</code> runs it had queued for
+itself. Its cure was pruning entries whose transcript no longer exists, which
+suits a transcript-based design and does nothing for a buffer-based one — a
+nested session here writes a real buffer and folds it like any other.</p>
+<p>The cure here is a marker: <code>draft</code> sets <code>SKILL_PLUS_PLUS_INTERNAL=1</code> on the agent it
+spawns, and the hook returns before doing anything when it sees it. Set by the
+process doing the spawning, so nothing has to recognise itself.</p>
+<h3 id="a-harness-envelope-became-a-candidate-title">A harness envelope became a candidate title<a class="headerlink" href="#a-harness-envelope-became-a-candidate-title" title="Permanent link">&para;</a></h3>
+<p>One entry was titled <code>&lt;task-notification&gt;</code>. The harness injects envelopes into
+the prompt stream — task notifications, system reminders, command wrappers — and
+<code>UserPromptSubmit</code> recorded one as stated intent. A skill's description is the
+only thing read when deciding whether to load it, so a skill named after a
+system message is dead on arrival.</p>
+<p>Prompts beginning with a known envelope prefix are now dropped.</p>
+<h3 id="what-this-says-about-testing">What this says about testing<a class="headerlink" href="#what-this-says-about-testing" title="Permanent link">&para;</a></h3>
+<p>Both defects survived 122 unit tests, three eval sets and a bakeoff against
+another branch's fixtures. Neither is subtle. They needed the thing to be
+<em>installed and used</em>, which is the one thing no harness reproduces — and it is
+the same lesson <code>feat/pattern-detection</code> recorded as <em>"toy fixtures hid three
+separate defects, all of which appeared on the first real session."</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.sections", "navigation.top", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

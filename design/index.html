@@ -1,0 +1,2272 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Spot the work you keep repeating in Claude Code, and turn it into reviewed skills.">
+      
+      
+      
+        <link rel="canonical" href="https://skill-plus-plus-org.github.io/design/">
+      
+      
+        <link rel="prev" href="../research/episode-filter/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Design (historical) - Skill++</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#skill--the-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Skill++" class="md-header__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Skill++
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Design (historical)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Skill++" class="md-nav__button md-logo" aria-label="Skill++" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Skill++
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/skill-plus-plus-org/skill-plus-plus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skill-plus-plus-org/skill-plus-plus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research log
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/episode-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The episode filter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design (historical)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design (historical)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-vision--value-proposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Vision &amp; Value Proposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1--ingestion--observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Ingestion &amp; Observation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2--segment-into-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Segment into tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3--summarize-on-write-not-on-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Summarize on Write (not on read)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4--candidate-surfacing-two-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Candidate Surfacing (two entry points)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5--review--promotion-pull-never-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Review &amp; Promotion (pull, never push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6--synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clarification-at-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clarification at Approval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Clarification at Approval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-the-questions-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the questions come from
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-disciplines-that-keep-review-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three disciplines that keep review fast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-there-is-no-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When there is no trace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-answers-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent answers first
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Output Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Output Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5b-why-the-marker-list-is-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5b. Why the marker list is short
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lifecycle-decay--storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lifecycle, Decay &amp; Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-portability-the-honest-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Portability: The Honest Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-claude-code-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Claude Code Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Claude Code Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capture-hooks-not-a-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture: hooks, not a daemon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-constraints-to-design-around" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two constraints to design around
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging--distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packaging &amp; Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-key-differentiators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Key Differentiators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-target-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Target Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#division-of-labour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Division of labour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1--single-developer-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — single developer (built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2--team-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — team distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#later" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Later
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-vision--value-proposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core Vision &amp; Value Proposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1--ingestion--observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Ingestion &amp; Observation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2--segment-into-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Segment into tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3--summarize-on-write-not-on-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Summarize on Write (not on read)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4--candidate-surfacing-two-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Candidate Surfacing (two entry points)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5--review--promotion-pull-never-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Review &amp; Promotion (pull, never push)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6--synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clarification-at-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clarification at Approval
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Clarification at Approval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-the-questions-come-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the questions come from
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#three-disciplines-that-keep-review-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three disciplines that keep review fast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-there-is-no-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When there is no trace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-agent-answers-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent answers first
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-output-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Output Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Output Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5b-why-the-marker-list-is-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5b. Why the marker list is short
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lifecycle-decay--storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lifecycle, Decay &amp; Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-portability-the-honest-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Portability: The Honest Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-claude-code-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Claude Code Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Claude Code Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capture-hooks-not-a-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capture: hooks, not a daemon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-constraints-to-design-around" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two constraints to design around
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging--distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packaging &amp; Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-key-differentiators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Key Differentiators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-target-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Target Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#division-of-labour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Division of labour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not built
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification status
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1--single-developer-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — single developer (built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2--team-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — team distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#later" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Later
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="skill--the-design">Skill++ — the design<a class="headerlink" href="#skill--the-design" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>This is the design document the project started from. Parts of it describe
+plans that were changed or never built, and some numbers are from before
+later measurements. For how Skill++ works today, read the
+<a href="../">README</a>, <a href="../usage/">usage.md</a> and
+<a href="../architecture/">architecture.md</a>; the measurements are in
+<a href="../research/">research/</a>. Code comments cite its sections as
+<code>docs/design.md §N</code>.</p>
+</blockquote>
+<p><strong>Skill++</strong> is a background-observing knowledge engine for developers and technical teams. It watches how work actually gets done, keeps a searchable <strong>ledger</strong> of candidate workflows, and — only on explicit human approval — promotes them into modular, enterprise-ready <code>SKILL.md</code> files.</p>
+<p>Capture is passive. Promotion is always deliberate.</p>
+<div class="highlight"><pre><span></span><code>./examples/demo.sh
+</code></pre></div>
+<p>That runs the whole loop against a scratch ledger — three captured sessions, a
+redacted credential, generated questions, a scaffolded skill — and touches
+nothing real. See §12 for what is built and what is not.</p>
+<hr />
+<h2 id="1-core-vision--value-proposition">1. Core Vision &amp; Value Proposition<a class="headerlink" href="#1-core-vision--value-proposition" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Zero-Friction Capture:</strong> Routine developer work (terminal pipelines, MCP tool chains, refactoring sequences) and dictated natural-language workflows land in the ledger automatically, with no interruption and no prompt engineering.</li>
+<li><strong>Bottom-Up Intelligence:</strong> Operational knowledge is derived from what the team actually does, rather than from documentation someone was supposed to write.</li>
+<li><strong>Nothing Unreviewed Ships:</strong> The ledger holds <em>candidates</em>, not skills. A <code>SKILL.md</code> is synthesized only after a human reads what it will do and approves it.</li>
+<li><strong>Open Standard Native:</strong> Output is the standard <code>SKILL.md</code> format, compatible with Claude Code, Cursor, OpenCode, and Microsoft Agent Framework. (See §7 for the honest limits of that portability.)</li>
+</ul>
+<hr />
+<h2 id="2-system-architecture">2. System Architecture<a class="headerlink" href="#2-system-architecture" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────────────────┐
+│                        DAILY INPUTS                          │
+│   • Passive MCP &amp; terminal execution traces                  │
+│   • Active natural-language text / voice dictation           │
+└───────────────────────────────┬──────────────────────────────┘
+                                │
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                        SEGMENTATION                          │
+│   Session cut into task episodes — one workflow per entry    │
+│   Boundaries: completion markers · new prompt                │
+│   No marker and nothing shipped → flagged, not proposed      │
+└───────────────────────────────┬──────────────────────────────┘
+                                │ summarized + sanitized on write
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                         THE LEDGER                           │
+│   Compact markdown candidate entries — never raw traces      │
+│   Searchable · local-first · unapproved entries expire 7–14d │
+└───────────────────────────────┬──────────────────────────────┘
+                                │
+             ┌──────────────────┴──────────────────┐
+             ▼                                     ▼
+ recurrence signal (N ≥ 3)              user ledger query
+ batched — never a popup          "that rollback last Tuesday"
+             └──────────────────┬──────────────────┘
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                     REVIEW &amp; PROMOTION                       │
+│   Pull-based: review command · session end · weekly digest   │
+│   Effect summary → source traces → 2-question interview      │
+└───────────────────────────────┬──────────────────────────────┘
+                                │ approved
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                          SYNTHESIS                           │
+│   Parameterize · dedup (embedding match) · compose           │
+│   Emit: SKILL.md + scripts/ + declared deps in metadata      │
+└───────────────────────────────┬──────────────────────────────┘
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                  DISTRIBUTION &amp; LIFECYCLE                    │
+│   provisional → trusted (earned through successful use)      │
+│   hot → cold → archived (demoted, never auto-deleted)        │
+│   Local `.claude/skills/` · team PR · dep check at pull time │
+└──────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="3-how-it-works">3. How It Works<a class="headerlink" href="#3-how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="step-1--ingestion--observation">Step 1 — Ingestion &amp; Observation<a class="headerlink" href="#step-1--ingestion--observation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Passive listener:</strong> A lightweight background daemon or terminal hook observes execution traces — commands, MCP calls, file edit sequences.</li>
+<li><strong>Active dictation:</strong> Workflows can be dictated in plain English (<em>"when we update X, run Y, check Z, then notify the on-call"</em>), for quick-thinking developers and non-technical contributors alike.</li>
+</ul>
+<h3 id="step-2--segment-into-tasks">Step 2 — Segment into tasks<a class="headerlink" href="#step-2--segment-into-tasks" title="Permanent link">&para;</a></h3>
+<p>A session is not a workflow. One sitting routinely holds several unrelated tasks — a deploy, an unrelated bug fix, an investigation that goes nowhere — and fingerprinting the whole thing as one unit is why a workflow performed three times can register as three unrelated one-offs that never reach the threshold. <strong>Developers reuse tasks, not sessions</strong>, so the unit of comparison has to be the unit of reuse.</p>
+<p>Sessions are therefore cut into episodes before anything is fingerprinted, on two signals that cost nothing to compute:</p>
+<ul>
+<li><strong>Completion markers</strong> — a command whose success means the developer's <em>goal</em> is done, not merely that a step worked. Version-control verbs qualify: nobody commits halfway through a thought. Infrastructure commands (<code>terraform apply</code>, <code>kubectl apply</code>, <code>npm publish</code>) deliberately do not — see §5b.</li>
+<li><strong>A new prompt</strong> — the developer stating a fresh goal, recognised by its position in the recorded stream rather than by any clock. No idle-gap timer: a threshold needs tuning per person and misfires the moment somebody reads documentation mid-task.</li>
+</ul>
+<p>A boundary that would leave an episode of fewer than two substantive steps is ignored, because one step is not a workflow. An episode that ends only because the session did, with no marker, is <strong>flagged rather than proposed</strong> — that is an investigation with nothing to show for itself.</p>
+<h3 id="step-3--summarize-on-write-not-on-read">Step 3 — Summarize on Write (not on read)<a class="headerlink" href="#step-3--summarize-on-write-not-on-read" title="Permanent link">&para;</a></h3>
+<p>Raw traces are <strong>never persisted</strong>. At capture time each observation is compressed into a compact markdown ledger entry and scrubbed in the same pass:</p>
+<ul>
+<li><strong>Compression</strong> keeps the ledger the same order of magnitude as the skill library itself, rather than the tens of megabytes raw MCP payloads and file diffs would consume.</li>
+<li><strong>Sanitization happens once, on write.</strong> A regex scan strips API keys, tokens, credentials, internal URLs and email addresses before anything touches disk — so the ledger is never a liability sitting in a buffer waiting to be cleaned later.</li>
+<li><strong>Searchability comes for free</strong>, because entries are already text.</li>
+</ul>
+<h3 id="step-4--candidate-surfacing-two-entry-points">Step 4 — Candidate Surfacing (two entry points)<a class="headerlink" href="#step-4--candidate-surfacing-two-entry-points" title="Permanent link">&para;</a></h3>
+<p>The ledger is not just a suggestion queue; it is a searchable record of your own work.</p>
+<ul>
+<li><strong>Recurrence signal:</strong> Workflows recurring <strong>3+ times</strong> across sessions are flagged as proposal candidates.</li>
+<li><strong>User query:</strong> Developers can search the ledger directly — <em>"that migration rollback from last Tuesday"</em> — and promote a one-off themselves. This matters because value and frequency correlate only weakly: the highest-value procedures (incident response, cert rotation, quarterly release) are often rare by nature.</li>
+</ul>
+<p>Unapproved candidates expire and self-delete after 7–14 days.</p>
+<h3 id="step-5--review--promotion-pull-never-push">Step 5 — Review &amp; Promotion (pull, never push)<a class="headerlink" href="#step-5--review--promotion-pull-never-push" title="Permanent link">&para;</a></h3>
+<p><strong>No interrupting popups.</strong> Candidates persist in the ledger, so review is something the developer pulls when they have attention to spare: an explicit review command, a prompt at session end, a weekly digest, or a nudge at PR time.</p>
+<p>Review is designed to take seconds, not minutes:</p>
+<ol>
+<li><strong>Effect summary first.</strong> The proposal leads with what the skill will <em>do</em> — commands it runs, paths it writes, anything destructive, any network calls — not what it's <em>for</em>. A purpose summary ("deploys to staging and runs smoke tests") can be perfectly accurate while the underlying steps are wrong; effect summaries are what make a fast review a real one.</li>
+<li><strong>Evidence one keypress away.</strong> The candidate is shown against the ledger entries it was derived from, with diverging steps highlighted. Confirming "yes, that's what I did" is far faster than auditing free-floating instructions.</li>
+<li><strong>Targeted clarification.</strong> Because synthesis happens <em>at approval</em>, the system can ask what traces can never reveal — but only where the trace is genuinely ambiguous. See §4.</li>
+</ol>
+<p>Nothing is written to the skill library without passing this gate.</p>
+<h3 id="step-6--synthesis">Step 6 — Synthesis<a class="headerlink" href="#step-6--synthesis" title="Permanent link">&para;</a></h3>
+<p>Only after approval is a <code>SKILL.md</code> generated.</p>
+<ul>
+<li><strong>Parameterization:</strong> Local paths (<code>/Users/dev/project/...</code>) and environment-specific values become template variables (<code>${PROJECT_PATH}</code>).</li>
+<li><strong>Deduplication:</strong> Each saved episode is embedded and compared with every existing entry of the same kind: a run with a conversation by its prompts and the openings of the replies, at <code>SKILL_PLUS_PLUS_MATCH_FLOOR_TURNS</code> (0.85); a run without one by its steps, one numbered line each, at <code>SKILL_PLUS_PLUS_MATCH_FLOOR</code> (0.93). A match at or above the floor joins that entry rather than spawning a near-duplicate. Each floor is set where wrong merges stop, not where merges are most numerous.</li>
+<li><strong>Hierarchical composition:</strong> Atomic sub-routines (e.g. <code>git-commit</code>) are extracted once and invoked as sub-skills by higher-level orchestrators, forming a DAG rather than a flat pile of prompts.</li>
+</ul>
+<hr />
+<h2 id="4-clarification-at-approval">4. Clarification at Approval<a class="headerlink" href="#4-clarification-at-approval" title="Permanent link">&para;</a></h2>
+<p>A trace records what happened, not why. The missing half — the diagnosis behind a retry, the rule behind a parameter, the check that happened in a browser — lives only in the developer's head, and approval is the one moment they are already looking at the workflow. Skill++ uses that moment to close the gap.</p>
+<p>It is not a questionnaire. A fixed set of questions gets skipped by the third proposal. Instead <strong>the ambiguity in the trace generates the question</strong>, which means a clean candidate asks nothing and a messy one asks precisely about the part that is messy.</p>
+<h3 id="where-the-questions-come-from">Where the questions come from<a class="headerlink" href="#where-the-questions-come-from" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Trace signal</th>
+<th>What is missing</th>
+<th>Question generated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Failure then retry</strong> — a command exits non-zero, a variant succeeds</td>
+<td>The diagnosis, not the fix</td>
+<td><em>"What tells you to reach for <code>--force-lock</code> here?"</em></td>
+</tr>
+<tr>
+<td><strong>Divergence across occurrences</strong> — run 1 hit staging, runs 2–3 hit prod</td>
+<td>The rule behind the variable</td>
+<td><em>"Is this always the current branch, or does it vary?"</em></td>
+</tr>
+<tr>
+<td><strong>Workflow ends off-trace</strong> — capture stops at deploy</td>
+<td>The verification step</td>
+<td><em>"How do you know it worked?"</em></td>
+</tr>
+<tr>
+<td><strong>Unparameterizable literal</strong> — a bare ID or URL</td>
+<td>Whether it is fixed or per-run</td>
+<td><em>"Is this account ID constant across environments?"</em></td>
+</tr>
+<tr>
+<td><strong>Step present in some runs only</strong></td>
+<td>Whether it is conditional or incidental</td>
+<td><em>"Is the cache clear required, or was that a one-off?"</em></td>
+</tr>
+</tbody>
+</table>
+<p>The failure-then-retry case is the highest-value one: recovery behavior is the entire difference between a skill and a shell script, and it is the part a trace shows without explaining.</p>
+<h3 id="three-disciplines-that-keep-review-fast">Three disciplines that keep review fast<a class="headerlink" href="#three-disciplines-that-keep-review-fast" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Cap at three questions.</strong> If synthesis has ten, the candidate is not ready — return it to the ledger rather than interrogating the developer. The question count is a quality signal about the candidate, not a budget to spend.</li>
+<li><strong>Pre-fill a guess.</strong> <em>"Staging — right?"</em> answered with Enter is a confirmation. An empty text box is composition, and composition is what people skip.</li>
+<li><strong>Skipping never blocks.</strong> Unanswered gaps still produce a skill, with an explicit <code>## Open questions</code> section, landed as <strong>provisional</strong>. Better than blocking, and far better than guessing silently — and it gives provisional→trusted promotion something concrete to resolve, since the gap closes the first time someone runs the skill and hits that branch.</li>
+</ol>
+<h3 id="when-there-is-no-trace">When there is no trace<a class="headerlink" href="#when-there-is-no-trace" title="Permanent link">&para;</a></h3>
+<p>A dictated workflow — <em>"create a skill for this: I give you information, you
+search online about the facts, give me in that format"</em> — has no execution
+history to mine. Retries and divergence do not exist, so the signal table above
+has nothing to work on.</p>
+<p>What remains mechanically checkable is <strong>completeness</strong>: whether the
+description covers trigger, procedure, output shape and failure handling. That
+requires no understanding of the domain.</p>
+<table>
+<thead>
+<tr>
+<th>Missing</th>
+<th>Detected by</th>
+<th>Question generated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A format named but never given</strong></td>
+<td>The text refers to "this format" / "the usual structure" with no example, list or block anywhere in it</td>
+<td><em>"You refer to a format but never give one. What should the output look like — fields, order, an example?"</em></td>
+</tr>
+<tr>
+<td><strong>Trigger</strong></td>
+<td>No <code>when</code> / <code>if</code> / <code>after</code> / <code>every time</code> condition</td>
+<td><em>"When should this fire?"</em></td>
+</tr>
+<tr>
+<td><strong>Source standard</strong></td>
+<td>Research or verification is mentioned with no constraint on what counts</td>
+<td><em>"What counts as a good enough source, and how many need to agree?"</em></td>
+</tr>
+<tr>
+<td><strong>Failure handling</strong></td>
+<td>No <code>otherwise</code> / <code>if not found</code> / <code>conflict</code> branch</td>
+<td><em>"What should happen when a step fails or comes back empty?"</em></td>
+</tr>
+<tr>
+<td><strong>A procedure that is one step</strong></td>
+<td>Fewer than two stages parse out</td>
+<td><em>"What are the actual stages, in order?"</em></td>
+</tr>
+</tbody>
+</table>
+<p>Dictated candidates skip the recurrence threshold. It exists to filter noise,
+and an explicit request is not noise.</p>
+<p>Ask for an <strong>example of the output</strong>, never a description of one. A worked
+example costs the developer less time and specifies more.</p>
+<h3 id="the-agent-answers-first">The agent answers first<a class="headerlink" href="#the-agent-answers-first" title="Permanent link">&para;</a></h3>
+<p>Where review runs inside an agent session (see §8), the agent resolves what it can before involving the developer: does <code>deploy.sh</code> still exist, does it accept <code>--env</code>, what does <code>package.json</code> call the test script. Only what the repository cannot answer reaches a human.</p>
+<p>On a clean candidate that is often zero questions. When it is three, all three are genuine judgment — which is the only kind worth a developer's attention.</p>
+<hr />
+<h2 id="5-output-formats">5. Output Formats<a class="headerlink" href="#5-output-formats" title="Permanent link">&para;</a></h2>
+<p>A <code>SKILL.md</code> is an instruction file, not a tool definition. It cannot declare a tool or provision an MCP server. Skill++ therefore emits along three tracks:</p>
+<table>
+<thead>
+<tr>
+<th>Captured pattern</th>
+<th>Emitted as</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deterministic command pipeline</td>
+<td><code>scripts/</code> + thin <code>SKILL.md</code> wrapper</td>
+<td>Captured determinism should come back as code, not as prose an agent re-derives (and re-fumbles) each run. Also far easier to review.</td>
+</tr>
+<tr>
+<td>Judgment-shaped procedure</td>
+<td>Instruction-only <code>SKILL.md</code></td>
+<td>Decision points, conventions, and escalation paths belong in prose.</td>
+</tr>
+<tr>
+<td>MCP-dependent workflow</td>
+<td><code>SKILL.md</code> referencing tools by name + declared deps</td>
+<td>Skills reference the host's existing tools; they never install them.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MCP handling.</strong> Skill++ references only MCP servers already connected in the session, and never attempts to bundle or provision one. Three rules keep that safe once a skill travels to a teammate:</p>
+<ul>
+<li><strong>Prefer the portable path.</strong> Where the ledger shows the same outcome is reachable through a CLI (<code>gh</code> instead of a GitHub MCP, <code>psql</code> instead of a Postgres MCP), the shell form is generated — it runs anywhere. MCP references are reserved for capabilities with no CLI equivalent.</li>
+<li><strong>Declare dependencies</strong> — required servers and CLIs — in the <code>metadata</code> frontmatter key, which is already supported in the wild and requires no spec extension.</li>
+<li><strong>Check at pull, not at run.</strong> On install, declared deps are diffed against the teammate's connected servers and missing ones are reported immediately. A skill whose dependency is absent must state what is missing and stop cleanly — never improvise a workaround.</li>
+</ul>
+<h3 id="5b-why-the-marker-list-is-short">5b. Why the marker list is short<a class="headerlink" href="#5b-why-the-marker-list-is-short" title="Permanent link">&para;</a></h3>
+<p>Segmentation (§3, step 2) cuts on completion markers, and the temptation is to treat every "work landed" command as one. Infrastructure verbs are excluded on purpose, and the reason generalises.</p>
+<p>Take a deploy that runs <code>terraform apply</code> and then <code>./scripts/deploy.sh &lt;target&gt;</code>. Treat <code>terraform apply</code> as a marker and the episode closes one step early, leaving <code>deploy.sh</code> as a fragment below the minimum size, which is then discarded. The truncated prefix is <em>identical across every occurrence</em>, so it still merges, still reaches the recurrence threshold, and still presents as a clean candidate — one that builds and provisions but never deploys, with nothing anywhere to flag it as incomplete.</p>
+<p><strong>Over-cutting is worse than under-cutting.</strong> An under-cut candidate is visibly wrong — a sprawling signature, a title naming the wrong task — and dies at review. An over-cut one looks correct and is silently missing its payload. A marker therefore has to mean <em>the developer's goal is done</em>, not <em>a step succeeded</em>.</p>
+<p>Tests going red→green are excluded for the same reason: green tests mean the goal was met only when testing <em>was</em> the goal. Usually they are mid-task verification, and <code>signals.py</code> already mines the failure-then-retry pattern for question generation, which is the right use of it.</p>
+<hr />
+<h2 id="6-lifecycle-decay--storage">6. Lifecycle, Decay &amp; Storage<a class="headerlink" href="#6-lifecycle-decay--storage" title="Permanent link">&para;</a></h2>
+<p><strong>Approved skills are never auto-deleted.</strong> Disuse is a poor proxy for value; a timer that removes anything untouched for 60 days preferentially destroys the incident runbook and keeps the command you would have typed from memory. On a shared skill it is worse still, since usage is distributed across a team.</p>
+<p>The real cost of an unused skill is index bloat, not disk. So skills are <strong>demoted, not deleted</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hot</strong></td>
+<td>Present in the always-loaded <code>name</code> + <code>description</code> index.</td>
+</tr>
+<tr>
+<td><strong>Cold</strong></td>
+<td>Dropped from the index; still discoverable by search and loadable on demand.</td>
+</tr>
+<tr>
+<td><strong>Archived</strong></td>
+<td>Retained, surfaced only by explicit lookup.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Staleness ≠ disuse.</strong> A skill rots when the script it calls is renamed or the flag it passes is removed. Decay is detected by checking whether referenced paths, commands, and tools still resolve — a cheap, accurate signal that a timer cannot approximate.</li>
+<li><strong>Expiry applies to the ledger, not the library.</strong> Unapproved candidates disappear after 7–14 days; anything a human blessed is kept.</li>
+<li><strong>Storage.</strong> Skill files average 1.5–3 KB; a full organizational library stays under 5 MB. The ledger stays in the same range because entries are summarized on write rather than stored as raw traces.</li>
+<li><strong>Context cost.</strong> Agents load only the lightweight <code>name</code> + <code>description</code> index, pulling full instructions into the context window on demand.</li>
+</ul>
+<hr />
+<h2 id="7-portability-the-honest-limits">7. Portability: The Honest Limits<a class="headerlink" href="#7-portability-the-honest-limits" title="Permanent link">&para;</a></h2>
+<p>Instruction-shaped skills travel cleanly across Claude Code, Cursor, OpenCode, and Microsoft Agent Framework. Tool-bound skills degrade:</p>
+<ul>
+<li><strong>MCP tool names are host-namespaced.</strong> <code>mcp__github__create_pr</code> is not the same identifier in every runtime.</li>
+<li><strong>Frontmatter extensions vary.</strong> <code>name</code> and <code>description</code> are universal; everything beyond them is host-specific.</li>
+</ul>
+<p>Portability is therefore a property of the <em>skill</em>, not of the format. The generation rules in §5 exist to keep as many skills as possible in the portable class.</p>
+<hr />
+<h2 id="8-claude-code-integration">8. Claude Code Integration<a class="headerlink" href="#8-claude-code-integration" title="Permanent link">&para;</a></h2>
+<p><strong>Terminal (CLI) is the capture surface. Desktop is the distribution surface.</strong></p>
+<p>Claude Code in the terminal is the reference host for passive capture: hooks fire automatically, the ledger builds from every session, and skills land in <code>~/.claude/skills/</code> ready to use. Desktop has no passive capture—the desktop app runs its own Claude Code runtime that never reads the host's <code>~/.claude/settings.json</code>—but it does have an upload path for finished skills.</p>
+<blockquote>
+<p>Installation, verification, and the complete terminal→Desktop workflow are
+covered in <a href="../usage/">usage.md</a>. This section
+outlines the architecture.</p>
+</blockquote>
+<h3 id="capture-hooks-not-a-daemon">Capture: hooks, not a daemon<a class="headerlink" href="#capture-hooks-not-a-daemon" title="Permanent link">&para;</a></h3>
+<p>Claude Code fires hooks — shell commands receiving JSON on stdin — at <code>PreToolUse</code>, <code>PostToolUse</code>, <code>UserPromptSubmit</code>, <code>SessionStart</code>, <code>SessionEnd</code>, <code>PreCompact</code>, and <code>Stop</code>, configured through <code>settings.json</code>. <code>PostToolUse</code> supplies the tool name, its input, and its result: a structured trace stream, considerably cleaner than parsing shell history. <code>SessionEnd</code> is the natural batching point for ledger writes and the pull-review nudge — it <em>triggers</em> the fold rather than performing it, because a hook that waits on a local model is a hook Claude Code kills. No OS daemon, no separate install, and a far smaller infosec surface than a background listener.</p>
+<p><strong>The decisive advantage is <code>UserPromptSubmit</code>.</strong> It captures what the developer <em>asked for</em> next to what actually <em>ran</em>. Intent is the half of the picture a raw command log can never recover, and having it in the same session materially improves synthesis — it is what reduces §4's clarification pass from an interview to a confirmation.</p>
+<p>It earns its keep twice over, because a prompt is also a <strong>task boundary</strong>. Prompts are recorded into the ordered step stream, not a separate list, so position alone records which prompt preceded which work — no timestamps, no gap threshold, nothing to tune. A shell-history tool has neither half.</p>
+<h3 id="surface-mapping">Surface mapping<a class="headerlink" href="#surface-mapping" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Skill++ concept</th>
+<th>Claude Code primitive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace capture</td>
+<td><code>PostToolUse</code> / <code>PreToolUse</code> hooks</td>
+</tr>
+<tr>
+<td>Intent capture</td>
+<td><code>UserPromptSubmit</code> hook</td>
+</tr>
+<tr>
+<td>Task boundaries</td>
+<td><code>UserPromptSubmit</code> — recorded in the step stream, so a prompt's position marks where one task ends and the next begins</td>
+</tr>
+<tr>
+<td>Segmentation + ledger write + review nudge</td>
+<td><code>SessionEnd</code> hook — stamps the session and spawns <code>skill-plus-plus fold-session</code>, which does the work detached</td>
+</tr>
+<tr>
+<td>Banking what an earlier session left behind</td>
+<td><code>SessionStart</code> hook → <code>skill-plus-plus fold-pending</code></td>
+</tr>
+<tr>
+<td>Pull-based review UI</td>
+<td><code>.claude/commands/skill-plus-plus-review.md</code> → <code>/skill-plus-plus-review</code></td>
+</tr>
+<tr>
+<td>Skill output</td>
+<td><code>.claude/skills/&lt;name&gt;/SKILL.md</code> + <code>scripts/</code></td>
+</tr>
+<tr>
+<td>Dependency check at pull</td>
+<td>Diff declared deps against <code>.mcp.json</code> and connected <code>mcp__&lt;server&gt;__&lt;tool&gt;</code> names</td>
+</tr>
+<tr>
+<td>Progressive disclosure</td>
+<td>Native — <code>name</code> + <code>description</code> indexed, body loaded on demand</td>
+</tr>
+</tbody>
+</table>
+<h3 id="two-constraints-to-design-around">Two constraints to design around<a class="headerlink" href="#two-constraints-to-design-around" title="Permanent link">&para;</a></h3>
+<p><strong>Capture is terminal-only.</strong> Hooks fire in Claude Code CLI sessions; the desktop
+and web chat surfaces run their own runtimes that don't read the host's
+<code>~/.claude/settings.json</code>, so they produce no ledger entries. This is a hard
+boundary (see usage.md, What is captured), not a configuration matter. Measured
+directly: a chat session produced no buffer, no error, and no log entry — the
+hook was never invoked at all.</p>
+<p><strong>There is no built-in cold tier.</strong> Claude Code indexes everything under the skills directory, so the hot/cold/archived model in §6 is implemented by physically moving files to a sibling directory (<code>.claude/skill-plus-plus/cold/</code>) with a retrieval skill that searches it. Demotion is a file move, not a flag.</p>
+<h3 id="packaging--distribution">Packaging &amp; Distribution<a class="headerlink" href="#packaging--distribution" title="Permanent link">&para;</a></h3>
+<p>Two formats, two use cases:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Use</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Upload ZIP</strong></td>
+<td>Claude Desktop</td>
+<td><code>skill-plus-plus bundle --format upload</code>, then Customize → Skills</td>
+</tr>
+<tr>
+<td><strong>Plugin</strong></td>
+<td>Claude Code terminal, team (Phase 2)</td>
+<td><code>skill-plus-plus bundle --format plugin</code></td>
+</tr>
+</tbody>
+</table>
+<p>A plugin bundles hooks, the review command, and retrieval skill. It's also the
+upgrade path for MCP-dependent skills (§5) — plugins can declare <code>mcpServers</code>,
+whereas a bare <code>SKILL.md</code> cannot.</p>
+<blockquote>
+<p>Hook names and payload shapes should be confirmed against current documentation before building. That surface evolves faster than the skill format does.</p>
+</blockquote>
+<hr />
+<h2 id="9-key-differentiators">9. Key Differentiators<a class="headerlink" href="#9-key-differentiators" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Dust.tt</th>
+<th>Superpowers</th>
+<th>IDE-native memory (Cursor, Copilot, Claude Code)</th>
+<th><strong>Skill++</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary focus</strong></td>
+<td>Team knowledge RAG</td>
+<td>Engineering process rules (TDD, planning)</td>
+<td>Per-developer context recall</td>
+<td><strong>Operational workflow capture</strong></td>
+</tr>
+<tr>
+<td><strong>Creation effort</strong></td>
+<td>High (manual prompting)</td>
+<td>Manual (maintainer-authored)</td>
+<td>Low, but per-session and personal</td>
+<td><strong>Passive capture, deliberate promotion</strong></td>
+</tr>
+<tr>
+<td><strong>Input source</strong></td>
+<td>Web forms &amp; docs</td>
+<td>Static GitHub repo</td>
+<td>Chat transcripts</td>
+<td><strong>Live traces + direct dictation</strong></td>
+</tr>
+<tr>
+<td><strong>Retrospective search</strong></td>
+<td>Documents only</td>
+<td>N/A</td>
+<td>Limited</td>
+<td><strong>Full searchable work ledger</strong></td>
+</tr>
+<tr>
+<td><strong>Security handling</strong></td>
+<td>Space-level ACLs</td>
+<td>N/A</td>
+<td>Varies by vendor</td>
+<td><strong>Sanitized on write, before disk</strong></td>
+</tr>
+<tr>
+<td><strong>Skill structure</strong></td>
+<td>Flat assistant prompts</td>
+<td>Flat prompt files</td>
+<td>Flat memory entries</td>
+<td><strong>Sub-skill composition (DAG)</strong></td>
+</tr>
+<tr>
+<td><strong>Team distribution</strong></td>
+<td>Native</td>
+<td>Manual repo sync</td>
+<td>Weak / personal by design</td>
+<td><strong>One-click PR + dep check at pull</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The competitive pressure worth taking seriously is the fourth column: memory and rule-generation features bundled free with the IDE. Skill++ differentiates on the two things those do not do — a searchable ledger of past work, and team-grade distribution with dependency and lifecycle management.</p>
+<hr />
+<h2 id="10-target-outcomes">10. Target Outcomes<a class="headerlink" href="#10-target-outcomes" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Self-building repository:</strong> The operational capability library grows as a by-product of daily engineering work.</li>
+<li><strong>Zero context bloat:</strong> Tiering plus progressive disclosure keeps agent context windows fast and cheap regardless of library size.</li>
+<li><strong>Nothing unreviewed, nothing lost:</strong> Every skill was read and approved by a human; nothing approved is ever silently discarded.</li>
+<li><strong>Portable by default:</strong> Generation actively prefers forms that survive the trip to another developer's machine.</li>
+</ol>
+<hr />
+<h2 id="11-open-questions">11. Open Questions<a class="headerlink" href="#11-open-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Does fast review stay real review?</strong> The effect-summary and evidence design targets a 20-second review. If approval rates approach 100%, the gate has become a rubber stamp and the design has failed.</li>
+<li><strong>Is N ≥ 3 the right trigger?</strong> Recurrence is a weak proxy for value. The searchable ledger hedges this, but the balance between pushed suggestions and pulled searches needs measurement.</li>
+<li><strong>Do developers actually answer the clarifying questions?</strong> §4 assumes three pre-filled questions get answered rather than skipped. If the skip rate is high, most skills land permanently provisional with open <code>## Open questions</code>, and the judgment layer never materializes.</li>
+<li><strong>Will infosec approve a background listener?</strong> Sanitize-on-write and local-first storage are the mitigations. Hook-based capture (§8) sidesteps this almost entirely by removing the daemon, which is an argument for shipping the Claude Code integration first. This remains the primary enterprise adoption risk for the OS-daemon path.</li>
+<li><strong>Provisional → trusted promotion:</strong> Landing skills as hints that earn trust through successful use makes shallow review safe. The promotion threshold is unvalidated.</li>
+</ul>
+<hr />
+<h2 id="12-implementation">12. Implementation<a class="headerlink" href="#12-implementation" title="Permanent link">&para;</a></h2>
+<p>Python 3.9+, standard library only — no dependencies, because a hook that has
+to import a third-party package is a hook that breaks somebody's session.</p>
+<div class="highlight"><pre><span></span><code>skill_plus_plus/
+  config.py      paths and thresholds, all env-overridable
+  sanitize.py    secret/PII scrubbing, applied on write
+  segment.py     cuts a session into task episodes
+  normalize.py   parameterisation + step shapes
+  ledger.py      candidate entries: markdown body, JSON payload
+  matching.py    same-procedure matching by embedding
+  similar.py     embedded text and folding one entry into another
+  signals.py     gap detection, question generation, effect summaries
+  capture.py     hook handlers (fail-safe: always exit 0)
+  summary.py     review surface, SKILL.md scaffold, dependency check
+  lifecycle.py   hot/cold/archived tiering, staleness, usage tracking
+  install.py     settings.json wiring (dry run by default)
+  cli.py         command dispatch
+commands/skill-plus-plus-review.md   /skill-plus-plus-review — review captured candidates
+commands/skill-plus-plus-new.md      /skill-plus-plus-new    — build a skill from a description
+examples/demo.sh             end-to-end walkthrough on a scratch ledger
+tests/fixtures/messy_session.py  demo.sh's sessions, polluted with unrelated work
+tests/test_skill_plus_plus.py        88 tests
+</code></pre></div>
+<h3 id="division-of-labour">Division of labour<a class="headerlink" href="#division-of-labour" title="Permanent link">&para;</a></h3>
+<p>The CLI does everything deterministic: capture, scrub, deduplicate, detect
+gaps, summarise effects, manage tiers. The <code>/skill-plus-plus-review</code> command drives an
+agent through everything that needs judgement — resolving what the repository
+can answer, asking the developer at most three questions, and writing prose
+worth reading. Neither half is useful alone.</p>
+<h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>skill-plus-plus install --user\|--project [DIR]</code></td>
+<td>Wire the hooks, for every project or just this one. Dry run without <code>--apply</code>; <code>--remove</code> takes them back out</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus doctor</code></td>
+<td>Whether the hooks are wired, the models answer, and anything is waiting to be banked</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus hook --event &lt;E&gt;</code></td>
+<td>Hook entry point; reads JSON on stdin, always exits 0</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus fold-session &lt;id&gt;</code></td>
+<td>Bank one ended session; what the <code>SessionEnd</code> hook spawns</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus dictate --text "…"</code></td>
+<td>Create a candidate from a description instead of a trace</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus review [--all]</code></td>
+<td>Candidates at or above the recurrence threshold</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus sift [--apply]</code></td>
+<td>Ask a local model which candidates are methods rather than one-off jobs; parks the rest. Dry run without <code>--apply</code>. See <a href="../research/episode-filter/">docs/research/episode-filter.md</a></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus reopen &lt;id&gt;</code></td>
+<td>Undo a sift verdict</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus merge [--apply]</code></td>
+<td>Merge candidates that are the same procedure worded differently, by embedding. Dry run without <code>--apply</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus split &lt;id&gt; --at N</code></td>
+<td>Split a candidate holding two procedures; the original is kept, not deleted</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus name &lt;id&gt; --title … --description …</code></td>
+<td>Give a candidate a task-shaped name; written by the agent during <code>draft</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus accuracy</code></td>
+<td>How often the ranker agreed with your own promote/dismiss decisions</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus keep</code></td>
+<td>Save the work so far as a candidate, without ending the session</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus reconcile</code></td>
+<td>Report promoted skills whose file is gone; reports only, never decides</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus ignored [--threshold N]</code></td>
+<td>List parked candidates and how often that work happened anyway</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus web [--port N] [--no-browser]</code></td>
+<td>Promote or dismiss candidates recognized ≥ 3 times (dismissed ones can be reinstated), then Draft (runs <code>skill-plus-plus draft --apply</code>, with an optional note on what to look out for) for a promoted one; review finished drafts, revise them through your agent, and download each as a skill folder zip; loopback only, no auth</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus draft &lt;id&gt; [--note "…"] [--apply]</code></td>
+<td>Have your own agent write a draft <code>SKILL.md</code>; never installs it. <code>--note</code> tells it what to look out for. Dry run without <code>--apply</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus revise &lt;id&gt; --instruction "…" [--apply]</code></td>
+<td>Have your own agent change a draft <code>SKILL.md</code> as instructed, in place; the previous version is kept in <code>.revisions/</code>. Dry run without <code>--apply</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus show &lt;id&gt;</code></td>
+<td>Effect summary, evidence, open questions</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus search &lt;words&gt;</code></td>
+<td>Search the ledger of your own past work</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus scaffold &lt;id&gt; --name &lt;n&gt;</code></td>
+<td>Generate a starting <code>SKILL.md</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus promote &lt;id&gt; --skill-path &lt;p&gt;</code></td>
+<td>Mark a candidate promoted</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus dismiss &lt;id&gt;</code> / <code>expire</code></td>
+<td>Dismiss one / delete unapproved past TTL</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus lifecycle</code> / <code>tier &lt;name&gt; &lt;tier&gt;</code></td>
+<td>Inventory and demotion</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus check --name &lt;n&gt;</code></td>
+<td>Dependency check at pull time (exit 2 if missing)</td>
+</tr>
+<tr>
+<td><code>skill-plus-plus bundle --out &lt;dir&gt; [--format upload\|plugin]</code></td>
+<td>Package skills: <code>upload</code> = one zip per skill for Customize → Skills; <code>plugin</code> = <code>.claude-plugin/</code> + <code>skills/</code></td>
+</tr>
+<tr>
+<td><code>skill-plus-plus install [--apply]</code></td>
+<td>Wire Claude Code hooks; dry run without <code>--apply</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="built">Built<a class="headerlink" href="#built" title="Permanent link">&para;</a></h3>
+<p>Capture with intent, segmentation into task episodes, sanitize-on-write (typed
+placeholders that keep step shapes stable), the ledger with embedding dedup and
+TTL expiry, all five trace gap signals from §4 with the three-question cap and
+duplicate suppression, the dictation path with its completeness check and
+threshold bypass, effect-first proposals, scaffolding with declared deps and
+<code>## Open questions</code> that close when answered, pull-time dependency checking,
+hot/cold/archived demotion, staleness by reference resolution, and usage
+tracking driven by observed <code>Skill</code> calls.</p>
+<p><strong>Segmentation, measured.</strong> <code>tests/fixtures/messy_session.py</code> takes the three
+<code>demo.sh</code> deploy sessions, keeps the deploy byte-identical across all three so
+it genuinely recurs, and surrounds each occurrence with different unrelated
+work. Folded as whole sessions, the deploy scores 0.358–0.475 against the 0.85
+threshold and is filed as three unrelated one-offs, each titled after whatever
+happened to come first. Segmented, it is recovered as a single candidate at
+three occurrences with steps identical to the unpolluted baseline, and
+titled after the deploy. Both halves are asserted, because the whole-session
+path survives as <code>_fold_steps</code> and is still taken by single-episode sessions —
+so the regression is a live test rather than a git archaeology exercise.</p>
+<h3 id="not-built">Not built<a class="headerlink" href="#not-built" title="Permanent link">&para;</a></h3>
+<p>Deliberately deferred — see §13 for phasing.</p>
+<ul>
+<li><strong>Team PR sync.</strong> Phase 2. Only the receiving half exists today: declared
+  dependencies and <code>skill-plus-plus check</code>.</li>
+<li><strong>Script extraction.</strong> The slash command tells the agent to lift
+  deterministic pipelines into <code>scripts/run.sh</code>; the CLI does not do it
+  automatically.</li>
+<li><strong>Automatic provisional→trusted promotion.</strong> The tier is recorded and
+  readable; usage counts are tracked; nothing promotes on them yet.</li>
+<li><strong>Voice input.</strong> Dictation is text-only — <code>skill-plus-plus dictate</code> and
+  <code>/skill-plus-plus-new</code>. Speech-to-text is somebody else's job; the parser does not
+  care how the words arrive.</li>
+<li><strong>The OS-level shell daemon.</strong> Capture is Claude Code hooks only, which is
+  the sequencing argued for in §11.</li>
+<li><strong>Episode labelling.</strong> Segmentation cuts and titles episodes from their own
+  prompts, but nothing names the <em>varying parameter</em> — <code>staging</code> versus <code>prod</code>
+  — which is what a synthesised skill needs to parameterise. That is judgement,
+  and it belongs with the reviewing agent alongside semantic dedup.</li>
+<li><strong>Non-linear segmentation.</strong> Cutting is linear, so a task interrupted by a
+  second task and then resumed is mis-attributed. Recorded as a known
+  limitation in the fixture rather than papered over.</li>
+</ul>
+<h3 id="verification-status">Verification status<a class="headerlink" href="#verification-status" title="Permanent link">&para;</a></h3>
+<p>Installed and confirmed firing in a live Claude Code terminal session. All
+three hooks verified against real payloads: <code>PostToolUse</code> parses <code>Bash</code> and
+<code>Edit</code> calls cleanly, <code>UserPromptSubmit</code> captures prompts verbatim, and
+<code>SessionEnd</code> folds a buffer into a ledger entry.</p>
+<p>Coverage is narrower than §8 originally claimed: chat-surface sessions are not
+captured at all. See
+<a href="../usage/#what-is-captured">usage.md</a>.</p>
+<p>Two limits worth stating plainly about segmentation:</p>
+<ul>
+<li><strong><code>git commit</code> is the only marker with test coverage.</strong> The other eight, and
+  the artifact-delivery path, are implemented but unexercised.</li>
+<li><strong>It has never run against a real session.</strong> Every result above comes from a
+  fixture written for the purpose. The known risk — a mid-task "continue" or
+  "fix that" cutting an episode in half — is precisely the thing a hand-written
+  fixture cannot demonstrate, since its prompts are one-per-task by
+  construction. Replaying real transcripts is the next thing that could show
+  the design is wrong rather than merely incomplete.</li>
+</ul>
+<hr />
+<h2 id="13-roadmap">13. Roadmap<a class="headerlink" href="#13-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1--single-developer-built">Phase 1 — single developer (built)<a class="headerlink" href="#phase-1--single-developer-built" title="Permanent link">&para;</a></h3>
+<p>Capture, ledger, review, promotion, lifecycle. Everything a developer needs to
+turn their own work into their own skills, on their own machine. The ledger
+never leaves the laptop.</p>
+<h3 id="phase-2--team-distribution">Phase 2 — team distribution<a class="headerlink" href="#phase-2--team-distribution" title="Permanent link">&para;</a></h3>
+<p>The receiving half already exists: skills declare their dependencies and
+<code>skill-plus-plus check</code> verifies them at pull time. What Phase 2 adds is the sending
+half — exporting an approved skill as a pull request against a shared library,
+with the lifecycle and dedup machinery extended across a team rather than a
+directory.</p>
+<p>Two design questions to settle before writing any of it, because both are
+easier to get right at the start than to retrofit:</p>
+<p><strong>What travels, and what stays.</strong> A ledger entry holds project paths, session
+ids, and the developer's own prompts. None of that belongs in a team
+repository. A promoted skill's <code>metadata.provenance</code> currently points at a
+local ledger id that a teammate cannot resolve — useful locally, meaningless
+after the trip. Phase 2 needs an explicit split between the skill (travels) and
+its provenance (stays), rather than letting the current field quietly leak
+context into a PR.</p>
+<p><strong>Whether provisional skills should travel at all.</strong> Tiering assumes trust is
+earned through successful use (§6). But use by whom? A skill that one developer
+has run twice is not validated for a team, and shipping <code>tier: provisional</code>
+into a shared library either means nothing or means "do not rely on this" —
+which is not obviously a thing worth distributing. The plausible rule is that
+only <code>trusted</code> skills open a PR, which makes automatic promotion a Phase 2
+prerequisite rather than a nice-to-have.</p>
+<p><strong>Team-level dedup is the real work.</strong> Lexical similarity is adequate for one
+person's ledger. Across a team, the same workflow arrives written five
+different ways, and catching that is a judgement problem — which points at the
+reviewing agent, not at a similarity threshold.</p>
+<h3 id="later">Later<a class="headerlink" href="#later" title="Permanent link">&para;</a></h3>
+<p>Voice input, the OS-level shell daemon, automatic script extraction.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.sections", "navigation.top", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
